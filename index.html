@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>shray77 — ветеринар × разработчик</title>
+<meta name="description" content="Открытые цифровые инструменты для ветеринарной медицины: метеопрогнозы рисков, эпизоотические карты, AI-ассистенты, in silico-исследования и обучение.">
+<meta property="og:title" content="shray77 — ветеринар × разработчик">
+<meta property="og:description" content="6 открытых проектов для ветеринарии: от метеорисков Ростовской области до AI-диагностики по фото.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://shray77.github.io/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230b0f14'/%3E%3Cg fill='%232dd4a7'%3E%3Cellipse cx='24' cy='22' rx='6' ry='8'/%3E%3Cellipse cx='40' cy='22' rx='6' ry='8'/%3E%3Cellipse cx='14' cy='34' rx='5' ry='7'/%3E%3Cellipse cx='50' cy='34' rx='5' ry='7'/%3E%3Cpath d='M32 32c7 0 14 8 14 15 0 6-5 9-14 9s-14-3-14-9c0-7 7-15 14-15z'/%3E%3C/g%3E%3C/svg%3E">
+<style>
+:root{
+  --bg:#0b0f14; --bg2:#0e141b; --surface:#121a23; --surface2:#16202b;
+  --border:rgba(255,255,255,.08); --border2:rgba(45,212,167,.35);
+  --text:#e9eef3; --muted:#94a3b1; --faint:#64748b;
+  --acc:#2dd4a7; --acc2:#5eead4;
+  --grad:linear-gradient(120deg,#2dd4a7,#38bdf8);
+  --radius:16px;
+  --sans:"Inter","SF Pro Display",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  --mono:"SF Mono","JetBrains Mono",Consolas,"Liberation Mono",monospace;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:var(--sans);background:var(--bg);color:var(--text);
+  line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden;
+}
+body::before{
+  content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;
+  background:
+    radial-gradient(900px 500px at 85% -5%,rgba(45,212,167,.10),transparent 60%),
+    radial-gradient(700px 400px at -10% 30%,rgba(56,189,248,.07),transparent 60%),
+    radial-gradient(600px 400px at 50% 110%,rgba(245,180,83,.05),transparent 60%);
+}
+.wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+a{color:var(--acc2);text-decoration:none}
+a:hover{text-decoration:underline}
+
+/* ===== шапка ===== */
+.nav{
+  position:sticky;top:0;z-index:50;
+  background:rgba(11,15,20,.75);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--border);
+}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+.logo{display:flex;align-items:center;gap:10px;font-weight:700;font-size:15px;letter-spacing:.02em}
+.logo .paw{width:26px;height:26px;flex:none}
+.nav nav{display:flex;gap:22px;align-items:center;font-size:14px}
+.nav nav a{color:var(--muted)}
+.nav nav a:hover{color:var(--text);text-decoration:none}
+.nav nav a.gh{color:var(--text);font-weight:600}
+@media(max-width:560px){.nav nav{gap:14px}.nav nav a.hide-s{display:none}}
+
+/* ===== герой ===== */
+.hero{padding:84px 0 64px;position:relative}
+.hero .wrap{display:flex;gap:36px;align-items:flex-start}
+.avatar-box{position:relative;flex:none;width:148px}
+.avatar{
+  width:148px;height:148px;border-radius:36px;display:block;
+  border:1px solid var(--border);background:var(--surface2);
+  box-shadow:0 24px 60px -20px rgba(45,212,167,.45);
+}
+.avatar-fb{
+  width:148px;height:148px;border-radius:36px;display:none;
+  align-items:center;justify-content:center;
+  font-size:52px;font-weight:800;color:var(--acc);
+  background:linear-gradient(135deg,var(--surface2),var(--surface));
+  border:1px solid var(--border);
+}
+.status-dot{
+  position:absolute;right:12px;bottom:12px;width:18px;height:18px;border-radius:50%;
+  background:#34d399;border:4px solid var(--bg);
+}
+.kicker{
+  display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:12.5px;
+  color:var(--acc);letter-spacing:.12em;text-transform:uppercase;
+  border:1px solid var(--border2);border-radius:999px;padding:6px 14px;background:rgba(45,212,167,.08);
+}
+h1{
+  font-size:clamp(34px,5.4vw,52px);line-height:1.08;letter-spacing:-.02em;
+  font-weight:800;margin:18px 0 6px;
+}
+h1 .grad{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.role{font-size:17px;color:var(--muted);margin-bottom:18px}
+.role b{color:var(--text);font-weight:600}
+.tagline{max-width:640px;color:var(--muted);font-size:16px;margin-bottom:22px}
+.badges{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:26px}
+.badge{
+  font-size:12.5px;font-weight:600;padding:5px 12px;border-radius:999px;
+  border:1px solid var(--border);color:var(--muted);background:rgba(255,255,255,.03);
+}
+.badge.acc{color:var(--acc2);border-color:var(--border2);background:rgba(45,212,167,.07)}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:38px}
+.btn{
+  display:inline-flex;align-items:center;gap:8px;padding:11px 20px;border-radius:12px;
+  font-weight:600;font-size:14.5px;border:1px solid transparent;transition:.18s;white-space:nowrap;
+}
+.btn:hover{text-decoration:none;transform:translateY(-2px)}
+.btn.primary{background:var(--grad);color:#04121b}
+.btn.primary:hover{box-shadow:0 14px 34px -12px rgba(45,212,167,.55)}
+.btn.ghost{background:rgba(255,255,255,.04);border-color:var(--border);color:var(--text)}
+.btn.ghost:hover{border-color:rgba(255,255,255,.22);background:rgba(255,255,255,.07)}
+.btn svg{width:17px;height:17px;flex:none}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;max-width:680px}
+.stat{
+  background:rgba(255,255,255,.03);border:1px solid var(--border);
+  border-radius:14px;padding:14px 16px;
+}
+.stat .n{font-size:24px;font-weight:800;letter-spacing:-.02em}
+.stat .n em{font-style:normal;color:var(--acc)}
+.stat .l{font-size:12px;color:var(--faint);margin-top:2px;line-height:1.35}
+@media(max-width:820px){
+  .hero{padding:52px 0 48px}
+  .hero .wrap{flex-direction:column;gap:24px}
+  .stats{max-width:520px}
+}
+@media(max-width:480px){.stats{grid-template-columns:1fr 1fr}}
+
+/* ===== секции ===== */
+section{padding:40px 0}
+.section-head{margin-bottom:28px}
+.section-head h2{
+  font-size:clamp(24px,3.4vw,32px);letter-spacing:-.01em;font-weight:800;
+  display:flex;align-items:center;gap:14px;
+}
+.section-head h2 .num{font-family:var(--mono);font-size:13px;color:var(--acc);font-weight:500}
+.section-head p{color:var(--muted);max-width:640px;margin-top:8px}
+
+/* ===== карточки ===== */
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:20px}
+.card{
+  display:flex;flex-direction:column;gap:14px;
+  background:linear-gradient(180deg,var(--surface),var(--bg2));
+  border:1px solid var(--border);border-radius:var(--radius);
+  padding:24px;position:relative;overflow:hidden;
+  transition:border-color .2s,transform .2s,box-shadow .2s;
+}
+.card:hover{transform:translateY(-4px);border-color:rgba(255,255,255,.16);box-shadow:0 22px 44px -18px rgba(0,0,0,.7)}
+.card-top{display:flex;align-items:center;gap:14px}
+.card-icon{
+  width:46px;height:46px;border-radius:13px;flex:none;display:flex;align-items:center;justify-content:center;
+  font-size:22px;
+  background:color-mix(in srgb,var(--c,#2dd4a7) 14%,transparent);
+  border:1px solid color-mix(in srgb,var(--c,#2dd4a7) 35%,transparent);
+}
+.card-top h3{font-size:18px;font-weight:700;letter-spacing:-.01em;line-height:1.25}
+.card-sub{font-family:var(--mono);font-size:11.5px;color:var(--faint);display:block;margin-top:3px}
+.year{
+  margin-left:auto;flex:none;font-family:var(--mono);font-size:11.5px;color:var(--faint);
+  border:1px solid var(--border);border-radius:999px;padding:3px 10px;
+}
+.card-desc{font-size:14.5px;color:#cbd5e1}
+ul.feat{list-style:none;display:flex;flex-direction:column;gap:7px;flex:1}
+ul.feat li{position:relative;padding-left:20px;font-size:13.5px;color:var(--muted)}
+ul.feat li::before{
+  content:"";position:absolute;left:2px;top:8px;width:7px;height:7px;border-radius:2px;
+  background:var(--c,#2dd4a7);opacity:.85;transform:rotate(45deg);
+}
+.tags{display:flex;flex-wrap:wrap;gap:7px}
+.tag{
+  font-family:var(--mono);font-size:11px;padding:3px 9px;border-radius:7px;
+  background:rgba(255,255,255,.05);border:1px solid var(--border);color:#a8b6c4;
+}
+.card-links{display:flex;gap:10px;padding-top:4px}
+.card-links .btn{padding:8px 15px;font-size:13.5px;border-radius:10px}
+.card-links .btn.live{background:color-mix(in srgb,var(--c,#2dd4a7) 86%,#fff 2%);color:#06120d}
+.card-links .btn.live:hover{box-shadow:0 10px 24px -10px color-mix(in srgb,var(--c,#2dd4a7) 70%,transparent)}
+.card-links .btn.code{background:rgba(255,255,255,.04);border-color:var(--border);color:var(--text)}
+.card-links .btn.code:hover{border-color:rgba(255,255,255,.25)}
+
+/* ===== принципы ===== */
+.principles{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.pr{
+  border:1px solid var(--border);border-radius:var(--radius);padding:20px 22px;
+  background:rgba(255,255,255,.025);
+}
+.pr .ico{font-size:20px;margin-bottom:10px;display:block}
+.pr h4{font-size:15px;font-weight:700;margin-bottom:6px}
+.pr p{font-size:13.5px;color:var(--muted)}
+@media(max-width:760px){.principles{grid-template-columns:1fr}}
+
+/* ===== футер ===== */
+footer{border-top:1px solid var(--border);padding:34px 0 44px;margin-top:24px}
+footer .wrap{display:flex;flex-wrap:wrap;gap:18px;align-items:center;justify-content:space-between}
+footer .cop{font-size:13.5px;color:var(--faint)}
+footer .links{display:flex;gap:18px;font-size:13.5px}
+footer .links a{color:var(--muted);display:inline-flex;gap:7px;align-items:center}
+footer .links a:hover{color:var(--text);text-decoration:none}
+footer .links svg{width:16px;height:16px}
+footer .note{width:100%;font-size:12px;color:#4a5764;margin-top:4px}
+::selection{background:rgba(45,212,167,.3)}
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <div class="logo">
+      <svg class="paw" viewBox="0 0 64 64" aria-hidden="true"><g fill="#2dd4a7"><ellipse cx="24" cy="22" rx="6" ry="8"/><ellipse cx="40" cy="22" rx="6" ry="8"/><ellipse cx="14" cy="34" rx="5" ry="7"/><ellipse cx="50" cy="34" rx="5" ry="7"/><path d="M32 32c7 0 14 8 14 15 0 6-5 9-14 9s-14-3-14-9c0-7 7-15 14-15z"/></g></svg>
+      shray77
+    </div>
+    <nav>
+      <a href="#projects">Проекты</a>
+      <a href="#principles" class="hide-s">Подход</a>
+      <a href="https://gitlab.com/shray77">GitLab</a>
+      <a class="gh" href="https://github.com/shray77">GitHub ↗</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<section class="hero">
+  <div class="wrap">
+    <div class="avatar-box">
+      <img class="avatar" src="https://github.com/shray77.png" alt="Аватар shray77"
+           onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+      <div class="avatar-fb">🐾</div>
+      <span class="status-dot" title="Активно разрабатываю"></span>
+    </div>
+    <div>
+      <span class="kicker">◆ ветеринарная медицина × код</span>
+      <h1>shray77<span class="grad">.</span></h1>
+      <p class="role">Ветеринарный врач и разработчик. <b>Ростовская область</b> — код без границ.</p>
+      <p class="tagline">
+        Делаю открытые цифровые инструменты для практической ветеринарии и концепции
+        «Единое здоровье»: метеориски для животных, эпизоотические карты, AI-ассистенты,
+        in&nbsp;silico-исследования и обучение. Шесть проектов за полгода —
+        на пути к единой экосистеме.
+      </p>
+      <div class="badges">
+        <span class="badge acc">One Health</span>
+        <span class="badge">Open Source</span>
+        <span class="badge">RU-first интерфейсы</span>
+        <span class="badge">Open data · без API-ключей</span>
+      </div>
+      <div class="cta">
+        <a class="btn primary" href="https://github.com/shray77" target="_blank" rel="noopener">
+          <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
+          GitHub
+        </a>
+        <a class="btn ghost" href="https://gitlab.com/shray77" target="_blank" rel="noopener">
+          <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M14.64 8.75l-1.16-3.57c-.05-.15-.14-.28-.26-.38L8 1.5 2.78 4.8c-.12.1-.21.23-.26.38L1.36 8.75c-.06.18-.03.37.07.53l.6.92c.12.18.32.29.54.29h10.86c.22 0 .42-.11.54-.29l.6-.92c.1-.16.13-.35.07-.53zM8 3.06l3.4 2.44H4.6L8 3.06zM3.1 6.9h.35l.5 1.5h-.85l-.35-1.5zm1.4 4.1H2.9l-.4-.62h2.4l-.4.62zm.75-2.6l-.5-1.5h.9l.5 1.5h-.9zm1.5 2.6l.4-1.5h1.7l.4 1.5H6.75zm1.15-3.6l.1-.4.1.4h-.2zm1.35 2.1l-.4-1.5h.9l.4 1.5h-.9zm2.4 1.5h-1.6l.4-1.5h1.2l.4 1.5zm.75-2.6h-.85l.5-1.5h.35l-.35 1.5z"/></svg>
+          GitLab
+        </a>
+      </div>
+      <div class="stats">
+        <div class="stat"><div class="n"><em>6</em></div><div class="l">проектов в экосистеме</div></div>
+        <div class="stat"><div class="n">2400<em>+</em></div><div class="l">препаратов в базе доз</div></div>
+        <div class="stat"><div class="n"><em>51</em></div><div class="l">болезнь в справочнике</div></div>
+        <div class="stat"><div class="n">85</div><div class="l">регионов на карте РФ</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="wrap">
+    <div class="section-head">
+      <h2><span class="num">01</span> Проекты</h2>
+      <p>Каждый решает задачу из реальной практики: приём, надзор, исследование, обучение.
+      Всё открыто — код, данные, формулы. Три проекта уже живут на GitHub Pages.</p>
+    </div>
+    <div class="grid">
+      <article class="card" style="--c:#38bdf8">
+        <div class="card-top">
+          <span class="card-icon">🌦</span>
+          <div><h3>ВЕТМЕТЕО</h3><span class="card-sub">vet-meteo</span></div>
+          <span class="year">2026</span>
+        </div>
+        <p class="card-desc">Продвинутый метеопрогноз для ветеринарных служб Ростовской области: «сейчас + 7 дней», стрессы, инвазии, эпиднадзор.</p>
+        <ul class="feat">
+          <li>THI / холодовой стресс, BRD-риск, паразитарные и трансмиссивные модели</li>
+          <li>16 станций, ансамбль ECMWF — живые данные без единого API-ключа</li>
+          <li>Карта Leaflet + скраббер прогноза 0–167 ч</li>
+          <li>GitHub Actions: архив погоды, сводки, Telegram-алерты</li>
+        </ul>
+        <div class="tags"><span class="tag">Next.js 16</span><span class="tag">TypeScript</span><span class="tag">Leaflet</span><span class="tag">Open-Meteo</span><span class="tag">Actions</span></div>
+        <div class="card-links">
+          <a class="btn live" href="https://shray77.github.io/vet-meteo/" target="_blank" rel="noopener">Демо ↗</a>
+          <a class="btn code" href="https://github.com/shray77/vet-meteo" target="_blank" rel="noopener">Код</a>
+        </div>
+      </article>
+      <article class="card" style="--c:#f87171">
+        <div class="card-top">
+          <span class="card-icon">🗺</span>
+          <div><h3>ВетКарта</h3><span class="card-sub">vet-heatmap</span></div>
+          <span class="year">2026</span>
+        </div>
+        <p class="card-desc">Интерактивная эпизоотическая обстановка России: вспышки болезней животных, зоны риска по стандартам ВОЗЖ, эпидкривые.</p>
+        <ul class="feat">
+          <li>Хороплет плотности по 85 регионам + маркеры вспышек</li>
+          <li>Зоны риска 3/10/30 км вокруг очагов (WOAH Terrestrial Code)</li>
+          <li>Справочник: 51 болезнь — Приказ МСХ №62</li>
+          <li>Фильтры, эпидкривые по ISO-неделям, состояние в ссылке</li>
+        </ul>
+        <div class="tags"><span class="tag">TypeScript</span><span class="tag">PWA</span><span class="tag">GIS</span></div>
+        <div class="card-links">
+          <a class="btn live" href="https://shray77.github.io/vet-heatmap/" target="_blank" rel="noopener">Демо ↗</a>
+          <a class="btn code" href="https://github.com/shray77/vet-heatmap" target="_blank" rel="noopener">Код</a>
+        </div>
+      </article>
+      <article class="card" style="--c:#a78bfa">
+        <div class="card-top">
+          <span class="card-icon">🔬</span>
+          <div><h3>VetInSilico Hub</h3><span class="card-sub">vet-insilico</span></div>
+          <span class="year">2026</span>
+        </div>
+        <p class="card-desc">In silico-инструментарий для ветеринарных патогенов: 17 браузерных инструментов от репозиционирования лекарств до дизайна вакцин.</p>
+        <ul class="feat">
+          <li>Drug repurposing, ADMET, PK/PD-симулятор, калькулятор доз</li>
+          <li>Эпитопы вакцин, PCR-праймеры, CRISPR gRNA, оптимизация кодонов</li>
+          <li>RDKit.js WASM + открытые ML-модели — ноль бэкенда</li>
+          <li>121 тест, Apache 2.0</li>
+        </ul>
+        <div class="tags"><span class="tag">TypeScript</span><span class="tag">RDKit.js</span><span class="tag">HuggingFace</span><span class="tag">WASM</span></div>
+        <div class="card-links">
+          <a class="btn live" href="https://shray77.github.io/vet-insilico/" target="_blank" rel="noopener">Демо ↗</a>
+          <a class="btn code" href="https://github.com/shray77/vet-insilico" target="_blank" rel="noopener">Код</a>
+        </div>
+      </article>
+      <article class="card" style="--c:#34d399">
+        <div class="card-top">
+          <span class="card-icon">🩺</span>
+          <div><h3>VetVoice</h3><span class="card-sub">vetvoice</span></div>
+          <span class="year">2026</span>
+        </div>
+        <p class="card-desc">Ветеринарный справочник и калькулятор дозировок с голосовым управлением — карманный помощник прямо на приёме.</p>
+        <ul class="feat">
+          <li>2400+ препаратов: доза по весу, виду и концентрации</li>
+          <li>Каренция, взаимодействия, экстренные протоколы, антидоты</li>
+          <li>Жидкостная терапия: объёмы и составы</li>
+          <li>Голосовое управление на Vosk, 10 видов — от КРС до пчёл</li>
+        </ul>
+        <div class="tags"><span class="tag">Flutter</span><span class="tag">Dart</span><span class="tag">Vosk STT</span><span class="tag">Offline-first</span></div>
+        <div class="card-links">
+          <a class="btn code" href="https://github.com/shray77/vetvoice" target="_blank" rel="noopener">Код</a>
+        </div>
+      </article>
+      <article class="card" style="--c:#fbbf24">
+        <div class="card-top">
+          <span class="card-icon">🧠</span>
+          <div><h3>VetVoice RAG</h3><span class="card-sub">vetvoice-rag</span></div>
+          <span class="year">2026</span>
+        </div>
+        <p class="card-desc">AI-ассистент ветеринарной дерматологии: диагностика по фото кожи, RAG-поиск по базе знаний, диктовка в SOAP-медкарту.</p>
+        <ul class="feat">
+          <li>Vision-модель GLM-4.6V — разбор фото очагов</li>
+          <li>Гибридный RAG: FAISS + TF-IDF, RU↔EN словари</li>
+          <li>Диктовка врача → структурированная SOAP-карта</li>
+          <li>Gradio + FastAPI, база знаний на HuggingFace Hub</li>
+        </ul>
+        <div class="tags"><span class="tag">Python</span><span class="tag">FAISS</span><span class="tag">FastAPI</span><span class="tag">GLM</span><span class="tag">Flutter</span></div>
+        <div class="card-links">
+          <a class="btn code" href="https://github.com/shray77/vetvoice-rag" target="_blank" rel="noopener">Код</a>
+        </div>
+      </article>
+      <article class="card" style="--c:#f472b6">
+        <div class="card-top">
+          <span class="card-icon">🎓</span>
+          <div><h3>VetLearn AI</h3><span class="card-sub">vetlearn-web · GitLab</span></div>
+          <span class="year">2026</span>
+        </div>
+        <p class="card-desc">AI-платформа персонализированного обучения ветеринарии: адаптивные квизы, клинические симуляторы, голосовой репетитор.</p>
+        <ul class="feat">
+          <li>Адаптивное обучение: placement-тест + квизы real-time</li>
+          <li>Симулятор, OSCE-станции, атлас рентген/УЗИ/цитология</li>
+          <li>AI-флешкарточки с интервальным повторением SM-2</li>
+          <li>5 специализаций: мелкие, крупные, лошади, экзоты и др.</li>
+        </ul>
+        <div class="tags"><span class="tag">Next.js 16</span><span class="tag">React 19</span><span class="tag">z-ai-sdk</span><span class="tag">Zustand</span></div>
+        <div class="card-links">
+          <a class="btn code" href="https://gitlab.com/shray77/vetlearn-web" target="_blank" rel="noopener">Код ↗</a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="principles">
+  <div class="wrap">
+    <div class="section-head">
+      <h2><span class="num">02</span> Подход</h2>
+      <p>Что общего у всех шести проектов — и почему они остаются бесплатными.</p>
+    </div>
+    <div class="principles">
+      <div class="pr">
+        <span class="ico">📡</span>
+        <h4>Открытые данные и код</h4>
+        <p>Open-Meteo, METAR, открытые датасеты вспышек, FOSS-модели. Никаких закрытых API —
+        инструменты работают у любого ветврача без ключей и подписок.</p>
+      </div>
+      <div class="pr">
+        <span class="ico">🐄</span>
+        <h4>Практика важнее технологий</h4>
+        <p>Каждый модуль родился из задачи в клинике, на ферме или в лаборатории:
+        доза, каренция, зона риска, медкарта. Алгоритмы сверены с первоисточниками
+        и нормативами (WOAH, приказы МСХ РФ).</p>
+      </div>
+      <div class="pr">
+        <span class="ico">🧩</span>
+        <h4>Путь к единой экосистеме</h4>
+        <p>Справочник, карта, AI-ассистент, исследовательский набор и обучение —
+        кирпичики одного дома. Данные и модели переиспользуются между проектами,
+        следующий шаг — их объединение.</p>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="cop">© <span id="yr">2026</span> shray77 · ветеринарная медицина × код</div>
+    <div class="links">
+      <a href="https://github.com/shray77" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
+        github.com/shray77
+      </a>
+      <a href="https://gitlab.com/shray77" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M14.64 8.75l-1.16-3.57c-.05-.15-.14-.28-.26-.38L8 1.5 2.78 4.8c-.12.1-.21.23-.26.38L1.36 8.75c-.06.18-.03.37.07.53l.6.92c.12.18.32.29.54.29h10.86c.22 0 .42-.11.54-.29l.6-.92c.1-.16.13-.35.07-.53zM8 3.06l3.4 2.44H4.6L8 3.06zM3.1 6.9h.35l.5 1.5h-.85l-.35-1.5zm1.4 4.1H2.9l-.4-.62h2.4l-.4.62zm.75-2.6l-.5-1.5h.9l.5 1.5h-.9zm1.5 2.6l.4-1.5h1.7l.4 1.5H6.75zm1.15-3.6l.1-.4.1.4h-.2zm1.35 2.1l-.4-1.5h.9l.4 1.5h-.9zm2.4 1.5h-1.6l.4-1.5h1.2l.4 1.5zm.75-2.6h-.85l.5-1.5h.35l-.35 1.5z"/></svg>
+        gitlab.com/shray77
+      </a>
+    </div>
+    <div class="note">Одна HTML-страница без зависимостей · хостится на GitHub Pages ·
+    проекты — как есть, без гарантий; решения в клинике всегда за врачом.</div>
+  </div>
+</footer>
+
+<script>
+document.getElementById('yr').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>

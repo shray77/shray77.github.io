@@ -4,9 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>shray77 — ветеринар × разработчик</title>
-<meta name="description" content="Открытые цифровые инструменты для ветеринарной медицины: метеопрогнозы рисков, эпизоотические карты, AI-ассистенты, in silico-исследования и обучение.">
+<meta name="description" content="Открытые цифровые инструменты для ветеринарной медицины: метеопрогнозы рисков, эпизоотические карты, AI-ассистенты, in silico-исследования, офлайн-инструменты и автоматические дайджесты PubMed.">
 <meta property="og:title" content="shray77 — ветеринар × разработчик">
-<meta property="og:description" content="6 открытых проектов для ветеринарии: от метеорисков Ростовской области до AI-диагностики по фото.">
+<meta property="og:description" content="10 открытых проектов для ветеринарии: от метеорисков Ростовской области до AI-диагностики по фото и дайджестов PubMed.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://shray77.github.io/">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230b0f14'/%3E%3Cg fill='%232dd4a7'%3E%3Cellipse cx='24' cy='22' rx='6' ry='8'/%3E%3Cellipse cx='40' cy='22' rx='6' ry='8'/%3E%3Cellipse cx='14' cy='34' rx='5' ry='7'/%3E%3Cellipse cx='50' cy='34' rx='5' ry='7'/%3E%3Cpath d='M32 32c7 0 14 8 14 15 0 6-5 9-14 9s-14-3-14-9c0-7 7-15 14-15z'/%3E%3C/g%3E%3C/svg%3E">
@@ -226,8 +226,8 @@ footer .note{width:100%;font-size:12px;color:#4a5764;margin-top:4px}
       <p class="tagline">
         Делаю открытые цифровые инструменты для практической ветеринарии и концепции
         «Единое здоровье»: метеориски для животных, эпизоотические карты, AI-ассистенты,
-        in&nbsp;silico-исследования и обучение. Шесть проектов за полгода —
-        на пути к единой экосистеме.
+        in&nbsp;silico-исследования, офлайн-инструменты приёма и автоматические дайджесты
+        PubMed. Десять проектов за полгода — на пути к единой экосистеме.
       </p>
       <div class="badges">
         <span class="badge acc">One Health</span>
@@ -246,7 +246,7 @@ footer .note{width:100%;font-size:12px;color:#4a5764;margin-top:4px}
         </a>
       </div>
       <div class="stats">
-        <div class="stat"><div class="n"><em>6</em></div><div class="l">проектов в экосистеме</div></div>
+        <div class="stat"><div class="n"><em>10</em></div><div class="l">проектов в экосистеме</div></div>
         <div class="stat"><div class="n">2400<em>+</em></div><div class="l">препаратов в базе доз</div></div>
         <div class="stat"><div class="n"><em>51</em></div><div class="l">болезнь в справочнике</div></div>
         <div class="stat"><div class="n">85</div><div class="l">регионов на карте РФ</div></div>
@@ -260,7 +260,8 @@ footer .note{width:100%;font-size:12px;color:#4a5764;margin-top:4px}
     <div class="section-head">
       <h2><span class="num">01</span> Проекты</h2>
       <p>Каждый решает задачу из реальной практики: приём, надзор, исследование, обучение.
-      Всё открыто — код, данные, формулы. Три проекта уже живут на GitHub Pages.</p>
+      Всё открыто — код, данные, формулы. Шесть проектов уже живут на GitHub Pages,
+      ядро приёма данных работает на Cloudflare.</p>
     </div>
     <div class="grid">
       <article class="card" style="--c:#38bdf8">
@@ -311,10 +312,10 @@ footer .note{width:100%;font-size:12px;color:#4a5764;margin-top:4px}
         <ul class="feat">
           <li>Drug repurposing, ADMET, PK/PD-симулятор, калькулятор доз</li>
           <li>Эпитопы вакцин, PCR-праймеры, CRISPR gRNA, оптимизация кодонов</li>
-          <li>RDKit.js WASM + открытые ML-модели — ноль бэкенда</li>
-          <li>121 тест, Apache 2.0</li>
+          <li>Гибрид: RDKit.js WASM + облачный ИИ без токена — Qwen LLM и ESM-2 через прокси-воркер Cloudflare</li>
+          <li>148 тестов, 17 патогенов, Apache 2.0</li>
         </ul>
-        <div class="tags"><span class="tag">TypeScript</span><span class="tag">RDKit.js</span><span class="tag">HuggingFace</span><span class="tag">WASM</span></div>
+        <div class="tags"><span class="tag">TypeScript</span><span class="tag">RDKit.js</span><span class="tag">Qwen LLM</span><span class="tag">ESM-2</span><span class="tag">Cloudflare</span></div>
         <div class="card-links">
           <a class="btn live" href="https://shray77.github.io/vet-insilico/" target="_blank" rel="noopener">Демо ↗</a>
           <a class="btn code" href="https://github.com/shray77/vet-insilico" target="_blank" rel="noopener">Код</a>
@@ -356,6 +357,81 @@ footer .note{width:100%;font-size:12px;color:#4a5764;margin-top:4px}
           <a class="btn code" href="https://github.com/shray77/vetvoice-rag" target="_blank" rel="noopener">Код</a>
         </div>
       </article>
+      <article class="card" style="--c:#4ade80">
+        <div class="card-top">
+          <span class="card-icon">🧰</span>
+          <div><h3>VetTools</h3><span class="card-sub">vettools</span></div>
+          <span class="year">2026</span>
+        </div>
+        <p class="card-desc">Офлайн-инструмент ветврача «всё в одном»: один самодостаточный HTML-файл — работает с диска, без интернета, ИИ и сервера.</p>
+        <ul class="feat">
+          <li>10 разделов: SOAP-приём, выписка владельцу, информированное согласие</li>
+          <li>Лист наблюдения с передачей смены, анестезиологический лист, некропсия</li>
+          <li>6 калькуляторов: дозы, инфузии, RER/MER, BSA, конвертер, BCS</li>
+          <li>Данные не покидают браузер: localStorage + экспорт/импорт JSON</li>
+        </ul>
+        <div class="tags"><span class="tag">HTML</span><span class="tag">Offline-first</span><span class="tag">file://</span></div>
+        <div class="card-links">
+          <a class="btn live" href="https://shray77.github.io/vettools/" target="_blank" rel="noopener">Демо ↗</a>
+          <a class="btn code" href="https://github.com/shray77/vettools" target="_blank" rel="noopener">Код</a>
+        </div>
+      </article>
+      <article class="card" style="--c:#60a5fa">
+        <div class="card-top">
+          <span class="card-icon">⚙️</span>
+          <div><h3>VetAPI</h3><span class="card-sub">vet-api</span></div>
+          <span class="year">2026</span>
+        </div>
+        <p class="card-desc">Вычислительный API экосистемы на Cloudflare Workers: живые метео-срезы, данные вспышек, шэринг расчётов — ноль серверов.</p>
+        <ul class="feat">
+          <li>/v1/meteo/slice: 49 станций, THI/THIadj/BRD + 48-часовой прогноз</li>
+          <li>Вспышки: merge + dedupe, дельты, KV-зеркала датасетов</li>
+          <li>insilico: шэринг сценариев расчётов, статус AI-слоя</li>
+          <li>workers.dev в РФ заблокирован — GitHub Actions мостят данные в Pages</li>
+        </ul>
+        <div class="tags"><span class="tag">Cloudflare Workers</span><span class="tag">KV</span><span class="tag">TypeScript</span></div>
+        <div class="card-links">
+          <a class="btn code" href="https://github.com/shray77/vet-api" target="_blank" rel="noopener">Код</a>
+        </div>
+      </article>
+      <article class="card" style="--c:#f97316">
+        <div class="card-top">
+          <span class="card-icon">🛰</span>
+          <div><h3>rss-core</h3><span class="card-sub">rss-core</span></div>
+          <span class="year">2026</span>
+        </div>
+        <p class="card-desc">Zero-cost ядро приёма данных: RSS, PubMed и JSON-API → нормализация → дедупликация → общая база D1. Продуктовые воркеры только читают.</p>
+        <ul class="feat">
+          <li>Адаптеры: RSS/Atom и PubMed работают, JSON-API и HTML-скрейпер — next</li>
+          <li>По каждому источнику: интервал, статус, счётчик неудач, витрина статуса</li>
+          <li>Под него собираются три продукта: VetDigest, VetRecall, BioThreat Watch</li>
+          <li>Всё в бесплатных лимитах: Workers + Cron, D1, Actions, Pages</li>
+        </ul>
+        <div class="tags"><span class="tag">Cloudflare D1</span><span class="tag">Cron</span><span class="tag">TypeScript</span></div>
+        <div class="card-links">
+          <a class="btn live" href="https://shray77.github.io/rss-core-site/" target="_blank" rel="noopener">Статус ↗</a>
+          <a class="btn code" href="https://github.com/shray77/rss-core" target="_blank" rel="noopener">Код</a>
+        </div>
+      </article>
+      <article class="card" style="--c:#22d3ee">
+        <div class="card-top">
+          <span class="card-icon">📰</span>
+          <div><h3>VetDigest</h3><span class="card-sub">vetdigest</span></div>
+          <span class="year">2026</span>
+        </div>
+        <p class="card-desc">Автоматический русский дайджест ветеринарных публикаций PubMed: Cloudflare Workers AI сжимает свежие статьи до трёх тезисов.</p>
+        <ul class="feat">
+          <li>Каждое утро в 10:00 МСК: PubMed → rss-core → 3 тезиса на статью</li>
+          <li>Публичный дашборд: выпуски по датам, поиск, фильтры по источникам</li>
+          <li>Без внешних CDN — открывается из РФ</li>
+          <li>Результат переезжает коммитами в Pages — обход блокировки workers.dev</li>
+        </ul>
+        <div class="tags"><span class="tag">Workers AI</span><span class="tag">PubMed</span><span class="tag">D1</span></div>
+        <div class="card-links">
+          <a class="btn live" href="https://shray77.github.io/vetdigest-site/" target="_blank" rel="noopener">Демо ↗</a>
+          <a class="btn code" href="https://github.com/shray77/vetdigest-site" target="_blank" rel="noopener">Код</a>
+        </div>
+      </article>
       <article class="card" style="--c:#f472b6">
         <div class="card-top">
           <span class="card-icon">🎓</span>
@@ -382,7 +458,7 @@ footer .note{width:100%;font-size:12px;color:#4a5764;margin-top:4px}
   <div class="wrap">
     <div class="section-head">
       <h2><span class="num">02</span> Подход</h2>
-      <p>Что общего у всех шести проектов — и почему они остаются бесплатными.</p>
+      <p>Что общего у всех десяти проектов — и почему они остаются бесплатными.</p>
     </div>
     <div class="principles">
       <div class="pr">
@@ -402,8 +478,8 @@ footer .note{width:100%;font-size:12px;color:#4a5764;margin-top:4px}
         <span class="ico">🧩</span>
         <h4>Путь к единой экосистеме</h4>
         <p>Справочник, карта, AI-ассистент, исследовательский набор и обучение —
-        кирпичики одного дома. Данные и модели переиспользуются между проектами,
-        следующий шаг — их объединение.</p>
+        кирпичики одного дома. Объединение уже идёт: rss-core льёт PubMed и ленты
+        в общую базу, VetDigest забирает из неё данные каждое утро.</p>
       </div>
     </div>
   </div>

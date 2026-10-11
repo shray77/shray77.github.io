@@ -29,7 +29,7 @@ biothreat-site|Витрины|https://shray77.github.io/biothreat-site/|200|
 vetrecall-site|Витрины|https://shray77.github.io/vetrecall-site/|200|
 vetflu-feed|Эндпоинты|https://shray77.github.io/vetflu-site/feed.xml|200|<rss version
 vetflu-model|Эндпоинты|https://shray77.github.io/vetflu-site/data/model.json|200|"nodes"
-vetflu-wind|Эндпоинты|https://shray77.github.io/vetflu-site/data/wind_live.json|200|wind_score
+vetflu-wind|Эндпоинты|https://shray77.github.io/vetflu-site/data/wind_live.json|200|sector_deg
 vetflu-og|Эндпоинты|https://shray77.github.io/vetflu-site/og-image.png|200|
 terms-biothreat|Terms|https://shray77.github.io/biothreat-site/terms.html|200|
 terms-rss-core|Terms|https://shray77.github.io/rss-core-site/terms.html|200|

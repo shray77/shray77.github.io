@@ -29,6 +29,7 @@ biothreat-site|Витрины|https://shray77.github.io/biothreat-site/|200|
 vetrecall-site|Витрины|https://shray77.github.io/vetrecall-site/|200|
 vetflu-feed|Эндпоинты|https://shray77.github.io/vetflu-site/feed.xml|200|<rss version
 vetflu-model|Эндпоинты|https://shray77.github.io/vetflu-site/data/model.json|200|"nodes"
+vetflu-wind|Эндпоинты|https://shray77.github.io/vetflu-site/data/wind_live.json|200|wind_score
 vetflu-og|Эндпоинты|https://shray77.github.io/vetflu-site/og-image.png|200|
 terms-biothreat|Terms|https://shray77.github.io/biothreat-site/terms.html|200|
 terms-rss-core|Terms|https://shray77.github.io/rss-core-site/terms.html|200|
@@ -43,6 +44,7 @@ w-vetdigest|Воркеры|https://vetdigest.shray77.workers.dev/|200|
 w-biothreat|Воркеры|https://biothreat.shray77.workers.dev/|200|
 w-vetrecall|Воркеры|https://vetrecall.shray77.workers.dev/|200|
 w-vet-api|Воркеры|https://vet-api.shray77.workers.dev/|200|"service"
+w-vet-api-vetflu|Воркеры|https://vet-api.shray77.workers.dev/v1/vetflu/risk|200|"vetflu"
 EOF
 )
 

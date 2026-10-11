@@ -1,0 +1,248 @@
+{
+ "service": "vetinsilico-status",
+ "note": "status.json обновляется ТОЛЬКО при изменении состояния; живость монитора — бейдж воркфлоу status-check",
+ "generated_for_run": "2026-10-11T14:19:12Z",
+ "checked_at": "2026-10-11T14:19:12Z",
+ "last_change_at": "2026-10-11T14:19:12Z",
+ "state_hash": "e283f370ad83",
+ "overall": "ok",
+ "checks_total": 26,
+ "checks_failed": 0,
+ "failed_ids": [],
+ "checks": [
+  {
+   "id": "hub",
+   "group": "Витрины",
+   "url": "https://shray77.github.io/",
+   "code": 200,
+   "ok": true,
+   "ms": 393,
+   "expected": "200/200+фраза"
+  },
+  {
+   "id": "vetflu",
+   "group": "Витрины",
+   "url": "https://shray77.github.io/vetflu-site/",
+   "code": 200,
+   "ok": true,
+   "ms": 176,
+   "expected": "200/200+фраза"
+  },
+  {
+   "id": "vet-heatmap",
+   "group": "Витрины",
+   "url": "https://shray77.github.io/vet-heatmap/",
+   "code": 200,
+   "ok": true,
+   "ms": 185,
+   "expected": "200/200"
+  },
+  {
+   "id": "vet-meteo",
+   "group": "Витрины",
+   "url": "https://shray77.github.io/vet-meteo/",
+   "code": 200,
+   "ok": true,
+   "ms": 244,
+   "expected": "200/200"
+  },
+  {
+   "id": "rss-core-site",
+   "group": "Витрины",
+   "url": "https://shray77.github.io/rss-core-site/",
+   "code": 200,
+   "ok": true,
+   "ms": 131,
+   "expected": "200/200"
+  },
+  {
+   "id": "vetdigest-site",
+   "group": "Витрины",
+   "url": "https://shray77.github.io/vetdigest-site/",
+   "code": 200,
+   "ok": true,
+   "ms": 420,
+   "expected": "200/200"
+  },
+  {
+   "id": "vet-insilico",
+   "group": "Витрины",
+   "url": "https://shray77.github.io/vet-insilico/",
+   "code": 200,
+   "ok": true,
+   "ms": 247,
+   "expected": "200/200"
+  },
+  {
+   "id": "vettools",
+   "group": "Витрины",
+   "url": "https://shray77.github.io/vettools/",
+   "code": 200,
+   "ok": true,
+   "ms": 227,
+   "expected": "200/200"
+  },
+  {
+   "id": "biothreat-site",
+   "group": "Витрины",
+   "url": "https://shray77.github.io/biothreat-site/",
+   "code": 200,
+   "ok": true,
+   "ms": 7339,
+   "expected": "200/200"
+  },
+  {
+   "id": "vetrecall-site",
+   "group": "Витрины",
+   "url": "https://shray77.github.io/vetrecall-site/",
+   "code": 200,
+   "ok": true,
+   "ms": 203,
+   "expected": "200/200"
+  },
+  {
+   "id": "vetflu-feed",
+   "group": "Эндпоинты",
+   "url": "https://shray77.github.io/vetflu-site/feed.xml",
+   "code": 200,
+   "ok": true,
+   "ms": 184,
+   "expected": "200/200+фраза"
+  },
+  {
+   "id": "vetflu-model",
+   "group": "Эндпоинты",
+   "url": "https://shray77.github.io/vetflu-site/data/model.json",
+   "code": 200,
+   "ok": true,
+   "ms": 182,
+   "expected": "200/200+фраза"
+  },
+  {
+   "id": "vetflu-og",
+   "group": "Эндпоинты",
+   "url": "https://shray77.github.io/vetflu-site/og-image.png",
+   "code": 200,
+   "ok": true,
+   "ms": 175,
+   "expected": "200/200"
+  },
+  {
+   "id": "terms-biothreat",
+   "group": "Terms",
+   "url": "https://shray77.github.io/biothreat-site/terms.html",
+   "code": 200,
+   "ok": true,
+   "ms": 134,
+   "expected": "200/200"
+  },
+  {
+   "id": "terms-rss-core",
+   "group": "Terms",
+   "url": "https://shray77.github.io/rss-core-site/terms.html",
+   "code": 200,
+   "ok": true,
+   "ms": 124,
+   "expected": "200/200"
+  },
+  {
+   "id": "terms-heatmap",
+   "group": "Terms",
+   "url": "https://shray77.github.io/vet-heatmap/terms.html",
+   "code": 200,
+   "ok": true,
+   "ms": 194,
+   "expected": "200/200"
+  },
+  {
+   "id": "terms-insilico",
+   "group": "Terms",
+   "url": "https://shray77.github.io/vet-insilico/terms/",
+   "code": 200,
+   "ok": true,
+   "ms": 155,
+   "expected": "200/200"
+  },
+  {
+   "id": "terms-meteo",
+   "group": "Terms",
+   "url": "https://shray77.github.io/vet-meteo/terms.html",
+   "code": 200,
+   "ok": true,
+   "ms": 148,
+   "expected": "200/200"
+  },
+  {
+   "id": "terms-vetdigest",
+   "group": "Terms",
+   "url": "https://shray77.github.io/vetdigest-site/terms.html",
+   "code": 200,
+   "ok": true,
+   "ms": 190,
+   "expected": "200/200"
+  },
+  {
+   "id": "terms-vetrecall",
+   "group": "Terms",
+   "url": "https://shray77.github.io/vetrecall-site/terms.html",
+   "code": 200,
+   "ok": true,
+   "ms": 124,
+   "expected": "200/200"
+  },
+  {
+   "id": "terms-vetflu",
+   "group": "Terms",
+   "url": "https://shray77.github.io/vetflu-site/terms.html",
+   "code": 200,
+   "ok": true,
+   "ms": 414,
+   "expected": "200/200"
+  },
+  {
+   "id": "w-rss-core",
+   "group": "Воркеры",
+   "url": "https://rss-core.shray77.workers.dev/",
+   "code": 200,
+   "ok": true,
+   "ms": 138,
+   "expected": "200/200"
+  },
+  {
+   "id": "w-vetdigest",
+   "group": "Воркеры",
+   "url": "https://vetdigest.shray77.workers.dev/",
+   "code": 200,
+   "ok": true,
+   "ms": 94,
+   "expected": "200/200"
+  },
+  {
+   "id": "w-biothreat",
+   "group": "Воркеры",
+   "url": "https://biothreat.shray77.workers.dev/",
+   "code": 200,
+   "ok": true,
+   "ms": 77,
+   "expected": "200/200"
+  },
+  {
+   "id": "w-vetrecall",
+   "group": "Воркеры",
+   "url": "https://vetrecall.shray77.workers.dev/",
+   "code": 200,
+   "ok": true,
+   "ms": 89,
+   "expected": "200/200"
+  },
+  {
+   "id": "w-vet-api",
+   "group": "Воркеры",
+   "url": "https://vet-api.shray77.workers.dev/",
+   "code": 200,
+   "ok": true,
+   "ms": 52,
+   "expected": "200/200+фраза"
+  }
+ ]
+}

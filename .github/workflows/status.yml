@@ -1,0 +1,33 @@
+name: status-check
+on:
+  schedule:
+    - cron: "17 * * * *"   # ежечасно на 17-й минуте
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: status-check
+  cancel-in-progress: false
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Ping all vitrines / endpoints / workers
+        run: bash scripts/check_status.sh
+
+      - name: Commit only on state change
+        run: |
+          git config user.name "status-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add status.json
+          git diff --cached --quiet && { echo "state unchanged — nothing to commit"; exit 0; }
+          OVERALL=$(python3 -c "import json;print(json.load(open('status.json'))['overall'])")
+          FAILED=$(python3 -c "import json;print(','.join(json.load(open('status.json'))['failed_ids']) or '-')")
+          git commit -m "status: ${OVERALL} @ $(date -u +%FT%TZ) failed=${FAILED}"
+          git push

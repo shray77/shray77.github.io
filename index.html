@@ -53,25 +53,6 @@ a:hover{text-decoration:underline}
 .nav nav a.gh{color:var(--text);font-weight:600}
 @media(max-width:560px){.nav nav{gap:14px}.nav nav a.hide-s{display:none}}
 
-/* ===== пилюля статуса систем (status.json — воркфлоу status-check) ===== */
-.status-pill{display:inline-flex;align-items:center;gap:8px;padding:5px 12px;border:1px solid var(--border);border-radius:999px;font-size:12.5px;color:var(--muted);cursor:pointer;user-select:none;white-space:nowrap;visibility:hidden}
-.status-pill.ready{visibility:visible}
-.status-pill:hover{text-decoration:none;border-color:var(--border2);color:var(--text)}
-.st-dot{width:8px;height:8px;border-radius:50%;flex:none;background:var(--faint)}
-.st-ok{background:var(--acc);box-shadow:0 0 8px rgba(45,212,167,.7)}
-.st-degraded{background:#f5b453;box-shadow:0 0 8px rgba(245,180,83,.7)}
-.st-down{background:#f87171;box-shadow:0 0 8px rgba(248,113,113,.7)}
-.status-panel{position:fixed;top:68px;right:max(16px,calc((100vw - 1080px)/2 + 24px));z-index:60;width:min(430px,calc(100vw - 32px));background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);box-shadow:0 18px 50px rgba(0,0,0,.5);padding:14px 16px;display:none;max-height:min(70vh,560px);overflow:auto}
-.status-panel.open{display:block}
-.status-panel h4{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--faint);margin:10px 0 6px;font-weight:600}
-.status-panel h4:first-child{margin-top:0}
-.status-panel .row{display:flex;align-items:center;gap:8px;font-size:12.5px;padding:3px 0;color:var(--muted)}
-.status-panel .row b{color:var(--text);font-weight:600}
-.status-panel .row .code{margin-left:auto;font-family:var(--mono);font-size:11px;color:var(--faint)}
-.status-panel .row .ms{font-family:var(--mono);font-size:11px;color:var(--faint);width:56px;text-align:right}
-.status-panel .meta{margin-top:10px;padding-top:10px;border-top:1px solid var(--border);font-size:11px;color:var(--faint);line-height:1.5}
-@media(max-width:560px){.status-pill #statusPillText{display:none}}
-
 /* ===== герой ===== */
 .hero{padding:84px 0 64px;position:relative}
 .hero .wrap{display:flex;gap:36px;align-items:flex-start}
@@ -210,6 +191,21 @@ footer .links a:hover{color:var(--text);text-decoration:none}
 footer .links svg{width:16px;height:16px}
 footer .note{width:100%;font-size:12px;color:#4a5764;margin-top:4px}
 ::selection{background:rgba(45,212,167,.3)}
+
+/* живые индикаторы свежести данных (fetch JSON витрин) */
+.fresh{display:inline-flex;align-items:center;gap:6px;font-family:var(--mono);font-size:10.5px;color:var(--faint);margin-left:8px;vertical-align:middle}
+.fresh i{width:7px;height:7px;border-radius:50%;background:#4b5563;flex:none}
+.fresh.ok i{background:#2dd4a7}.fresh.warn i{background:#fbbf24}.fresh.err i{background:#f87171}
+
+/* живые индикаторы свежести данных (fetch JSON витрин) */
+.fresh{display:inline-flex;align-items:center;gap:6px;font-family:var(--mono);font-size:10.5px;color:var(--faint);margin-left:8px;vertical-align:middle}
+.fresh i{width:7px;height:7px;border-radius:50%;background:#4b5563;flex:none}
+.fresh.ok i{background:#2dd4a7}.fresh.warn i{background:#fbbf24}.fresh.err i{background:#f87171}
+
+/* живые индикаторы свежести данных (fetch JSON витрин) */
+.fresh{display:inline-flex;align-items:center;gap:6px;font-family:var(--mono);font-size:10.5px;color:var(--faint);margin-left:8px;vertical-align:middle}
+.fresh i{width:7px;height:7px;border-radius:50%;background:#4b5563;flex:none}
+.fresh.ok i{background:#2dd4a7}.fresh.warn i{background:#fbbf24}.fresh.err i{background:#f87171}
 </style>
 </head>
 <body>
@@ -223,8 +219,7 @@ footer .note{width:100%;font-size:12px;color:#4a5764;margin-top:4px}
     <nav>
       <a href="#projects">Проекты</a>
       <a href="#principles" class="hide-s">Подход</a>
-      <a href="https://gitlab.com/shray77" class="hide-s">GitLab</a>
-      <span class="status-pill" id="statusPill" role="button" tabindex="0" title="Статус систем VetInSilico"><span class="st-dot"></span><span id="statusPillText">статус…</span></span>
+      <a href="https://gitlab.com/shray77">GitLab</a>
       <a class="gh" href="https://github.com/shray77">GitHub ↗</a>
     </nav>
   </div>
@@ -458,9 +453,9 @@ footer .note{width:100%;font-size:12px;color:#4a5764;margin-top:4px}
           <div><h3>VetFlu</h3><span class="card-sub">vetflu-site</span></div>
           <span class="year">2026</span>
         </div>
-        <p class="card-desc">Предиктивные окна риска заноса гриппа птиц: три канала риска — транзит, колонии, зимовки — × погодный форсаж × фон вспышек × входящее давление с границ по 4 флайвеям России. v2.1: BP — вспышки в странах-граничниках РФ.</p>
+        <p class="card-desc">Предиктивные окна риска заноса гриппа птиц: три канала риска — транзит, колонии, зимовки — × погодный форсаж × фон вспышек по 4 флайвеям России. v2.0: узловая детализация, история R, RSS-лента.</p>
         <ul class="feat">
-          <li>R = max(транзит M, колонии C, зимовки Z) × погода MW × фон MB × границы BP — 8 групп резервуаров × 4 флайвея</li>
+          <li>R = max(транзит M, колонии C, зимовки Z) × погода MW × фон MB — 8 групп резервуаров × 4 флайвея</li>
           <li>Карта коридоров + 16 узлов с R узла, скраббер 52 недель, спарклайны истории</li>
           <li>Живые данные ежедневно: погода Open-Meteo (по каждому узлу отдельно) + вспышки WOAH WAHIS</li>
           <li>Бэктест v2 по волнам 2020–2023: осенние — транзит, летняя колониальная 2021 — канал «Колонии» (пост-хок, честная оговорка)</li>
@@ -548,32 +543,133 @@ footer .note{width:100%;font-size:12px;color:#4a5764;margin-top:4px}
 <script>
 document.getElementById('yr').textContent = new Date().getFullYear();
 </script>
+
 <script>
-/* ===== статус систем: status.json пишется почасовым воркфлоу status-check,
-   коммитится только при изменении состояния ===== */
-(function(){
-  var pill=document.getElementById('statusPill'),txt=document.getElementById('statusPillText'),dot=pill.querySelector('.st-dot');
-  var CLS={ok:'st-ok',degraded:'st-degraded',down:'st-down'};
-  function esc(s){return String(s).replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];});}
-  fetch('status.json',{cache:'no-store'}).then(function(r){if(!r.ok)throw 0;return r.json();}).then(function(S){
-    pill.classList.add('ready');
-    dot.classList.add(CLS[S.overall]||'');
-    txt.textContent = S.checks_failed===0 ? ('Все '+S.checks_total+' проверок ОК') : ('Проблемы: '+S.checks_failed+' из '+S.checks_total);
-    var groups={};
-    S.checks.forEach(function(c){(groups[c.group]=groups[c.group]||[]).push(c);});
-    var html='<h4>Статус систем — '+(S.overall==='ok'?'всё работает':'есть проблемы')+'</h4>';
-    Object.keys(groups).forEach(function(g){
-      html+='<h4>'+esc(g)+'</h4>'+groups[g].map(function(c){
-        return '<div class="row"><span class="st-dot '+(c.ok?'st-ok':'st-down')+'"></span><b>'+esc(c.id)+'</b><span class="code">'+c.code+'</span><span class="ms">'+c.ms+' ms</span></div>';
-      }).join('');
-    });
-    html+='<div class="meta">Проверено: '+esc(S.checked_at)+' UTC · обновляется при изменении состояния (воркфлоу status-check, ежечасно)</div>';
-    var panel=document.createElement('div');panel.className='status-panel';panel.innerHTML=html;document.body.appendChild(panel);
-    function toggle(e){e.preventDefault();panel.classList.toggle('open');}
-    pill.addEventListener('click',toggle);
-    pill.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){toggle(e);}});
-    document.addEventListener('click',function(e){if(!panel.contains(e.target)&&!pill.contains(e.target))panel.classList.remove('open');});
-  }).catch(function(){pill.classList.add('ready');dot.classList.add('st-down');txt.textContent='статус недоступен';});
+// v2: живые индикаторы свежести данных на карточках (fetch + CORS GitHub Pages)
+(function () {
+  const MAP = [
+    ['vetflu-site',    'data/model.json', 30],
+    ['biothreat-site', 'events.json',      6],
+    ['vetrecall-site', 'signals.json',     6],
+    ['vetdigest-site', 'digest.json',     30],
+    ['rss-core-site',  'status.json',      6],
+  ];
+  const sub = (repo) => {
+    const cards = document.querySelectorAll('.card-sub');
+    for (const c of cards) if (c.textContent.trim() === repo) return c;
+    return null;
+  };
+  for (const [repo, path, maxH] of MAP) {
+    const el = sub(repo);
+    if (!el) continue;
+    const chip = document.createElement('span');
+    chip.className = 'fresh';
+    chip.innerHTML = '<i></i><span>данные…</span>';
+    el.appendChild(chip);
+    fetch(`https://shray77.github.io/${repo}/${path}`, { cache: 'no-store' })
+      .then((r) => (r.ok ? r.json() : Promise.reject(r.status)))
+      .then((j) => {
+        const ts = j.generated_at || j.updated || (j.meta && j.meta.updated) || null;
+        const ageH = ts ? (Date.now() - new Date(ts).getTime()) / 3600000 : null;
+        const ok = ageH != null && !isNaN(ageH) && ageH <= maxH;
+        const label = ageH != null && !isNaN(ageH)
+          ? `данные ${ageH < 1 ? Math.max(1, Math.round(ageH * 60)) + ' мин' : Math.round(ageH) + ' ч'} назад`
+          : 'данные';
+        chip.className = 'fresh ' + (ok ? 'ok' : 'warn');
+        chip.querySelector('span').textContent = label;
+        chip.title = `${repo}/${path} · порог свежести ${maxH} ч`;
+      })
+      .catch(() => {
+        chip.className = 'fresh err';
+        chip.querySelector('span').textContent = 'данные недоступны';
+      });
+  }
+})();
+</script>
+
+<script>
+// v2: живые индикаторы свежести данных на карточках (fetch + CORS GitHub Pages)
+(function () {
+  const MAP = [
+    ['vetflu-site',    'data/model.json', 30],
+    ['biothreat-site', 'events.json',      6],
+    ['vetrecall-site', 'signals.json',     6],
+    ['vetdigest-site', 'digest.json',     30],
+    ['rss-core-site',  'status.json',      6],
+  ];
+  const sub = (repo) => {
+    const cards = document.querySelectorAll('.card-sub');
+    for (const c of cards) if (c.textContent.trim() === repo) return c;
+    return null;
+  };
+  for (const [repo, path, maxH] of MAP) {
+    const el = sub(repo);
+    if (!el) continue;
+    const chip = document.createElement('span');
+    chip.className = 'fresh';
+    chip.innerHTML = '<i></i><span>данные…</span>';
+    el.appendChild(chip);
+    fetch(`https://shray77.github.io/${repo}/${path}`, { cache: 'no-store' })
+      .then((r) => (r.ok ? r.json() : Promise.reject(r.status)))
+      .then((j) => {
+        const ts = j.generated_at || j.updated || (j.meta && j.meta.updated) || null;
+        const ageH = ts ? (Date.now() - new Date(ts).getTime()) / 3600000 : null;
+        const ok = ageH != null && !isNaN(ageH) && ageH <= maxH;
+        const label = ageH != null && !isNaN(ageH)
+          ? `данные ${ageH < 1 ? Math.max(1, Math.round(ageH * 60)) + ' мин' : Math.round(ageH) + ' ч'} назад`
+          : 'данные';
+        chip.className = 'fresh ' + (ok ? 'ok' : 'warn');
+        chip.querySelector('span').textContent = label;
+        chip.title = `${repo}/${path} · порог свежести ${maxH} ч`;
+      })
+      .catch(() => {
+        chip.className = 'fresh err';
+        chip.querySelector('span').textContent = 'данные недоступны';
+      });
+  }
+})();
+</script>
+
+<script>
+// v2: живые индикаторы свежести данных на карточках (fetch + CORS GitHub Pages)
+(function () {
+  const MAP = [
+    ['vetflu-site',    'data/model.json', 30],
+    ['biothreat-site', 'events.json',      6],
+    ['vetrecall-site', 'signals.json',     6],
+    ['vetdigest-site', 'digest.json',     30],
+    ['rss-core-site',  'status.json',      6],
+  ];
+  const sub = (repo) => {
+    const cards = document.querySelectorAll('.card-sub');
+    for (const c of cards) if (c.textContent.trim() === repo) return c;
+    return null;
+  };
+  for (const [repo, path, maxH] of MAP) {
+    const el = sub(repo);
+    if (!el) continue;
+    const chip = document.createElement('span');
+    chip.className = 'fresh';
+    chip.innerHTML = '<i></i><span>данные…</span>';
+    el.appendChild(chip);
+    fetch(`https://shray77.github.io/${repo}/${path}`, { cache: 'no-store' })
+      .then((r) => (r.ok ? r.json() : Promise.reject(r.status)))
+      .then((j) => {
+        const ts = j.generated_at || j.updated || (j.meta && j.meta.updated) || null;
+        const ageH = ts ? (Date.now() - new Date(ts).getTime()) / 3600000 : null;
+        const ok = ageH != null && !isNaN(ageH) && ageH <= maxH;
+        const label = ageH != null && !isNaN(ageH)
+          ? `данные ${ageH < 1 ? Math.max(1, Math.round(ageH * 60)) + ' мин' : Math.round(ageH) + ' ч'} назад`
+          : 'данные';
+        chip.className = 'fresh ' + (ok ? 'ok' : 'warn');
+        chip.querySelector('span').textContent = label;
+        chip.title = `${repo}/${path} · порог свежести ${maxH} ч`;
+      })
+      .catch(() => {
+        chip.className = 'fresh err';
+        chip.querySelector('span').textContent = 'данные недоступны';
+      });
+  }
 })();
 </script>
 </body>

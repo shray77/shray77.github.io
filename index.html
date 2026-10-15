@@ -447,6 +447,25 @@ footer .note{width:100%;font-size:12px;color:#4a5764;margin-top:4px}
           <a class="btn code" href="https://github.com/shray77/vetdigest-site" target="_blank" rel="noopener">Код</a>
         </div>
       </article>
+      <article class="card" style="--c:#a78bfa">
+        <div class="card-top">
+          <span class="card-icon">🤖</span>
+          <div><h3>VetDigest LLM</h3><span class="card-sub">vet-digest-llm</span></div>
+          <span class="year">2026</span>
+        </div>
+        <p class="card-desc">Еженедельный машинный дайджест всей экосистемы: малая LLM (Qwen3-1.7B, Apache-2.0) собирает сводку недели из живых JSON-каналов — окна риска ВПГП, вспышки, фармаконадзор, PubMed — прямо на раннере GitHub Actions. Без ключей, без GPU.</p>
+        <ul class="feat">
+          <li>Понедельник 06:00 UTC: контекст из 5 источников → llama.cpp (CPU) → текст дайджеста</li>
+          <li>Числа — из данных, текст — из модели; дедуп и фильтр мусора в контексте</li>
+          <li>Архив выпусков + модель/рантайм в actions/cache (1.8 ГБ не перекачивается)</li>
+          <li>Публичный репозиторий — бесплатные Actions-минуты</li>
+        </ul>
+        <div class="tags"><span class="tag">Qwen3-1.7B</span><span class="tag">llama.cpp</span><span class="tag">Actions</span><span class="tag">Без ключей</span></div>
+        <div class="card-links">
+          <a class="btn live" href="https://shray77.github.io/vet-digest-llm/" target="_blank" rel="noopener">Демо ↗</a>
+          <a class="btn code" href="https://github.com/shray77/vet-digest-llm" target="_blank" rel="noopener">Код</a>
+        </div>
+      </article>
       <article class="card" style="--c:#38bdf8">
         <div class="card-top">
           <span class="card-icon">🦆</span>
@@ -552,6 +571,7 @@ document.getElementById('yr').textContent = new Date().getFullYear();
     ['biothreat-site', 'events.json',      6],
     ['vetrecall-site', 'signals.json',     6],
     ['vetdigest-site', 'digest.json',     30],
+    ['vet-digest-llm', 'data/llm_digest.json', 200],
     ['rss-core-site',  'status.json',      6],
   ];
   const sub = (repo) => {
@@ -595,6 +615,7 @@ document.getElementById('yr').textContent = new Date().getFullYear();
     ['biothreat-site', 'events.json',      6],
     ['vetrecall-site', 'signals.json',     6],
     ['vetdigest-site', 'digest.json',     30],
+    ['vet-digest-llm', 'data/llm_digest.json', 200],
     ['rss-core-site',  'status.json',      6],
   ];
   const sub = (repo) => {
@@ -638,6 +659,7 @@ document.getElementById('yr').textContent = new Date().getFullYear();
     ['biothreat-site', 'events.json',      6],
     ['vetrecall-site', 'signals.json',     6],
     ['vetdigest-site', 'digest.json',     30],
+    ['vet-digest-llm', 'data/llm_digest.json', 200],
     ['rss-core-site',  'status.json',      6],
   ];
   const sub = (repo) => {

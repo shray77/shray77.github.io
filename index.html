@@ -176,7 +176,7 @@ section{padding:78px 0}
 footer{border-top:1px solid var(--border);padding:40px 0 46px;background:var(--bg2)}
 footer .wrap{display:flex;flex-wrap:wrap;gap:18px;align-items:center;justify-content:space-between}
 .cop{color:var(--faint);font-size:13.5px}
-.flinks{display:flex;gap:20px;align-items:center}
+.flinks{display:flex;flex-wrap:wrap;gap:12px 20px;align-items:center}
 .flinks a{display:inline-flex;align-items:center;gap:7px;color:var(--muted);font-size:13.5px;font-weight:600;transition:color .2s}
 .flinks a:hover{color:var(--text)}
 .flinks svg{width:15px;height:15px;fill:currentColor}
@@ -185,15 +185,15 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:18px;align-items:center;justify-con
 /* ---------- адаптив ---------- */
 @media (max-width:1020px){
   .hero .wrap{grid-template-columns:1fr}
-  .collage{height:440px;max-width:640px;margin:10px auto 0}
+  .collage{width:100%;height:500px;max-width:640px;margin:10px auto 0}
 }
 @media (max-width:640px){
   nav a.nl{display:none}
   section{padding:56px 0}
-  .collage{height:340px}
+  .collage{height:380px}
   .collage .s1{height:200px;top:40px}
   .collage .s2,.collage .s3{height:150px;top:220px}
-  .pill.p2{display:none}
+  .pill{display:none}
   .grid{grid-template-columns:1fr}
   .node{min-width:200px}
   .node+.node{margin-left:28px}
@@ -253,14 +253,15 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:18px;align-items:center;justify-con
       <h2>Проекты</h2>
       <p>Каждый решает задачу из реальной практики: приём, надзор, исследование, обучение.
       Плитки фильтруются по разделам, скриншоты — живые витрины: клик открывает рабочий
-      инструмент.</p>
+      инструмент. Пилоты и экспериментальные решения спрятаны на отдельной вкладке.</p>
     </div>
     <div class="filters" id="filters">
-      <button class="fbtn on" data-f="all">Все <b>18</b></button>
+      <button class="fbtn on" data-f="all">Продукты <b>15</b></button>
       <button class="fbtn" data-f="mon">Мониторинг и прогнозы <b>7</b></button>
-      <button class="fbtn" data-f="data">Данные и ИИ <b>5</b></button>
-      <button class="fbtn" data-f="doc">Инструменты врача <b>4</b></button>
+      <button class="fbtn" data-f="data">Данные и ИИ <b>3</b></button>
+      <button class="fbtn" data-f="doc">Инструменты врача <b>3</b></button>
       <button class="fbtn" data-f="plat">Платформа <b>2</b></button>
+      <button class="fbtn" data-f="lab">Пилоты и пробы <b>3</b></button>
     </div>
     <div class="grid" id="grid">
       <article class="card" data-cat="mon" style="--c:#38bdf8">
@@ -512,7 +513,7 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:18px;align-items:center;justify-con
         </div>
       </article>
 
-      <article class="card" data-cat="data" style="--c:#4ade80">
+      <article class="card" data-cat="lab" style="--c:#4ade80">
         <a class="shot" href="https://github.com/shray77/vet-pilots" target="_blank" rel="noopener">
           <img src="assets/shots/vet-pilots.jpg" alt="vet-pilots — график аномалий TSPulse" loading="lazy">
           <span class="veil"></span><span class="open">репозиторий ↗</span>
@@ -536,7 +537,7 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:18px;align-items:center;justify-con
         </div>
       </article>
 
-      <article class="card" data-cat="data" style="--c:#a78bfa">
+      <article class="card" data-cat="lab" style="--c:#a78bfa">
         <a class="shot" href="https://shray77.github.io/vet-insilico/" target="_blank" rel="noopener">
           <img src="assets/shots/vet-insilico.jpg" alt="VetInSilico Hub — 17 in silico инструментов" loading="lazy">
           <span class="veil"></span><span class="open">открыть ↗</span>
@@ -612,38 +613,39 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:18px;align-items:center;justify-con
 
       <article class="card" data-cat="doc" style="--c:#fbbf24">
         <div class="shot ph">
-          <span class="emoji">🧠</span>
-          <span class="ph-cap">Gradio · FastAPI</span>
+          <span class="emoji">📱</span>
+          <span class="ph-cap">Android · Flutter</span>
         </div>
         <div class="cbody">
           <div class="chead">
             <span class="cico">📸</span>
-            <div><h3>VetVoice RAG</h3><span class="repo">vetvoice-rag</span></div>
-            <span class="live apk"><i></i>ИИ-сервис</span>
+            <div><h3>ВетЭко</h3><span class="repo">vetvoice-rag</span></div>
+            <span class="live apk"><i></i>APK</span>
           </div>
-          <p class="cdesc">AI-ассистент ветеринарной дерматологии: диагностика по фото кожи, RAG-поиск по базе знаний, диктовка в SOAP-медкарту.</p>
+          <p class="cdesc">Android-ассистент ветврача: диктовка приёма в SOAP-медкарту, калькулятор доз, RAG-чат по базе знаний и диагностика кожных поражений по фото.</p>
           <ul class="feat">
-            <li><b>Vision-модель GLM-4.6V</b> — разбор фото очагов поражения</li>
-            <li>Гибридный RAG: FAISS + TF-IDF, RU↔EN словари терминов</li>
-            <li>Диктовка врача → структурированная SOAP-карта; база знаний на HuggingFace Hub</li>
+            <li><b>Диктовка → SOAP-медкарта:</b> голосовые записи приёма, 3-уровневый fallback ИИ-шлюза</li>
+            <li><b>RAG-чат (12 024 чанка)</b> + VLM-диагностика по фото кожи (GLM-4.6V)</li>
+            <li>База: 2 401 препарат, 169 болезней, 154 протокола, 73 взаимодействия</li>
           </ul>
-          <div class="tags"><span class="tag">Python</span><span class="tag">FAISS</span><span class="tag">FastAPI</span><span class="tag">GLM-4.6V</span><span class="tag">Flutter</span></div>
+          <div class="tags"><span class="tag">Flutter</span><span class="tag">RAG</span><span class="tag">FAISS</span><span class="tag">GLM-4.6V</span></div>
           <div class="clinks">
+            <a class="cbtn live" href="https://github.com/shray77/vetvoice-rag/releases/latest" target="_blank" rel="noopener">Скачать APK ↗</a>
             <a class="cbtn code" href="https://github.com/shray77/vetvoice-rag" target="_blank" rel="noopener">Код</a>
           </div>
         </div>
       </article>
 
-      <article class="card" data-cat="doc" style="--c:#f472b6">
-        <div class="shot ph">
-          <span class="emoji">🎓</span>
-          <span class="ph-cap">Next.js · GitLab</span>
-        </div>
+      <article class="card" data-cat="lab" style="--c:#f472b6">
+        <a class="shot" href="https://t1h1h8e10p40-d.space-z.ai/" target="_blank" rel="noopener">
+          <img src="assets/shots/vetlearn-web.jpg" alt="VetLearn AI — платформа обучения ветеринарии" loading="lazy">
+          <span class="veil"></span><span class="open">открыть ↗</span>
+        </a>
         <div class="cbody">
           <div class="chead">
             <span class="cico">📚</span>
             <div><h3>VetLearn AI</h3><span class="repo">vetlearn-web · GitLab</span></div>
-            <span class="live lib"><i></i>в разработке</span>
+            <span class="live"><i></i>бета</span>
           </div>
           <p class="cdesc">AI-платформа персонализированного обучения ветеринарии: адаптивные квизы, клинические симуляторы, голосовой репетитор.</p>
           <ul class="feat">
@@ -653,6 +655,7 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:18px;align-items:center;justify-con
           </ul>
           <div class="tags"><span class="tag">Next.js 16</span><span class="tag">React 19</span><span class="tag">Zustand</span><span class="tag">SM-2</span></div>
           <div class="clinks">
+            <a class="cbtn live" href="https://t1h1h8e10p40-d.space-z.ai/" target="_blank" rel="noopener">Демо ↗</a>
             <a class="cbtn code" href="https://gitlab.com/shray77/vetlearn-web" target="_blank" rel="noopener">Код ↗</a>
           </div>
         </div>
@@ -789,14 +792,14 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:18px;align-items:center;justify-con
 <footer>
   <div class="wrap">
     <div class="cop">© <span id="yr">2026</span> shray77 · ветеринарная медицина × код</div>
-    <div class="links">
-      <a href="./terms.html">условия использования</a>
+    <div class="flinks">
       <a href="https://github.com/shray77" target="_blank" rel="noopener">
         <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
         github.com/shray77
       </a>
+      <a href="./terms.html">условия использования</a>
       <a href="https://gitlab.com/shray77" target="_blank" rel="noopener">
-        <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M14.64 8.75l-1.16-3.57c-.05-.15-.14-.28-.26-.38L8 1.5 2.78 4.8c-.12.1-.21.23-.26.38L1.36 8.75c-.06.18-.03.37.07.53l.6.92c.12.18.32.29.54.29h10.86c.22 0 .42-.11.54-.29l.6-.92c.1-.16.13-.35.07-.53zM8 3.06l3.4 2.44H4.6L8 3.06zM3.1 6.9h.35l.5 1.5h-.85l-.35-1.5zm1.4 4.1H2.9l-.4-.62h2.4l-.4.62zm.75-2.6l-.5-1.5h.9l.5 1.5h-.9zm1.5 2.6l.4-1.5h1.7l.4 1.5H6.75zm1.15-3.6l.1-.4.1.4h-.2zm1.35 2.1l-.4-1.5h.9l.4 1.5h.9zm2.4 1.5h-1.6l.4-1.5h1.2l.4 1.5zm.75-2.6h-.85l.5-1.5h.35l-.35 1.5z"/></svg>
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m23.6004 9.5927-.0337-.0862L20.3.9814a.851.851 0 0 0-.3362-.405.8748.8748 0 0 0-.9997.0539-.8748.8748 0 0 0-.29.4399l-2.2055 6.748H7.5375l-2.2057-6.748a.8573.8573 0 0 0-.29-.4412.8748.8748 0 0 0-.9997-.0537.8585.8585 0 0 0-.3362.4049L.4332 9.5082a1.719 1.719 0 0 0 .064 1.4774l6.5242 12.0733c.2446.4527.7172.737 1.2326.7378h8.4904a1.4414 1.4414 0 0 0 1.2326-.7378l6.5242-12.0733a1.719 1.719 0 0 0 .064-1.4774z"/></svg>
         gitlab.com/shray77
       </a>
     </div>
@@ -814,12 +817,19 @@ document.getElementById('yr').textContent = new Date().getFullYear();
 (function () {
   const btns = document.querySelectorAll('.fbtn');
   const cards = document.querySelectorAll('#grid .card');
+  const apply = (f) => {
+    cards.forEach((c) => {
+      const cat = c.dataset.cat;
+      const show = f === 'lab' ? cat === 'lab' : (f === 'all' ? cat !== 'lab' : cat === f);
+      c.style.display = show ? '' : 'none';
+    });
+  };
   btns.forEach((b) => b.addEventListener('click', () => {
     btns.forEach((x) => x.classList.remove('on'));
     b.classList.add('on');
-    const f = b.dataset.f;
-    cards.forEach((c) => { c.style.display = (f === 'all' || c.dataset.cat === f) ? '' : 'none'; });
+    apply(b.dataset.f);
   }));
+  apply(document.querySelector('.fbtn.on')?.dataset.f || 'all');
 })();
 </script>
 

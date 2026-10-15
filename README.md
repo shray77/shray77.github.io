@@ -8,13 +8,14 @@
 | Раздел | Проекты |
 |---|---|
 | Мониторинг и прогнозы | [ВЕТМЕТЕО](https://github.com/shray77/vet-meteo) · [ВетКарта](https://github.com/shray77/vet-heatmap) · [ВетХаб](https://github.com/shray77/vet-hub) · [VetFlu](https://github.com/shray77/vetflu-site) · [VetFlu Forecast](https://github.com/shray77/vetflu-forecast) · [VetRecall](https://github.com/shray77/vetrecall-site) · [BioThreat Watch](https://github.com/shray77/biothreat-site) |
-| Данные и ИИ | [VetDigest](https://github.com/shray77/vetdigest-site) · [VetDigest LLM](https://github.com/shray77/vet-digest-llm) · [RSS-конвейер](https://github.com/shray77/rss-core-site) · [Вет-Пилоты](https://github.com/shray77/vet-pilots) · [VetInSilico Hub](https://github.com/shray77/vet-insilico) |
-| Инструменты врача | [VetTools](https://github.com/shray77/vettools) · [VetVoice](https://github.com/shray77/vetvoice) · [VetVoice RAG](https://github.com/shray77/vetvoice-rag) · [VetLearn AI](https://gitlab.com/shray77/vetlearn-web) |
+| Данные и ИИ | [VetDigest](https://github.com/shray77/vetdigest-site) · [VetDigest LLM](https://github.com/shray77/vet-digest-llm) · [RSS-конвейер](https://github.com/shray77/rss-core-site) |
+| Инструменты врача | [VetTools](https://github.com/shray77/vettools) · [VetVoice](https://github.com/shray77/vetvoice) · [ВетЭко](https://github.com/shray77/vetvoice-rag) |
 | Платформа | [VetOS](https://github.com/shray77/vetos) · [VetAPI](https://github.com/shray77/vet-api) |
+| Пилоты и пробы (отдельная вкладка) | [Вет-Пилоты](https://github.com/shray77/vet-pilots) · [VetInSilico Hub](https://github.com/shray77/vet-insilico) · [VetLearn AI](https://gitlab.com/shray77/vetlearn-web) ([демо](https://t1h1h8e10p40-d.space-z.ai/)) |
 
 На визитке: скриншоты живых веб-морд (ассеты `assets/shots/*.jpg`, 960px),
-фильтр проектов по разделам, индикаторы свежести данных (fetch JSON с витрин),
-схема конвейера экосистемы.
+фильтр проектов по разделам, отдельная вкладка «Пилоты и пробы»,
+индикаторы свежести данных (fetch JSON с витрин), схема конвейера экосистемы.
 
 ## Технически
 

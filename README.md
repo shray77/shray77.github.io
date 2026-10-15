@@ -2,8 +2,8 @@
 
 Личный сайт-визитка: **[shray77.github.io](https://shray77.github.io/)**
 
-Ветеринарная медицина × код. Витрина всей открытой экосистемы — **19 проектов**,
-из них 14 живых демо на GitHub Pages:
+Ветеринарная медицина × код. Витрина всей открытой экосистемы — **18 проектов**,
+из них 12 живых демо на GitHub Pages:
 
 | Раздел | Проекты |
 |---|---|
@@ -11,7 +11,6 @@
 | Данные и ИИ | [VetDigest](https://github.com/shray77/vetdigest-site) · [VetDigest LLM](https://github.com/shray77/vet-digest-llm) · [RSS-конвейер](https://github.com/shray77/rss-core-site) · [Вет-Пилоты](https://github.com/shray77/vet-pilots) · [VetInSilico Hub](https://github.com/shray77/vet-insilico) |
 | Инструменты врача | [VetTools](https://github.com/shray77/vettools) · [VetVoice](https://github.com/shray77/vetvoice) · [VetVoice RAG](https://github.com/shray77/vetvoice-rag) · [VetLearn AI](https://gitlab.com/shray77/vetlearn-web) |
 | Платформа | [VetOS](https://github.com/shray77/vetos) · [VetAPI](https://github.com/shray77/vet-api) |
-| Не только ветеринария | [Вакансии Армении](https://github.com/shray77/armenia-jobs) |
 
 На визитке: скриншоты живых веб-морд (ассеты `assets/shots/*.jpg`, 960px),
 фильтр проектов по разделам, индикаторы свежести данных (fetch JSON с витрин),

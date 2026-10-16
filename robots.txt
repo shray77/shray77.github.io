@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://shray77.github.io/sitemap.xml

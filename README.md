@@ -11,7 +11,7 @@
 | Данные и ИИ | [VetDigest](https://github.com/shray77/vetdigest-site) · [VetDigest LLM](https://github.com/shray77/vet-digest-llm) · [RSS-конвейер](https://github.com/shray77/rss-core-site) |
 | Инструменты врача | [VetTools](https://github.com/shray77/vettools) · [VetVoice](https://github.com/shray77/vetvoice) · [ВетЭко](https://github.com/shray77/vetvoice-rag) |
 | Платформа | [VetOS](https://github.com/shray77/vetos) · [VetAPI](https://github.com/shray77/vet-api) |
-| Пилоты и пробы (отдельная вкладка) | [Вет-Пилоты](https://github.com/shray77/vet-pilots) · [VetInSilico Hub](https://github.com/shray77/vet-insilico) · [VetLearn AI](https://gitlab.com/shray77/vetlearn-web) ([демо](https://t1h1h8e10p40-d.space-z.ai/)) |
+| Пилоты и пробы (отдельная вкладка) | [Вет-Пилоты](https://github.com/shray77/vet-pilots) · [VetInSilico Hub](https://github.com/shray77/vet-insilico) · [VetLearn AI](https://gitlab.com/shray77/vetlearn-web) ([демо](https://shray77.github.io/vetlearn-web/)) |
 
 На визитке: скриншоты живых веб-морд (ассеты `assets/shots/*.jpg`, 960px),
 фильтр проектов по разделам, отдельная вкладка «Пилоты и пробы»,

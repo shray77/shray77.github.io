@@ -2,7 +2,7 @@
 <html lang="ru">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>shray77 — ветеринар × разработчик</title>
 <meta name="description" content="Открытая экосистема для ветеринарии: метеорадар, эпизоотические карты, окна риска ВПГП, предиктивные модели, AI-дайджесты, офлайн-инструменты врача и голосовые ассистенты. 18 проектов, всё бесплатно и без API-ключей.">
 <meta property="og:title" content="shray77 — ветеринар × разработчик">
@@ -10,13 +10,17 @@
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://shray77.github.io/">
 <meta property="og:image" content="https://shray77.github.io/assets/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="theme-color" content="#0b0f14">
+<link rel="canonical" href="https://shray77.github.io/">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230b0f14'/%3E%3Cg fill='%232dd4a7'%3E%3Cellipse cx='24' cy='22' rx='6' ry='8'/%3E%3Cellipse cx='40' cy='22' rx='6' ry='8'/%3E%3Cellipse cx='14' cy='34' rx='5' ry='7'/%3E%3Cellipse cx='50' cy='34' rx='5' ry='7'/%3E%3Cpath d='M32 32c7 0 14 8 14 15 0 6-5 9-14 9s-14-3-14-9c0-7 7-15 14-15z'/%3E%3C/g%3E%3C/svg%3E">
 <style>
 :root{
   --bg:#0b0f14; --bg2:#0e141b; --surface:#121a23; --surface2:#16202b;
   --border:rgba(255,255,255,.08); --border2:rgba(45,212,167,.35);
-  --text:#e9eef3; --muted:#94a3b1; --faint:#64748b;
+  --text:#e9eef3; --muted:#94a3b1; --faint:#7c8ea3;
   --acc:#2dd4a7; --acc2:#38bdf8;
   --grad:linear-gradient(120deg,#2dd4a7,#38bdf8);
   --radius:18px;
@@ -25,10 +29,15 @@
 }
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation:none!important;transition:none!important}
+}
+a:focus-visible,button:focus-visible{outline:2px solid var(--acc);outline-offset:3px;border-radius:8px}
 body{background:var(--bg);color:var(--text);font-family:var(--sans);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
 a{color:var(--acc);text-decoration:none}
 img{display:block;max-width:100%}
-.wrap{max-width:1240px;margin:0 auto;padding:0 24px}
+.wrap{max-width:1240px;margin:0 auto;padding-left:max(24px,env(safe-area-inset-left));padding-right:max(24px,env(safe-area-inset-right))}
 
 /* ---------- nav ---------- */
 nav{position:sticky;top:0;z-index:50;background:rgba(11,15,20,.82);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--border)}
@@ -38,6 +47,7 @@ nav .wrap{display:flex;align-items:center;gap:22px;height:60px}
 .brand .paw svg{width:17px;height:17px;fill:var(--acc)}
 .brand small{color:var(--faint);font-weight:500;font-size:12px}
 nav .sp{flex:1}
+.nlinks{display:contents}
 nav a.nl{color:var(--muted);font-size:14px;font-weight:500;transition:color .2s}
 nav a.nl:hover{color:var(--text)}
 nav a.gh{display:flex;align-items:center;gap:7px;padding:7px 14px;border-radius:10px;border:1px solid var(--border);color:var(--text);font-size:13.5px;font-weight:600;background:var(--surface);transition:border-color .2s}
@@ -51,7 +61,7 @@ nav a.gh svg{width:15px;height:15px;fill:currentColor}
   radial-gradient(800px 420px at 88% 4%,rgba(56,189,248,.10),transparent 65%),
   radial-gradient(600px 500px at 55% 115%,rgba(167,139,250,.07),transparent 60%);
   pointer-events:none}
-.hero::after{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);background-size:44px 44px;mask-image:radial-gradient(720px 460px at 30% 10%,#000 30%,transparent 75%);pointer-events:none}
+.hero::after{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);background-size:44px 44px;-webkit-mask-image:radial-gradient(720px 460px at 30% 10%,#000 30%,transparent 75%);mask-image:radial-gradient(720px 460px at 30% 10%,#000 30%,transparent 75%);pointer-events:none}
 .hero .wrap{position:relative;display:grid;grid-template-columns:1.02fr .98fr;gap:48px;align-items:center}
 .eyebrow{display:inline-flex;align-items:center;gap:8px;padding:6px 14px;border-radius:99px;border:1px solid var(--border2);color:var(--acc);font-size:13px;font-weight:600;background:rgba(45,212,167,.07);margin-bottom:22px}
 .eyebrow i{width:7px;height:7px;border-radius:50%;background:var(--acc);box-shadow:0 0 12px var(--acc)}
@@ -177,26 +187,43 @@ footer{border-top:1px solid var(--border);padding:40px 0 46px;background:var(--b
 footer .wrap{display:flex;flex-wrap:wrap;gap:18px;align-items:center;justify-content:space-between}
 .cop{color:var(--faint);font-size:13.5px}
 .flinks{display:flex;flex-wrap:wrap;gap:12px 20px;align-items:center}
-.flinks a{display:inline-flex;align-items:center;gap:7px;color:var(--muted);font-size:13.5px;font-weight:600;transition:color .2s}
+.flinks a{display:inline-flex;align-items:center;gap:7px;color:var(--muted);font-size:13.5px;font-weight:600;transition:color .2s;padding:6px 0}
 .flinks a:hover{color:var(--text)}
 .flinks svg{width:15px;height:15px;fill:currentColor}
 .note{width:100%;color:var(--faint);font-size:12.5px;border-top:1px solid var(--border);padding-top:18px;margin-top:6px}
 
 /* ---------- адаптив ---------- */
+/* тач: гасим «залипающий» hover, метка «открыть» видна всегда */
+@media (hover:none){
+  .card:hover{transform:none;border-color:var(--border);box-shadow:none}
+  .card:hover .shot img{transform:none}
+  .btn:hover{transform:none}
+  .pr:hover{transform:none;border-color:var(--border)}
+  .shot .open{opacity:1;transform:translateY(0)}
+}
 @media (max-width:1020px){
   .hero .wrap{grid-template-columns:1fr}
   .collage{width:100%;height:500px;max-width:640px;margin:10px auto 0}
 }
 @media (max-width:640px){
-  nav a.nl{display:none}
-  section{padding:56px 0}
+  nav .wrap{flex-wrap:wrap;height:auto;row-gap:0;column-gap:14px;padding-top:8px}
+  .nlinks{order:99;flex:1 1 100%;display:flex;gap:8px;margin-top:8px}
+  nav a.nl{display:flex;flex:1 1 0;align-items:center;justify-content:center;height:42px;border-radius:11px;border:1px solid var(--border);background:var(--surface);font-size:13.5px;color:var(--muted)}
+  section{padding:56px 0;scroll-margin-top:112px}
   .collage{height:380px}
   .collage .s1{height:200px;top:40px}
   .collage .s2,.collage .s3{height:150px;top:220px}
   .pill{display:none}
+  .filters{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;-ms-overflow-style:none;padding-bottom:4px}
+  .filters::-webkit-scrollbar{display:none}
+  .fbtn{flex:none;padding:12px 16px}
   .grid{grid-template-columns:1fr}
   .node{min-width:200px}
   .node+.node{margin-left:28px}
+}
+@media (max-width:420px){
+  .brand small{display:none}
+  nav .wrap{column-gap:10px}
 }
 </style>
 <script type="application/ld+json">
@@ -247,9 +274,11 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:18px;align-items:center;justify-con
       shray77 <small>· vet-экосистема</small>
     </a>
     <span class="sp"></span>
-    <a class="nl" href="#projects">Проекты</a>
-    <a class="nl" href="#pipeline">Конвейер</a>
-    <a class="nl" href="#principles">Подход</a>
+    <div class="nlinks">
+      <a class="nl" href="#projects">Проекты</a>
+      <a class="nl" href="#pipeline">Конвейер</a>
+      <a class="nl" href="#principles">Подход</a>
+    </div>
     <a class="gh" href="https://github.com/shray77" target="_blank" rel="noopener"><svg viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>GitHub</a>
   </div>
 </nav>
@@ -278,9 +307,9 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:18px;align-items:center;justify-con
       <div class="pill p1"><span>🌡</span><span>THI 66.5<small>метеорадар · сейчас</small></span></div>
       <div class="pill p2"><span>🦆</span><span><span class="pv">R = 100</span><small>окно риска ВПГП · нед. 42</small></span></div>
       <div class="pill p3"><span>🐾</span><span>2 758 вспышек<small>эпизокарта РФ</small></span></div>
-      <div class="shot s1"><img src="assets/shots/vet-hub.jpg" alt="ВетХаб — ситуационный центр"></div>
-      <div class="shot s2"><img src="assets/shots/vet-meteo.jpg" alt="ВетРадар-61 — метеодашборд"></div>
-      <div class="shot s3"><img src="assets/shots/vet-heatmap.jpg" alt="ВетКарта — эпизоотическая карта РФ"></div>
+      <div class="shot s1"><img src="assets/shots/vet-hub.jpg" alt=""></div>
+      <div class="shot s2"><img src="assets/shots/vet-meteo.jpg" alt=""></div>
+      <div class="shot s3"><img src="assets/shots/vet-heatmap.jpg" alt=""></div>
     </div>
   </div>
 </header>
@@ -294,23 +323,23 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:18px;align-items:center;justify-con
       Плитки фильтруются по разделам, скриншоты — живые витрины: клик открывает рабочий
       инструмент. Пилоты и экспериментальные решения спрятаны на отдельной вкладке.</p>
     </div>
-    <div class="filters" id="filters">
-      <button class="fbtn on" data-f="all">Продукты <b>15</b></button>
-      <button class="fbtn" data-f="mon">Мониторинг и прогнозы <b>7</b></button>
-      <button class="fbtn" data-f="data">Данные и ИИ <b>3</b></button>
-      <button class="fbtn" data-f="doc">Инструменты врача <b>3</b></button>
-      <button class="fbtn" data-f="plat">Платформа <b>2</b></button>
-      <button class="fbtn" data-f="lab">Пилоты и пробы <b>3</b></button>
+    <div class="filters" id="filters" role="group" aria-label="Фильтр проектов">
+      <button class="fbtn on" data-f="all" aria-pressed="true">Продукты <b>15</b></button>
+      <button class="fbtn" data-f="mon" aria-pressed="false">Мониторинг и прогнозы <b>7</b></button>
+      <button class="fbtn" data-f="data" aria-pressed="false">Данные и ИИ <b>3</b></button>
+      <button class="fbtn" data-f="doc" aria-pressed="false">Инструменты врача <b>3</b></button>
+      <button class="fbtn" data-f="plat" aria-pressed="false">Платформа <b>2</b></button>
+      <button class="fbtn" data-f="lab" aria-pressed="false">Пилоты и пробы <b>3</b></button>
     </div>
     <div class="grid" id="grid">
       <article class="card" data-cat="mon" style="--c:#38bdf8">
         <a class="shot" href="https://shray77.github.io/vet-meteo/" target="_blank" rel="noopener">
-          <img src="assets/shots/vet-meteo.jpg" alt="ВетРадар-61 — карта THI станций Ростовской области" loading="lazy">
+          <img src="assets/shots/vet-meteo.jpg" alt="ВетРадар-61 — карта THI станций Ростовской области" loading="lazy" decoding="async">
           <span class="veil"></span><span class="open">открыть ↗</span>
         </a>
         <div class="cbody">
           <div class="chead">
-            <span class="cico">🌦</span>
+            <span class="cico" aria-hidden="true">🌦</span>
             <div><h3>ВЕТМЕТЕО · ВетРадар-61</h3><span class="repo">vet-meteo</span></div>
             <span class="live"><i></i>live</span>
           </div>
@@ -330,12 +359,12 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:18px;align-items:center;justify-con
 
       <article class="card" data-cat="mon" style="--c:#f87171">
         <a class="shot" href="https://shray77.github.io/vet-heatmap/" target="_blank" rel="noopener">
-          <img src="assets/shots/vet-heatmap.jpg" alt="ВетКарта — вспышки болезней по регионам РФ" loading="lazy">
+          <img src="assets/shots/vet-heatmap.jpg" alt="ВетКарта — вспышки болезней по регионам РФ" loading="lazy" decoding="async">
           <span class="veil"></span><span class="open">открыть ↗</span>
         </a>
         <div class="cbody">
           <div class="chead">
-            <span class="cico">🗺</span>
+            <span class="cico" aria-hidden="true">🗺</span>
             <div><h3>ВетКарта</h3><span class="repo">vet-heatmap</span></div>
             <span class="live"><i></i>live</span>
           </div>
@@ -355,12 +384,12 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:18px;align-items:center;justify-con
 
       <article class="card" data-cat="mon" style="--c:#2dd4a7">
         <a class="shot" href="https://shray77.github.io/vet-hub/" target="_blank" rel="noopener">
-          <img src="assets/shots/vet-hub.jpg" alt="ВетХаб — ситуационный центр экосистемы" loading="lazy">
+          <img src="assets/shots/vet-hub.jpg" alt="ВетХаб — ситуационный центр экосистемы" loading="lazy" decoding="async">
           <span class="veil"></span><span class="open">открыть ↗</span>
         </a>
         <div class="cbody">
           <div class="chead">
-            <span class="cico">🛰</span>
+            <span class="cico" aria-hidden="true">🛰</span>
             <div><h3>ВетХаб</h3><span class="repo">vet-hub</span></div>
             <span class="live"><i></i>live</span>
           </div>
@@ -380,12 +409,12 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:18px;align-items:center;justify-con
 
       <article class="card" data-cat="mon" style="--c:#f97316">
         <a class="shot" href="https://shray77.github.io/vetflu-site/" target="_blank" rel="noopener">
-          <img src="assets/shots/vetflu-site.jpg" alt="VetFlu — карта флайвеев и окон риска ВПГП" loading="lazy">
+          <img src="assets/shots/vetflu-site.jpg" alt="VetFlu — карта флайвеев и окон риска ВПГП" loading="lazy" decoding="async">
           <span class="veil"></span><span class="open">открыть ↗</span>
         </a>
         <div class="cbody">
           <div class="chead">
-            <span class="cico">🦆</span>
+            <span class="cico" aria-hidden="true">🦆</span>
             <div><h3>VetFlu</h3><span class="repo">vetflu-site</span></div>
             <span class="live"><i></i>live</span>
           </div>
@@ -405,12 +434,12 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:18px;align-items:center;justify-con
 
       <article class="card" data-cat="mon" style="--c:#818cf8">
         <a class="shot" href="https://shray77.github.io/vetflu-forecast/" target="_blank" rel="noopener">
-          <img src="assets/shots/vetflu-forecast.jpg" alt="VetFlu Forecast — прогноз TimesFM 2.5 и ретроспектива" loading="lazy">
+          <img src="assets/shots/vetflu-forecast.jpg" alt="VetFlu Forecast — прогноз TimesFM 2.5 и ретроспектива" loading="lazy" decoding="async">
           <span class="veil"></span><span class="open">открыть ↗</span>
         </a>
         <div class="cbody">
           <div class="chead">
-            <span class="cico">📈</span>
+            <span class="cico" aria-hidden="true">📈</span>
             <div><h3>VetFlu Forecast</h3><span class="repo">vetflu-forecast</span></div>
             <span class="live"><i></i>live</span>
           </div>
@@ -430,12 +459,12 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:18px;align-items:center;justify-con
 
       <article class="card" data-cat="mon" style="--c:#fb7185">
         <a class="shot" href="https://shray77.github.io/vetrecall-site/" target="_blank" rel="noopener">
-          <img src="assets/shots/vetrecall-site.jpg" alt="VetRecall — радар отзывов и брака препаратов" loading="lazy">
+          <img src="assets/shots/vetrecall-site.jpg" alt="VetRecall — радар отзывов и брака препаратов" loading="lazy" decoding="async">
           <span class="veil"></span><span class="open">открыть ↗</span>
         </a>
         <div class="cbody">
           <div class="chead">
-            <span class="cico">🚨</span>
+            <span class="cico" aria-hidden="true">🚨</span>
             <div><h3>VetRecall</h3><span class="repo">vetrecall-site</span></div>
             <span class="live"><i></i>live</span>
           </div>
@@ -455,12 +484,12 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:18px;align-items:center;justify-con
 
       <article class="card" data-cat="mon" style="--c:#facc15">
         <a class="shot" href="https://shray77.github.io/biothreat-site/" target="_blank" rel="noopener">
-          <img src="assets/shots/biothreat-site.jpg" alt="BioThreat Watch — мировой радар трансграничных болезней" loading="lazy">
+          <img src="assets/shots/biothreat-site.jpg" alt="BioThreat Watch — мировой радар трансграничных болезней" loading="lazy" decoding="async">
           <span class="veil"></span><span class="open">открыть ↗</span>
         </a>
         <div class="cbody">
           <div class="chead">
-            <span class="cico">🌍</span>
+            <span class="cico" aria-hidden="true">🌍</span>
             <div><h3>BioThreat Watch</h3><span class="repo">biothreat-site</span></div>
             <span class="live"><i></i>live</span>
           </div>
@@ -479,12 +508,12 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:18px;align-items:center;justify-con
       </article>
       <article class="card" data-cat="data" style="--c:#22d3ee">
         <a class="shot" href="https://shray77.github.io/vetdigest-site/" target="_blank" rel="noopener">
-          <img src="assets/shots/vetdigest-site.jpg" alt="VetDigest — ежедневный дайджест PubMed" loading="lazy">
+          <img src="assets/shots/vetdigest-site.jpg" alt="VetDigest — ежедневный дайджест PubMed" loading="lazy" decoding="async">
           <span class="veil"></span><span class="open">открыть ↗</span>
         </a>
         <div class="cbody">
           <div class="chead">
-            <span class="cico">📰</span>
+            <span class="cico" aria-hidden="true">📰</span>
             <div><h3>VetDigest</h3><span class="repo">vetdigest-site</span></div>
             <span class="live"><i></i>live</span>
           </div>
@@ -504,12 +533,12 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:18px;align-items:center;justify-con
 
       <article class="card" data-cat="data" style="--c:#a78bfa">
         <a class="shot" href="https://shray77.github.io/vet-digest-llm/" target="_blank" rel="noopener">
-          <img src="assets/shots/vet-digest-llm.jpg" alt="VetDigest LLM — недельный дайджест экосистемы с аудио-версией" loading="lazy">
+          <img src="assets/shots/vet-digest-llm.jpg" alt="VetDigest LLM — недельный дайджест экосистемы с аудио-версией" loading="lazy" decoding="async">
           <span class="veil"></span><span class="open">открыть ↗</span>
         </a>
         <div class="cbody">
           <div class="chead">
-            <span class="cico">🤖</span>
+            <span class="cico" aria-hidden="true">🤖</span>
             <div><h3>VetDigest LLM</h3><span class="repo">vet-digest-llm</span></div>
             <span class="live"><i></i>live</span>
           </div>
@@ -529,12 +558,12 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:18px;align-items:center;justify-con
 
       <article class="card" data-cat="data" style="--c:#f97316">
         <a class="shot" href="https://shray77.github.io/rss-core-site/" target="_blank" rel="noopener">
-          <img src="assets/shots/rss-core-site.jpg" alt="rss-core — витрина конвейера приёма данных" loading="lazy">
+          <img src="assets/shots/rss-core-site.jpg" alt="rss-core — витрина конвейера приёма данных" loading="lazy" decoding="async">
           <span class="veil"></span><span class="open">открыть ↗</span>
         </a>
         <div class="cbody">
           <div class="chead">
-            <span class="cico">🛰</span>
+            <span class="cico" aria-hidden="true">🛰</span>
             <div><h3>RSS-конвейер</h3><span class="repo">rss-core-site · витрина</span></div>
             <span class="live"><i></i>live</span>
           </div>
@@ -554,12 +583,12 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:18px;align-items:center;justify-con
 
       <article class="card" data-cat="lab" style="--c:#4ade80">
         <a class="shot" href="https://github.com/shray77/vet-pilots" target="_blank" rel="noopener">
-          <img src="assets/shots/vet-pilots.jpg" alt="vet-pilots — график аномалий TSPulse" loading="lazy">
+          <img src="assets/shots/vet-pilots.jpg" alt="vet-pilots — график аномалий TSPulse" loading="lazy" decoding="async">
           <span class="veil"></span><span class="open">репозиторий ↗</span>
         </a>
         <div class="cbody">
           <div class="chead">
-            <span class="cico">🧪</span>
+            <span class="cico" aria-hidden="true">🧪</span>
             <div><h3>Вет-Пилоты</h3><span class="repo">vet-pilots</span></div>
             <span class="live apk"><i></i>лаборатория</span>
           </div>
@@ -578,12 +607,12 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:18px;align-items:center;justify-con
 
       <article class="card" data-cat="lab" style="--c:#a78bfa">
         <a class="shot" href="https://shray77.github.io/vet-insilico/" target="_blank" rel="noopener">
-          <img src="assets/shots/vet-insilico.jpg" alt="VetInSilico Hub — 17 in silico инструментов" loading="lazy">
+          <img src="assets/shots/vet-insilico.jpg" alt="VetInSilico Hub — 17 in silico инструментов" loading="lazy" decoding="async">
           <span class="veil"></span><span class="open">открыть ↗</span>
         </a>
         <div class="cbody">
           <div class="chead">
-            <span class="cico">🔬</span>
+            <span class="cico" aria-hidden="true">🔬</span>
             <div><h3>VetInSilico Hub</h3><span class="repo">vet-insilico</span></div>
             <span class="live"><i></i>live</span>
           </div>
@@ -602,12 +631,12 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:18px;align-items:center;justify-con
       </article>
       <article class="card" data-cat="doc" style="--c:#4ade80">
         <a class="shot" href="https://shray77.github.io/vettools/" target="_blank" rel="noopener">
-          <img src="assets/shots/vettools.jpg" alt="VetTools — офлайн-инструмент ветврача" loading="lazy">
+          <img src="assets/shots/vettools.jpg" alt="VetTools — офлайн-инструмент ветврача" loading="lazy" decoding="async">
           <span class="veil"></span><span class="open">открыть ↗</span>
         </a>
         <div class="cbody">
           <div class="chead">
-            <span class="cico">🧰</span>
+            <span class="cico" aria-hidden="true">🧰</span>
             <div><h3>VetTools</h3><span class="repo">vettools</span></div>
             <span class="live"><i></i>live</span>
           </div>
@@ -632,7 +661,7 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:18px;align-items:center;justify-con
         </div>
         <div class="cbody">
           <div class="chead">
-            <span class="cico">🗣</span>
+            <span class="cico" aria-hidden="true">🗣</span>
             <div><h3>VetVoice</h3><span class="repo">vetvoice</span></div>
             <span class="live apk"><i></i>APK</span>
           </div>
@@ -658,7 +687,7 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:18px;align-items:center;justify-con
         </div>
         <div class="cbody">
           <div class="chead">
-            <span class="cico">📸</span>
+            <span class="cico" aria-hidden="true">📸</span>
             <div><h3>ВетЭко</h3><span class="repo">vetvoice-rag</span></div>
             <span class="live apk"><i></i>APK</span>
           </div>
@@ -679,12 +708,12 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:18px;align-items:center;justify-con
 
       <article class="card" data-cat="lab" style="--c:#f472b6">
         <a class="shot" href="https://shray77.github.io/vetlearn-web/" target="_blank" rel="noopener">
-          <img src="assets/shots/vetlearn-web.jpg" alt="VetLearn AI — платформа обучения ветеринарии" loading="lazy">
+          <img src="assets/shots/vetlearn-web.jpg" alt="VetLearn AI — платформа обучения ветеринарии" loading="lazy" decoding="async">
           <span class="veil"></span><span class="open">открыть ↗</span>
         </a>
         <div class="cbody">
           <div class="chead">
-            <span class="cico">📚</span>
+            <span class="cico" aria-hidden="true">📚</span>
             <div><h3>VetLearn AI</h3><span class="repo">vetlearn-web · GitLab</span></div>
             <span class="live"><i></i>бета</span>
           </div>
@@ -709,7 +738,7 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:18px;align-items:center;justify-con
         </div>
         <div class="cbody">
           <div class="chead">
-            <span class="cico">📱</span>
+            <span class="cico" aria-hidden="true">📱</span>
             <div><h3>VetOS</h3><span class="repo">vetos</span></div>
             <span class="live apk"><i></i>APK</span>
           </div>
@@ -734,7 +763,7 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:18px;align-items:center;justify-con
         </div>
         <div class="cbody">
           <div class="chead">
-            <span class="cico">🔌</span>
+            <span class="cico" aria-hidden="true">🔌</span>
             <div><h3>VetAPI</h3><span class="repo">vet-api</span></div>
             <span class="live lib"><i></i>compute-слой</span>
           </div>
@@ -765,27 +794,27 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:18px;align-items:center;justify-con
     </div>
     <div class="flow">
       <div class="node dim">
-        <span class="ni">📡</span>
+        <span class="ni" aria-hidden="true">📡</span>
         <h4>Открытые источники</h4>
         <p>Open-Meteo / ECMWF, METAR NOAA, WOAH WAHIS, ФСВПС Россельхознадзора, PubMed, RSS-ленты новостей</p>
       </div>
       <div class="node">
-        <span class="ni">🛰</span>
+        <span class="ni" aria-hidden="true">🛰</span>
         <h4>rss-core</h4>
         <p>инжест → нормализация → дедупликация → Cloudflare D1; статус каждого источника</p>
       </div>
       <div class="node">
-        <span class="ni">⚙️</span>
+        <span class="ni" aria-hidden="true">⚙️</span>
         <h4>Воркеры-продукты</h4>
         <p>VetDigest (Workers AI), VetRecall (keyword-радар), BioThreat Watch (ИИ + гео-словарь), VetAPI (метео-срезы)</p>
       </div>
       <div class="node">
-        <span class="ni">🪞</span>
+        <span class="ni" aria-hidden="true">🪞</span>
         <h4>GitHub Actions → Pages</h4>
         <p>крон-мост: fetch → валидация → коммит JSON в публичные репы -site; работает из РФ без VPN</p>
       </div>
       <div class="node">
-        <span class="ni">🖥</span>
+        <span class="ni" aria-hidden="true">🖥</span>
         <h4>Хабы и модели</h4>
         <p>ВетХаб собирает витрины вместе; TimesFM, TSPulse, Qwen3, Piper — CPU-модели на раннерах Actions</p>
       </div>
@@ -805,14 +834,14 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:18px;align-items:center;justify-con
     </div>
     <div class="principles">
       <div class="pr">
-        <span class="ico">📡</span>
+        <span class="ico" aria-hidden="true">📡</span>
         <h4>Открытые данные и код</h4>
         <p>Open-Meteo, METAR, открытые датасеты вспышек, FOSS-модели (Qwen, TimesFM, TSPulse, Piper, GigaAM).
         Никаких закрытых API — инструменты работают у любого ветврача без ключей и подписок.
         Каждый проект — публичный репозиторий с историей решений в ворклоге.</p>
       </div>
       <div class="pr">
-        <span class="ico">🐄</span>
+        <span class="ico" aria-hidden="true">🐄</span>
         <h4>Практика важнее технологий</h4>
         <p>Каждый модуль родился из задачи в клинике, на ферме или в лаборатории:
         доза, каренция, зона риска, медкарта. Алгоритмы сверены с первоисточниками
@@ -820,7 +849,7 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:18px;align-items:center;justify-con
         и не выживают на витрине, если проигрывают простой статистике.</p>
       </div>
       <div class="pr">
-        <span class="ico">🧩</span>
+        <span class="ico" aria-hidden="true">🧩</span>
         <h4>Экосистема, а не монолит</h4>
         <p>Каждый тул живёт своим репо, своим CI и своей частотой обновления. Git — это бекенд:
         воркеры коммитят JSON, витрины и хабы читают. Новый проект не ломает старые —
@@ -866,8 +895,9 @@ document.getElementById('yr').textContent = new Date().getFullYear();
     });
   };
   btns.forEach((b) => b.addEventListener('click', () => {
-    btns.forEach((x) => x.classList.remove('on'));
+    btns.forEach((x) => { x.classList.remove('on'); x.setAttribute('aria-pressed', 'false'); });
     b.classList.add('on');
+    b.setAttribute('aria-pressed', 'true');
     apply(b.dataset.f);
   }));
   apply(document.querySelector('.fbtn.on')?.dataset.f || 'all');

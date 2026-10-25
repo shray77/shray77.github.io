@@ -1,10 +1,10 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ru">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>shray77 — ветеринар × разработчик</title>
-<meta name="description" content="Открытая экосистема для ветеринарии: метеорадар, эпизоотические карты, окна риска ВПГП, предиктивные модели, AI-дайджесты, офлайн-инструменты врача и голосовые ассистенты. 19 проектов, всё бесплатно и без API-ключей.">
+<meta name="description" content="Открытая экосистема для ветеринарии: метеорадар, эпизоотические карты, окна риска ВПГП, предиктивные модели, AI-дайджесты, in silico-исследования, офлайн-инструменты врача. 19 проектов, всё бесплатно и без API-ключей.">
 <meta property="og:title" content="shray77 — ветеринар × разработчик">
 <meta property="og:description" content="19 открытых проектов для ветеринарии: живые дашборды, предиктивные модели, офлайн-инструменты врача. Код, данные и формулы — открыты.">
 <meta property="og:type" content="website">
@@ -12,218 +12,176 @@
 <meta property="og:image" content="https://shray77.github.io/assets/og.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta name="theme-color" content="#0b0f14">
+<meta name="theme-color" content="#FAF9F5">
 <link rel="canonical" href="https://shray77.github.io/">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230b0f14'/%3E%3Cg fill='%232dd4a7'%3E%3Cellipse cx='24' cy='22' rx='6' ry='8'/%3E%3Cellipse cx='40' cy='22' rx='6' ry='8'/%3E%3Cellipse cx='14' cy='34' rx='5' ry='7'/%3E%3Cellipse cx='50' cy='34' rx='5' ry='7'/%3E%3Cpath d='M32 32c7 0 14 8 14 15 0 6-5 9-14 9s-14-3-14-9c0-7 7-15 14-15z'/%3E%3C/g%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231C1B1A'/%3E%3Cg fill='%23C73E1D'%3E%3Cellipse cx='24' cy='22' rx='6' ry='8'/%3E%3Cellipse cx='40' cy='22' rx='6' ry='8'/%3E%3Cellipse cx='14' cy='34' rx='5' ry='7'/%3E%3Cellipse cx='50' cy='34' rx='5' ry='7'/%3E%3Cpath d='M32 32c7 0 14 8 14 15 0 6-5 9-14 9s-14-3-14-9c0-7 7-15 14-15z'/%3E%3C/g%3E%3C/svg%3E">
+<script>(function(){try{if(localStorage.getItem("vetds-theme")==="dark")document.documentElement.setAttribute("data-theme","dark")}catch(e){}})()</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="./vet-ds.css">
 <style>
+/* Визитка экосистемы — vet-ds v2.2 «Научная периодика», характер: акцент по умолчанию
+   (эпид-красный периодики). Локальные правила — только каталог/лид/конвейер. */
 :root{
-  --bg:#0b0f14; --bg2:#0e141b; --surface:#121a23; --surface2:#16202b;
-  --border:rgba(255,255,255,.08); --border2:rgba(45,212,167,.35);
-  --text:#e9eef3; --muted:#94a3b1; --faint:#7c8ea3;
-  --acc:#2dd4a7; --acc2:#38bdf8;
-  --grad:linear-gradient(120deg,#2dd4a7,#38bdf8);
-  --radius:18px;
-  --sans:"Inter","SF Pro Display",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
-  --mono:"SF Mono","JetBrains Mono",Consolas,"Liberation Mono",monospace;
+  --bg:var(--ds-bg); --surface:var(--ds-surface); --surface2:var(--ds-surface2);
+  --border:var(--ds-border); --border-strong:var(--ds-border-strong);
+  --text:var(--ds-text); --muted:var(--ds-muted); --faint:var(--ds-faint);
+  --accent:var(--ds-accent); --mono:var(--ds-font-mono);
+  --red:var(--ds-red); --green:var(--ds-green); --amber:var(--ds-amber);
+  --blue:var(--ds-blue); --violet:var(--ds-violet); --orange:var(--ds-orange);
 }
-*{margin:0;padding:0;box-sizing:border-box}
+*{box-sizing:border-box}
 html{scroll-behavior:smooth}
 @media (prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
-  *,*::before,*::after{animation:none!important;transition:none!important}
+  *,*::before,*::after{transition:none!important;animation:none!important}
 }
-a:focus-visible,button:focus-visible{outline:2px solid var(--acc);outline-offset:3px;border-radius:8px}
-body{background:var(--bg);color:var(--text);font-family:var(--sans);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
-a{color:var(--acc);text-decoration:none}
+body{margin:0;background:var(--bg);color:var(--text);
+  font:16px/1.6 var(--ds-font-sans);-webkit-font-smoothing:antialiased;
+  font-variant-numeric:tabular-nums;overflow-x:hidden}
+a{color:inherit}
 img{display:block;max-width:100%}
-.wrap{max-width:1240px;margin:0 auto;padding-left:max(24px,env(safe-area-inset-left));padding-right:max(24px,env(safe-area-inset-right))}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:4px}
+.wrap{max-width:1160px;margin:0 auto;padding-left:max(24px,env(safe-area-inset-left));padding-right:max(24px,env(safe-area-inset-right))}
 
-/* ---------- nav ---------- */
-nav{position:sticky;top:0;z-index:50;background:rgba(11,15,20,.82);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--border)}
-nav .wrap{display:flex;align-items:center;gap:22px;height:60px}
-.brand{display:flex;align-items:center;gap:10px;font-weight:700;font-size:15px;color:var(--text)}
-.brand .paw{width:30px;height:30px;border-radius:9px;background:var(--surface2);display:grid;place-items:center;border:1px solid var(--border2)}
-.brand .paw svg{width:17px;height:17px;fill:var(--acc)}
-.brand small{color:var(--faint);font-weight:500;font-size:12px}
-nav .sp{flex:1}
-.nlinks{display:contents}
-nav a.nl{color:var(--muted);font-size:14px;font-weight:500;transition:color .2s}
-nav a.nl:hover{color:var(--text)}
-nav a.gh{display:flex;align-items:center;gap:7px;padding:7px 14px;border-radius:10px;border:1px solid var(--border);color:var(--text);font-size:13.5px;font-weight:600;background:var(--surface);transition:border-color .2s}
-nav a.gh:hover{border-color:var(--border2)}
-nav a.gh svg{width:15px;height:15px;fill:currentColor}
+/* ---------- категории (цвет = данные фильтра, тема-зависимые токены ДС) ---- */
+.cat-mon {--c:var(--ds-blue)}
+.cat-data{--c:var(--ds-violet)}
+.cat-doc {--c:var(--ds-green)}
+.cat-plat{--c:var(--ds-accent)}
+.cat-lab {--c:var(--ds-amber)}
 
-/* ---------- hero ---------- */
-.hero{position:relative;padding:76px 0 66px;overflow:hidden}
-.hero::before{content:"";position:absolute;inset:0;background:
-  radial-gradient(700px 380px at 12% -6%,rgba(45,212,167,.13),transparent 65%),
-  radial-gradient(800px 420px at 88% 4%,rgba(56,189,248,.10),transparent 65%),
-  radial-gradient(600px 500px at 55% 115%,rgba(167,139,250,.07),transparent 60%);
-  pointer-events:none}
-.hero::after{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);background-size:44px 44px;-webkit-mask-image:radial-gradient(720px 460px at 30% 10%,#000 30%,transparent 75%);mask-image:radial-gradient(720px 460px at 30% 10%,#000 30%,transparent 75%);pointer-events:none}
-.hero .wrap{position:relative;display:grid;grid-template-columns:1.02fr .98fr;gap:48px;align-items:center}
-.eyebrow{display:inline-flex;align-items:center;gap:8px;padding:6px 14px;border-radius:99px;border:1px solid var(--border2);color:var(--acc);font-size:13px;font-weight:600;background:rgba(45,212,167,.07);margin-bottom:22px}
-.eyebrow i{width:7px;height:7px;border-radius:50%;background:var(--acc);box-shadow:0 0 12px var(--acc)}
-h1{font-size:clamp(34px,4.6vw,56px);line-height:1.08;letter-spacing:-.02em;font-weight:800;margin-bottom:20px}
-h1 .gr{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
-.lead{color:var(--muted);font-size:clamp(15.5px,1.5vw,17.5px);max-width:540px;margin-bottom:28px}
-.lead b{color:var(--text);font-weight:600}
-.stats{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:30px}
-.stat{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:11px 14px;min-width:96px;flex:1 1 96px;max-width:150px}
-.stat b{display:block;font-size:20px;font-weight:800;letter-spacing:-.02em}
-.stat b em{font-style:normal;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
-.stat span{font-size:12px;color:var(--faint)}
-.cta{display:flex;gap:12px;flex-wrap:wrap}
-.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 22px;border-radius:12px;font-size:15px;font-weight:700;transition:transform .15s,box-shadow .2s,border-color .2s}
-.btn:hover{transform:translateY(-2px)}
-.btn.prim{background:var(--grad);color:#071016;box-shadow:0 8px 28px rgba(45,212,167,.25)}
-.btn.prim:hover{box-shadow:0 12px 34px rgba(45,212,167,.4)}
-.btn.ghost{border:1px solid var(--border);color:var(--text);background:var(--surface)}
-.btn.ghost:hover{border-color:var(--border2)}
-
-/* коллаж */
-.collage{position:relative;height:520px}
-.collage .shot{position:absolute;border-radius:14px;overflow:hidden;border:1px solid rgba(255,255,255,.14);box-shadow:0 24px 70px rgba(0,0,0,.55),0 0 0 6px rgba(255,255,255,.02);background:var(--surface)}
-.collage .shot img{width:100%;height:100%;object-fit:cover;object-position:top}
-.collage .s1{width:78%;height:330px;left:6%;top:60px;transform:rotate(-2.2deg);z-index:3}
-.collage .s2{width:52%;height:230px;left:-4%;top:262px;transform:rotate(3deg);z-index:2;opacity:.96}
-.collage .s3{width:52%;height:230px;right:-4%;top:250px;transform:rotate(-4deg);z-index:2;opacity:.96}
-.collage .shot::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 62%,rgba(7,10,14,.5));pointer-events:none}
-.pill{position:absolute;z-index:5;display:flex;align-items:center;gap:8px;background:rgba(14,20,27,.92);backdrop-filter:blur(8px);border:1px solid var(--border2);border-radius:12px;padding:8px 14px;font-size:12.5px;font-weight:700;box-shadow:0 10px 30px rgba(0,0,0,.45);animation:float 5.5s ease-in-out infinite}
-.pill small{display:block;font-size:10.5px;color:var(--faint);font-weight:500}
-.pill .pv{color:var(--acc)}
-.pill.p1{left:-2%;top:18px;animation-delay:.2s}
-.pill.p2{right:0;top:34px;animation-delay:1.1s}
-.pill.p3{right:6%;bottom:0;animation-delay:2s}
-@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-9px)}}
+/* ---------- лид ---------- */
+.open{padding:44px 0 10px}
+.open__grid{display:grid;grid-template-columns:1.04fr .96fr;gap:44px;align-items:start}
+.open__stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(118px,1fr));gap:14px 20px;margin:26px 0 6px;
+  border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:18px 0}
+.open__cta{display:flex;gap:10px;flex-wrap:wrap;margin-top:22px}
+.open__shots{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.open__shot{border:1px solid var(--border);border-radius:var(--ds-radius);overflow:hidden;background:var(--surface2)}
+.open__shot img{width:100%;height:100%;object-fit:cover;object-position:top center}
+.open__shot--main{grid-column:1/-1;aspect-ratio:16/8.4}
+.open__shot--side{aspect-ratio:16/9.6}
+.open__chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}
 
 /* ---------- секции ---------- */
-section{padding:78px 0}
-.sec-head{margin-bottom:38px}
-.sec-head .kicker{display:inline-flex;align-items:center;gap:10px;font-size:13px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--acc);margin-bottom:14px}
-.sec-head .kicker::before{content:"";width:26px;height:2px;background:var(--grad);border-radius:2px}
-.sec-head h2{font-size:clamp(26px,3.2vw,38px);letter-spacing:-.02em;font-weight:800}
-.sec-head p{color:var(--muted);max-width:720px;margin-top:12px;font-size:16px}
+section{padding:56px 0}
+section:first-of-type{padding-top:0}
+.sec-head{margin-bottom:30px}
+.sec-head h2{margin-bottom:10px}
+.sec-head .ds-lede{margin-bottom:0}
 
-/* фильтры */
-.filters{display:flex;flex-wrap:wrap;gap:9px;margin-bottom:30px}
-.fbtn{padding:8px 16px;border-radius:99px;border:1px solid var(--border);background:var(--surface);color:var(--muted);font-size:13.5px;font-weight:600;cursor:pointer;transition:all .18s;font-family:var(--sans)}
-.fbtn:hover{border-color:var(--border2);color:var(--text)}
-.fbtn.on{background:var(--grad);color:#071016;border-color:transparent;box-shadow:0 6px 20px rgba(45,212,167,.22)}
-.fbtn b{font-weight:800;opacity:.75}
+/* ---------- фильтры ---------- */
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin:20px 0 26px}
+.fbtn{display:inline-flex;align-items:center;gap:8px;min-height:34px;padding:0 14px;
+  border:1px solid var(--border-strong);border-radius:var(--ds-radius-s);
+  background:transparent;color:var(--muted);cursor:pointer;
+  font-family:var(--mono);font-size:12px;font-weight:500;letter-spacing:.02em;
+  transition:color var(--ds-dur) var(--ds-ease),border-color var(--ds-dur) var(--ds-ease),background var(--ds-dur) var(--ds-ease)}
+.fbtn:hover{color:var(--text);border-color:var(--text)}
+.fbtn .fdot{width:7px;height:7px;border-radius:50%;background:var(--fc,var(--faint));flex:none}
+.fbtn b{font-weight:700;opacity:.6}
+.fbtn.on{color:var(--accent);border-color:color-mix(in srgb,var(--accent) 45%,transparent);
+  background:color-mix(in srgb,var(--accent) 10%,transparent)}
 
-/* ---------- карточки ---------- */
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(350px,1fr));gap:24px}
-.card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;display:flex;flex-direction:column;transition:transform .22s,border-color .22s,box-shadow .25s;position:relative}
-.card:hover{transform:translateY(-5px);border-color:var(--border2);box-shadow:0 18px 50px rgba(0,0,0,.45)}
-.card::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--c,#2dd4a7),transparent 78%);opacity:.9;z-index:2}
-.shot{position:relative;display:block;aspect-ratio:16/9.6;overflow:hidden;background:var(--bg2)}
-.shot img{width:100%;height:100%;object-fit:cover;object-position:top center;transition:transform .5s ease}
-.card:hover .shot img{transform:scale(1.045)}
-.shot .veil{position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(7,10,14,.55));opacity:.85;transition:opacity .3s}
-.shot .open{position:absolute;right:12px;bottom:12px;padding:7px 13px;border-radius:9px;background:rgba(7,10,14,.78);backdrop-filter:blur(6px);border:1px solid rgba(255,255,255,.18);font-size:12.5px;font-weight:700;color:var(--text);opacity:0;transform:translateY(6px);transition:all .25s}
-.card:hover .shot .open{opacity:1;transform:translateY(0)}
-.shot.ph{display:grid;place-items:center;background:
-  radial-gradient(420px 240px at 20% 0%,color-mix(in srgb,var(--c) 26%,transparent),transparent 70%),
-  radial-gradient(380px 260px at 90% 110%,color-mix(in srgb,var(--c) 14%,transparent),transparent 60%),var(--bg2)}
-.shot.ph .emoji{font-size:74px;filter:drop-shadow(0 10px 26px rgba(0,0,0,.5));transition:transform .4s}
-.card:hover .shot.ph .emoji{transform:scale(1.12) rotate(-4deg)}
-.shot.ph .ph-cap{position:absolute;left:14px;bottom:12px;font-size:12px;color:var(--faint);font-weight:600;letter-spacing:.06em;text-transform:uppercase}
-.cbody{padding:20px 22px 22px;display:flex;flex-direction:column;flex:1}
-.chead{display:flex;align-items:center;gap:11px;margin-bottom:10px}
-.cico{width:38px;height:38px;border-radius:11px;display:grid;place-items:center;font-size:19px;background:color-mix(in srgb,var(--c) 14%,#0e141b);border:1px solid color-mix(in srgb,var(--c) 35%,transparent);flex:none}
-.chead h3{font-size:17.5px;font-weight:800;letter-spacing:-.01em;line-height:1.25}
-.chead .repo{display:block;font-family:var(--mono);font-size:11px;color:var(--faint);font-weight:500}
-.chead .live{margin-left:auto;flex:none;display:inline-flex;align-items:center;gap:6px;font-size:10.5px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--acc);padding:4px 9px;border-radius:99px;border:1px solid rgba(45,212,167,.3);background:rgba(45,212,167,.07)}
-.chead .live i{width:6px;height:6px;border-radius:50%;background:var(--acc);box-shadow:0 0 8px var(--acc);animation:blink 2.4s infinite}
-.chead .live.apk{color:#fbbf24;border-color:rgba(251,191,36,.3);background:rgba(251,191,36,.07)}
-.chead .live.apk i{background:#fbbf24;box-shadow:0 0 8px #fbbf24}
-.chead .live.lib{color:var(--acc2);border-color:rgba(56,189,248,.3);background:rgba(56,189,248,.07)}
-.chead .live.lib i{background:var(--acc2);box-shadow:0 0 8px var(--acc2)}
-@keyframes blink{0%,100%{opacity:1}50%{opacity:.35}}
-.cdesc{color:var(--muted);font-size:14px;margin-bottom:14px}
-.feat{list-style:none;margin-bottom:16px;flex:1}
-.feat li{position:relative;padding-left:20px;font-size:13.2px;color:var(--muted);margin-bottom:7px}
-.feat li::before{content:"";position:absolute;left:2px;top:8px;width:8px;height:8px;border-radius:3px;background:color-mix(in srgb,var(--c) 60%,transparent)}
-.feat li b{color:var(--text);font-weight:600}
-.tags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:16px}
-.tag{font-family:var(--mono);font-size:10.8px;color:var(--muted);background:var(--bg2);border:1px solid var(--border);padding:3px 9px;border-radius:7px}
-.clinks{display:flex;gap:9px}
-.cbtn{flex:1;text-align:center;padding:9.5px 12px;border-radius:10px;font-size:13.5px;font-weight:700;transition:all .18s}
-.cbtn.live{background:var(--grad);color:#071016}
-.cbtn.live:hover{box-shadow:0 6px 22px rgba(45,212,167,.3)}
-.cbtn.code{border:1px solid var(--border);color:var(--text);background:var(--bg2)}
-.cbtn.code:hover{border-color:var(--border2)}
-.fresh{display:inline-flex;align-items:center;gap:5px;margin-left:8px;font-size:10px;font-weight:700;color:var(--faint);vertical-align:1px}
-.fresh i{width:6px;height:6px;border-radius:50%;background:var(--faint)}
-.fresh.ok{color:#4ade80}.fresh.ok i{background:#4ade80;box-shadow:0 0 7px #4ade80}
-.fresh.warn{color:#fbbf24}.fresh.warn i{background:#fbbf24}
-.fresh.err{color:#f87171}.fresh.err i{background:#f87171}
+/* ---------- карточки каталога ---------- */
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:20px}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:var(--ds-radius);
+  overflow:hidden;display:flex;flex-direction:column;
+  transition:border-color var(--ds-dur) var(--ds-ease),box-shadow var(--ds-dur) var(--ds-ease)}
+.card:hover{border-color:var(--border-strong);box-shadow:var(--ds-shadow)}
+.card__shot{position:relative;display:block;aspect-ratio:16/9.6;overflow:hidden;
+  background:var(--surface2);border-bottom:1px solid var(--border)}
+.card__shot img{width:100%;height:100%;object-fit:cover;object-position:top center;
+  transition:transform .45s var(--ds-ease)}
+.card:hover .card__shot img{transform:scale(1.03)}
+.card__open{position:absolute;right:10px;bottom:10px;padding:4px 10px;border-radius:var(--ds-radius-s);
+  background:color-mix(in srgb,var(--bg) 78%,transparent);border:1px solid var(--border-strong);
+  font-family:var(--mono);font-size:11px;font-weight:500;color:var(--text);
+  opacity:0;transform:translateY(4px);transition:opacity var(--ds-dur) var(--ds-ease),transform var(--ds-dur) var(--ds-ease)}
+.card:hover .card__open{opacity:1;transform:translateY(0)}
+.card__shot.ph{display:grid;place-items:center;background-color:var(--surface2);
+  background-image:radial-gradient(color-mix(in srgb,var(--c) 16%,transparent) 1px,transparent 1px);
+  background-size:14px 14px}
+.card__shot.ph .ph-ico{color:var(--c);opacity:.75}
+.card__shot.ph .ph-ico svg{width:44px;height:44px;stroke-width:1.4}
+.card__shot.ph .ph-cap{position:absolute;left:12px;bottom:10px;font-family:var(--mono);
+  font-size:10.5px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:var(--faint)}
+.card__body{padding:16px 18px 18px;display:flex;flex-direction:column;flex:1}
+.card__head{display:flex;align-items:center;gap:11px;margin-bottom:10px}
+.card__ico{width:36px;height:36px;flex:none;display:grid;place-items:center;color:var(--c);
+  background:color-mix(in srgb,var(--c) 10%,transparent);
+  border:1px solid color-mix(in srgb,var(--c) 30%,transparent);border-radius:var(--ds-radius-s)}
+.card__ico svg{width:18px;height:18px}
+.card__title{font-size:16.5px;font-weight:700;line-height:1.25;margin:0;letter-spacing:-.01em}
+.card__repo{display:block;font-family:var(--mono);font-size:11px;color:var(--faint);margin-top:2px}
+.card__live{margin-left:auto;flex:none}
+.card__desc{color:var(--muted);font-size:13.5px;line-height:1.55;margin:0 0 12px}
+.card__feat{list-style:none;margin:0 0 12px;padding:0;flex:1}
+.card__feat li{position:relative;padding-left:17px;font-size:12.8px;line-height:1.5;color:var(--muted);margin-bottom:6px}
+.card__feat li::before{content:"";position:absolute;left:0;top:8px;width:8px;height:2px;background:var(--c)}
+.card__feat li b{color:var(--text);font-weight:600}
+.card__tags{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:14px}
+.card__tag{font-family:var(--mono);font-size:10.5px;color:var(--muted);
+  border:1px solid var(--border);padding:2px 8px;border-radius:var(--ds-radius-s)}
+.card__links{display:flex;gap:8px}
+.card__links .ds-btn{flex:1;min-height:36px;font-size:13px}
+.fresh{display:inline-flex;align-items:center;gap:5px;margin-left:8px;font-family:var(--mono);
+  font-size:10px;font-weight:500;color:var(--faint);vertical-align:1px}
+.fresh i{width:6px;height:6px;border-radius:50%;background:var(--faint);flex:none}
+.fresh.ok{color:var(--green)} .fresh.ok i{background:var(--green)}
+.fresh.warn{color:var(--amber)} .fresh.warn i{background:var(--amber)}
+.fresh.err{color:var(--red)} .fresh.err i{background:var(--red)}
 
 /* ---------- конвейер ---------- */
-#pipeline{background:var(--bg2);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+#pipeline{background:var(--surface2);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
 .flow{display:flex;align-items:stretch;gap:0;overflow-x:auto;padding:6px 2px 18px}
-.node{flex:1;min-width:186px;background:var(--surface);border:1px solid var(--border);border-radius:15px;padding:18px 18px 16px;position:relative}
-.node .ni{font-size:24px;margin-bottom:9px;display:block}
-.node h4{font-size:14.5px;font-weight:800;margin-bottom:5px}
-.node p{font-size:12.3px;color:var(--muted);line-height:1.5}
+.node{flex:1;min-width:192px;background:var(--surface);border:1px solid var(--border);
+  border-radius:var(--ds-radius);padding:16px 16px 14px;position:relative}
+.node__ico{color:var(--accent);margin-bottom:8px}
+.node__ico svg{width:20px;height:20px}
+.node h4{font-size:14.5px;font-weight:700;margin:0 0 5px;letter-spacing:-.01em}
+.node p{font-size:12.3px;color:var(--muted);line-height:1.5;margin:0}
 .node+.node{margin-left:34px}
-.node+.node::before{content:"";position:absolute;left:-24px;top:50%;width:16px;height:2px;background:linear-gradient(90deg,transparent,var(--acc));box-shadow:-6px 0 0 -3px var(--acc)}
-.node+.node::after{content:"";position:absolute;left:-11px;top:50%;transform:translateY(-46%) rotate(45deg);width:8px;height:8px;border-top:2px solid var(--acc);border-right:2px solid var(--acc)}
+.node+.node::before{content:"";position:absolute;left:-24px;top:50%;width:16px;height:1px;background:var(--border-strong)}
+.node+.node::after{content:"";position:absolute;left:-11px;top:50%;transform:translateY(-46%) rotate(45deg);
+  width:7px;height:7px;border-top:1.5px solid var(--border-strong);border-right:1.5px solid var(--border-strong)}
 .node.dim{border-style:dashed}
-.flownote{color:var(--faint);font-size:13px;max-width:860px;margin-top:8px}
+.flownote{color:var(--faint);font-size:13px;max-width:860px;margin-top:10px;line-height:1.6}
+.flownote b{color:var(--muted);font-weight:600}
 
 /* ---------- подход ---------- */
-.principles{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:22px}
-.pr{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:28px 26px;transition:border-color .2s,transform .2s}
-.pr:hover{border-color:var(--border2);transform:translateY(-3px)}
-.pr .ico{font-size:26px;display:block;margin-bottom:14px}
-.pr h4{font-size:16.5px;font-weight:800;margin-bottom:9px}
-.pr p{font-size:13.8px;color:var(--muted)}
-
-/* ---------- footer ---------- */
-footer{border-top:1px solid var(--border);padding:40px 0 46px;background:var(--bg2)}
-footer .wrap{display:flex;flex-wrap:wrap;gap:18px;align-items:center;justify-content:space-between}
-.cop{color:var(--faint);font-size:13.5px}
-.flinks{display:flex;flex-wrap:wrap;gap:12px 20px;align-items:center}
-.flinks a{display:inline-flex;align-items:center;gap:7px;color:var(--muted);font-size:13.5px;font-weight:600;transition:color .2s;padding:6px 0}
-.flinks a:hover{color:var(--text)}
-.flinks svg{width:15px;height:15px;fill:currentColor}
-.note{width:100%;color:var(--faint);font-size:12.5px;border-top:1px solid var(--border);padding-top:18px;margin-top:6px}
+.principles{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}
+.pr{background:var(--surface);border:1px solid var(--border);border-radius:var(--ds-radius);padding:24px}
+.pr:hover{border-color:var(--border-strong)}
+.pr .pr-ico{color:var(--accent);margin-bottom:12px}
+.pr .pr-ico svg{width:22px;height:22px}
+.pr h4{font-size:16.5px;font-weight:700;margin:0 0 9px;letter-spacing:-.01em}
+.pr p{font-size:13.8px;color:var(--muted);line-height:1.6;margin:0}
+.fnotes{margin-top:26px}
 
 /* ---------- адаптив ---------- */
-/* тач: гасим «залипающий» hover, метка «открыть» видна всегда */
 @media (hover:none){
-  .card:hover{transform:none;border-color:var(--border);box-shadow:none}
-  .card:hover .shot img{transform:none}
-  .btn:hover{transform:none}
-  .pr:hover{transform:none;border-color:var(--border)}
-  .shot .open{opacity:1;transform:translateY(0)}
+  .card:hover{box-shadow:none}
+  .card:hover .card__shot img{transform:none}
+  .card__open{opacity:1;transform:translateY(0)}
 }
 @media (max-width:1020px){
-  .hero .wrap{grid-template-columns:1fr}
-  .collage{width:100%;height:500px;max-width:640px;margin:10px auto 0}
+  .open__grid{grid-template-columns:1fr}
+  .open__fig{max-width:640px}
 }
 @media (max-width:640px){
-  nav .wrap{flex-wrap:wrap;height:auto;row-gap:0;column-gap:14px;padding-top:8px}
-  .nlinks{order:99;flex:1 1 100%;display:flex;gap:8px;margin-top:8px}
-  nav a.nl{display:flex;flex:1 1 0;align-items:center;justify-content:center;height:42px;border-radius:11px;border:1px solid var(--border);background:var(--surface);font-size:13.5px;color:var(--muted)}
-  section{padding:56px 0;scroll-margin-top:112px}
-  .collage{height:380px}
-  .collage .s1{height:200px;top:40px}
-  .collage .s2,.collage .s3{height:150px;top:220px}
-  .pill{display:none}
+  section{padding:44px 0;scroll-margin-top:20px}
+  .open{padding-top:30px}
   .filters{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;-ms-overflow-style:none;padding-bottom:4px}
   .filters::-webkit-scrollbar{display:none}
-  .fbtn{flex:none;padding:12px 16px}
+  .fbtn{flex:none}
   .grid{grid-template-columns:1fr}
-  .node{min-width:200px}
-  .node+.node{margin-left:28px}
-}
-@media (max-width:420px){
-  .brand small{display:none}
-  nav .wrap{column-gap:10px}
+  .node{min-width:210px}
+  .node+.node{margin-left:30px}
+  .ds-masthead__title{font-size:24px}
 }
 </style>
 <script type="application/ld+json">
@@ -267,532 +225,576 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:18px;align-items:center;justify-con
 }
 </script>
 </head>
-<body>
-<nav>
-  <div class="wrap">
-    <a class="brand" href="#top">
-      <span class="paw"><svg viewBox="0 0 64 64"><g><ellipse cx="24" cy="22" rx="6" ry="8"/><ellipse cx="40" cy="22" rx="6" ry="8"/><ellipse cx="14" cy="34" rx="5" ry="7"/><ellipse cx="50" cy="34" rx="5" ry="7"/><path d="M32 32c7 0 14 8 14 15 0 6-5 9-14 9s-14-3-14-9c0-7 7-15 14-15z"/></g></svg></span>
-      shray77 <small>· vet-экосистема</small>
-    </a>
-    <span class="sp"></span>
-    <div class="nlinks">
-      <a class="nl" href="#projects">Проекты</a>
-      <a class="nl" href="#pipeline">Конвейер</a>
-      <a class="nl" href="#principles">Подход</a>
-    </div>
-    <a class="gh" href="https://github.com/shray77" target="_blank" rel="noopener"><svg viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>GitHub</a>
-  </div>
-</nav>
+<body class="ds-body">
 
-<header class="hero" id="top">
+<header class="ds-masthead">
   <div class="wrap">
-    <div>
-      <span class="eyebrow"><i></i>ветеринарная медицина × код</span>
-      <h1>Открытая экосистема<br>для <span class="gr">ветеринарии</span></h1>
-      <p class="lead">От метеорисков Ростовской области и окон риска гриппа птиц — до
-      предиктивных моделей, AI-дайджестов, in silico-исследований и офлайн-инструментов
-      врача. <b>Код, данные и формулы открыты</b>, инфраструктура — в бесплатных лимитах,
-      ни одного API-ключа.</p>
-      <div class="stats">
-        <div class="stat"><b>19</b><span>открытых проектов</span></div>
-        <div class="stat"><b><em>13</em></b><span>живых демо на Pages</span></div>
-        <div class="stat"><b>0 ₽</b><span>инфраструктура</span></div>
-        <div class="stat"><b>0</b><span>API-ключей</span></div>
-      </div>
-      <div class="cta">
-        <a class="btn prim" href="#projects">Смотреть проекты ↓</a>
-        <a class="btn ghost" href="https://github.com/shray77?tab=repositories" target="_blank" rel="noopener">Все репозитории ↗</a>
-      </div>
+    <div class="ds-masthead-meta">
+      <span>shray77 · вет-экосистема · выпуск 2026</span>
+      <span class="m-date">…</span>
     </div>
-    <div class="collage" aria-hidden="true">
-      <div class="pill p1"><span>🌡</span><span>THI 66.5<small>метеорадар · сейчас</small></span></div>
-      <div class="pill p2"><span>🦆</span><span><span class="pv">R = 100</span><small>окно риска ВПГП · нед. 42</small></span></div>
-      <div class="pill p3"><span>🐾</span><span>2 758 вспышек<small>эпизокарта РФ</small></span></div>
-      <div class="shot s1"><img src="assets/shots/vet-hub.jpg" alt=""></div>
-      <div class="shot s2"><img src="assets/shots/vet-meteo.jpg" alt=""></div>
-      <div class="shot s3"><img src="assets/shots/vet-heatmap.jpg" alt=""></div>
+    <div class="ds-masthead__row" style="margin-top:12px">
+      <div class="ds-masthead__brand">
+        <div class="ds-masthead__logo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+><circle cx="11" cy="4" r="2" /><circle cx="18" cy="8" r="2" /><circle cx="20" cy="16" r="2" /><path d="M9 10a5 5 0 0 1 5 5v3.5a3.5 3.5 0 0 1-6.84 1.045Q6.52 17.48 4.46 16.84A3.5 3.5 0 0 1 5.5 10Z" /></svg></div>
+        <div>
+          <h1 class="ds-masthead__title">Ветеринар × разработчик</h1>
+          <p class="ds-masthead__sub ds-masthead__sub--display">открытая экосистема инструментов для ветеринарной медицины — данные, модели и код без ключей и подписок</p>
+        </div>
+      </div>
+      <div class="ds-masthead__side">
+        <span class="ds-mono ds-faint" style="font-size:12px">19 проектов · 14 демо · 0 ₽</span>
+        <button class="ds-btn ds-btn--sm ds-theme-toggle ds-theme-toggle--labeled" id="themeToggle" aria-label="Переключить тему" title="Переключить тему">
+          <svg class="ds-theme-toggle__sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.9 4.9l1.4 1.4m11.4 11.4 1.4 1.4M2 12h2m16 0h2M4.9 19.1l1.4-1.4m11.4-11.4 1.4-1.4"/></svg>
+          <svg class="ds-theme-toggle__moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
+          <span class="ds-theme-toggle__label" aria-hidden="true"></span>
+        </button>
+      </div>
     </div>
   </div>
 </header>
+<div class="ds-rule-double wrap" aria-hidden="true"></div>
+
+<nav class="ds-hub wrap" aria-label="Разделы визитки" style="padding-top:12px">
+  <a href="#projects">Каталог</a>
+  <a href="#pipeline">Архитектура</a>
+  <a href="#principles">Подход</a>
+  <a href="./terms.html">Условия</a>
+  <a href="https://github.com/shray77" target="_blank" rel="noopener">GitHub ↗</a>
+</nav>
+
+<main>
+<section class="open" id="top">
+  <div class="wrap open__grid">
+    <div class="open__text">
+      <p class="ds-overline">Открытая экосистема · <b>ветеринария × код</b></p>
+      <h2 class="ds-display ds-display--hero" style="margin-bottom:16px">Инструменты, которые <em>уже работают</em></h2>
+      <p class="ds-lede ds-dropcap" style="margin-bottom:0">От метеорисков Ростовской области и окон риска гриппа птиц — до предиктивных моделей, AI-дайджестов, in&nbsp;silico-исследований и офлайн-инструментов врача. Код, данные и формулы открыты, инфраструктура — в бесплатных лимитах, ни одного API-ключа.</p>
+      <div class="open__stats">
+        <div class="ds-stat"><span class="ds-stat__value">19</span><span class="ds-stat__label">открытых проектов</span></div>
+        <div class="ds-stat"><span class="ds-stat__value">14</span><span class="ds-stat__label">живых демо на Pages</span></div>
+        <div class="ds-stat"><span class="ds-stat__value">0<small>&nbsp;₽</small></span><span class="ds-stat__label">инфраструктура</span></div>
+        <div class="ds-stat"><span class="ds-stat__value">0</span><span class="ds-stat__label">API-ключей</span></div>
+      </div>
+      <div class="open__cta">
+        <a class="ds-btn ds-btn--primary" href="#projects">Смотреть проекты ↓</a>
+        <a class="ds-btn" href="https://github.com/shray77?tab=repositories" target="_blank" rel="noopener">Все репозитории ↗</a>
+      </div>
+    </div>
+    <figure class="ds-figure open__fig">
+      <div class="open__shots" aria-hidden="true">
+        <div class="open__shot open__shot--main"><img src="assets/shots/vet-hub.jpg" alt=""></div>
+        <div class="open__shot open__shot--side"><img src="assets/shots/vet-heatmap.jpg" alt=""></div>
+        <div class="open__shot open__shot--side"><img src="assets/shots/vet-meteo.jpg" alt=""></div>
+      </div>
+      <figcaption class="ds-figure__caption"><b>Рис. 1</b> — живые витрины экосистемы: ВетХаб (ситуационный центр), ВетКарта (тема C «Прибор»), ВетРадар-61. Скриншоты сняты 26.10.2026.</figcaption>
+      <div class="open__chips" aria-label="Живые показатели экосистемы">
+        <span class="ds-chip">THI 66.5 · ВетРадар</span>
+        <span class="ds-chip">R = 100 · окно ВПГП</span>
+        <span class="ds-chip">2 758 вспышек · ВетКарта</span>
+        <span class="ds-chip">24 источника · rss-core</span>
+      </div>
+    </figure>
+  </div>
+</section>
 
 <section id="projects">
   <div class="wrap">
     <div class="sec-head">
-      <span class="kicker">01 · Каталог</span>
-      <h2>Проекты</h2>
-      <p>Каждый решает задачу из реальной практики: приём, надзор, исследование, обучение.
-      Плитки фильтруются по разделам, скриншоты — живые витрины: клик открывает рабочий
-      инструмент. Пилоты и экспериментальные решения спрятаны на отдельной вкладке.</p>
+      <p class="ds-overline ds-overline--rule">01 · <b>Каталог</b></p>
+      <h2 class="ds-display">Проекты</h2>
+      <p class="ds-lede">Каждый решает задачу из реальной практики: приём, надзор, исследование, обучение. Плитки фильтруются по разделам, скриншоты — живые витрины: клик открывает рабочий инструмент.</p>
     </div>
     <div class="filters" id="filters" role="group" aria-label="Фильтр проектов">
-      <button class="fbtn on" data-f="all" aria-pressed="true">Продукты <b>15</b></button>
-      <button class="fbtn" data-f="mon" aria-pressed="false">Мониторинг и прогнозы <b>7</b></button>
-      <button class="fbtn" data-f="data" aria-pressed="false">Данные и ИИ <b>3</b></button>
-      <button class="fbtn" data-f="doc" aria-pressed="false">Инструменты врача <b>3</b></button>
-      <button class="fbtn" data-f="plat" aria-pressed="false">Платформа <b>2</b></button>
-      <button class="fbtn" data-f="lab" aria-pressed="false">Пилоты и пробы <b>4</b></button>
+      <button class="fbtn on" data-f="all" aria-pressed="true" style="--fc:var(--ds-accent)">Продукты <b>17</b></button>
+      <button class="fbtn" data-f="mon" aria-pressed="false" style="--fc:var(--ds-blue)">Мониторинг и прогнозы <b>7</b></button>
+      <button class="fbtn" data-f="data" aria-pressed="false" style="--fc:var(--ds-violet)">Данные и ИИ <b>4</b></button>
+      <button class="fbtn" data-f="doc" aria-pressed="false" style="--fc:var(--ds-green)">Инструменты врача <b>4</b></button>
+      <button class="fbtn" data-f="plat" aria-pressed="false" style="--fc:var(--ds-accent)">Платформа <b>2</b></button>
+      <button class="fbtn" data-f="lab" aria-pressed="false" style="--fc:var(--ds-amber)">Пилоты и пробы <b>2</b></button>
     </div>
     <div class="grid" id="grid">
-      <article class="card" data-cat="mon" style="--c:#38bdf8">
-        <a class="shot" href="https://shray77.github.io/vet-meteo/" target="_blank" rel="noopener">
+
+      <article class="card cat-mon" data-cat="mon">
+        <a class="card__shot" href="https://shray77.github.io/vet-meteo/" target="_blank" rel="noopener">
           <img src="assets/shots/vet-meteo.jpg" alt="ВетРадар-61 — карта THI станций Ростовской области" loading="lazy" decoding="async">
-          <span class="veil"></span><span class="open">открыть ↗</span>
+          <span class="card__open">открыть ↗</span>
         </a>
-        <div class="cbody">
-          <div class="chead">
-            <span class="cico" aria-hidden="true">🌦</span>
-            <div><h3>ВЕТМЕТЕО · ВетРадар-61</h3><span class="repo">vet-meteo</span></div>
-            <span class="live"><i></i>live</span>
+        <div class="card__body">
+          <div class="card__head">
+            <span class="card__ico" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+><path d="M12 9a4 4 0 0 0-2 7.5" /><path d="M12 3v2" /><path d="m6.6 18.4-1.4 1.4" /><path d="M20 4v10.54a4 4 0 1 1-4 0V4a2 2 0 0 1 4 0Z" /><path d="M4 13H2" /><path d="M6.34 7.34 4.93 5.93" /></svg></span>
+            <div><h3 class="card__title">ВЕТМЕТЕО · ВетРадар-61</h3><span class="card__repo">vet-meteo</span></div>
+            <span class="ds-badge ds-badge--green card__live">live</span>
           </div>
-          <p class="cdesc">Метеопрогноз для ветеринарных служб: «сейчас + 7 дней» по 49 станциям Ростовской области — тепловые стрессы, риски болезней, надзор.</p>
-          <ul class="feat">
+          <p class="card__desc">Метеопрогноз для ветеринарных служб: «сейчас + 7 дней» по 49 станциям Ростовской области — тепловые стрессы, риски болезней, надзор.</p>
+          <ul class="card__feat">
             <li><b>THI / THIadj / CCI / холодовой стресс</b> и BRD-риск по КРС</li>
             <li>Карта Leaflet + скраббер прогноза 0–167 ч, ансамбль ECMWF</li>
             <li>Actions-архив погоды, сводки, Telegram-алерты</li>
           </ul>
-          <div class="tags"><span class="tag">Next.js 16</span><span class="tag">TypeScript</span><span class="tag">Leaflet</span><span class="tag">Open-Meteo</span></div>
-          <div class="clinks">
-            <a class="cbtn live" href="https://shray77.github.io/vet-meteo/" target="_blank" rel="noopener">Демо ↗</a>
-            <a class="cbtn code" href="https://github.com/shray77/vet-meteo" target="_blank" rel="noopener">Код</a>
+          <div class="card__tags"><span class="card__tag">Next.js 16</span><span class="card__tag">TypeScript</span><span class="card__tag">Leaflet</span><span class="card__tag">Open-Meteo</span></div>
+          <div class="card__links">
+            <a class="ds-btn ds-btn--primary" href="https://shray77.github.io/vet-meteo/" target="_blank" rel="noopener">Демо ↗</a>
+            <a class="ds-btn" href="https://github.com/shray77/vet-meteo" target="_blank" rel="noopener">Код</a>
           </div>
         </div>
       </article>
 
-      <article class="card" data-cat="mon" style="--c:#f87171">
-        <a class="shot" href="https://shray77.github.io/vet-heatmap/" target="_blank" rel="noopener">
-          <img src="assets/shots/vet-heatmap.jpg" alt="ВетКарта — вспышки болезней по регионам РФ" loading="lazy" decoding="async">
-          <span class="veil"></span><span class="open">открыть ↗</span>
+      <article class="card cat-mon" data-cat="mon">
+        <a class="card__shot" href="https://shray77.github.io/vet-heatmap/" target="_blank" rel="noopener">
+          <img src="assets/shots/vet-heatmap.jpg" alt="ВетКарта — вспышки болезней по регионам РФ, приборная тема" loading="lazy" decoding="async">
+          <span class="card__open">открыть ↗</span>
         </a>
-        <div class="cbody">
-          <div class="chead">
-            <span class="cico" aria-hidden="true">🗺</span>
-            <div><h3>ВетКарта</h3><span class="repo">vet-heatmap</span></div>
-            <span class="live"><i></i>live</span>
+        <div class="card__body">
+          <div class="card__head">
+            <span class="card__ico" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+><path d="M14.106 5.553a2 2 0 0 0 1.788 0l3.659-1.83A1 1 0 0 1 21 4.619v12.764a1 1 0 0 1-.553.894l-4.553 2.277a2 2 0 0 1-1.788 0l-4.212-2.106a2 2 0 0 0-1.788 0l-3.659 1.83A1 1 0 0 1 3 19.381V6.618a1 1 0 0 1 .553-.894l4.553-2.277a2 2 0 0 1 1.788 0z" /><path d="M15 5.764v15" /><path d="M9 3.236v15" /></svg></span>
+            <div><h3 class="card__title">ВетКарта</h3><span class="card__repo">vet-heatmap</span></div>
+            <span class="ds-badge ds-badge--green card__live">live</span>
           </div>
-          <p class="cdesc">Эпизоотическая обстановка России: 2 758 вспышек по 85 регионам, зоны риска по стандартам ВОЗЖ, эпидкривые и калькулятор карантина.</p>
-          <ul class="feat">
+          <p class="card__desc">Эпизоотическая обстановка России: 2 758 вспышек по 85 регионам, зоны риска по стандартам ВОЗЖ, эпидкривые и калькулятор карантина.</p>
+          <ul class="card__feat">
             <li><b>Хороплет плотности</b> + маркеры вспышек, пульсация активных</li>
             <li>Зоны 3/10/30 км вокруг очагов (WOAH Terrestrial Code)</li>
             <li>Справочник 51 болезни — Приказ МСХ №62; PWA, шаринг фильтров ссылкой</li>
           </ul>
-          <div class="tags"><span class="tag">TypeScript</span><span class="tag">PWA</span><span class="tag">GIS</span><span class="tag">WAHIS+ФСВПС</span></div>
-          <div class="clinks">
-            <a class="cbtn live" href="https://shray77.github.io/vet-heatmap/" target="_blank" rel="noopener">Демо ↗</a>
-            <a class="cbtn code" href="https://github.com/shray77/vet-heatmap" target="_blank" rel="noopener">Код</a>
+          <div class="card__tags"><span class="card__tag">TypeScript</span><span class="card__tag">PWA</span><span class="card__tag">GIS</span><span class="card__tag">WAHIS+ФСВПС</span></div>
+          <div class="card__links">
+            <a class="ds-btn ds-btn--primary" href="https://shray77.github.io/vet-heatmap/" target="_blank" rel="noopener">Демо ↗</a>
+            <a class="ds-btn" href="https://github.com/shray77/vet-heatmap" target="_blank" rel="noopener">Код</a>
           </div>
         </div>
       </article>
 
-      <article class="card" data-cat="mon" style="--c:#2dd4a7">
-        <a class="shot" href="https://shray77.github.io/vet-hub/" target="_blank" rel="noopener">
+      <article class="card cat-mon" data-cat="mon">
+        <a class="card__shot" href="https://shray77.github.io/vet-hub/" target="_blank" rel="noopener">
           <img src="assets/shots/vet-hub.jpg" alt="ВетХаб — ситуационный центр экосистемы" loading="lazy" decoding="async">
-          <span class="veil"></span><span class="open">открыть ↗</span>
+          <span class="card__open">открыть ↗</span>
         </a>
-        <div class="cbody">
-          <div class="chead">
-            <span class="cico" aria-hidden="true">🛰</span>
-            <div><h3>ВетХаб</h3><span class="repo">vet-hub</span></div>
-            <span class="live"><i></i>live</span>
+        <div class="card__body">
+          <div class="card__head">
+            <span class="card__ico" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+><path d="m13.5 6.5-3.148-3.148a1.205 1.205 0 0 0-1.704 0L6.352 5.648a1.205 1.205 0 0 0 0 1.704L9.5 10.5" /><path d="M16.5 7.5 19 5" /><path d="m17.5 10.5 3.148 3.148a1.205 1.205 0 0 1 0 1.704l-2.296 2.296a1.205 1.205 0 0 1-1.704 0L13.5 14.5" /><path d="M9 21a6 6 0 0 0-6-6" /><path d="M9.352 10.648a1.205 1.205 0 0 0 0 1.704l2.296 2.296a1.205 1.205 0 0 0 1.704 0l4.296-4.296a1.205 1.205 0 0 0 0-1.704l-2.296-2.296a1.205 1.205 0 0 0-1.704 0z" /></svg></span>
+            <div><h3 class="card__title">ВетХаб</h3><span class="card__repo">vet-hub</span></div>
+            <span class="ds-badge ds-badge--green card__live">live</span>
           </div>
-          <p class="cdesc">Ситуационный центр всей экосистемы: метео, хитмап заболеваний, окна риска ВПГП и прогноз TimesFM — в одном окне.</p>
-          <ul class="feat">
+          <p class="card__desc">Ситуационный центр всей экосистемы: метео, хитмап заболеваний, окна риска ВПГП и прогноз TimesFM — в одном окне.</p>
+          <ul class="card__feat">
             <li><b>KPI-сводка:</b> THI/CCI, BRD, R-индекс, аномалия недели TSPulse</li>
             <li>Общая карта со слоями + панель прогноза с ретроспективой</li>
             <li>Агрегатор, а не монолит: читает публичные JSON всех сервисов</li>
           </ul>
-          <div class="tags"><span class="tag">Vanilla JS</span><span class="tag">Агрегатор JSON</span><span class="tag">TimesFM</span><span class="tag">TSPulse</span></div>
-          <div class="clinks">
-            <a class="cbtn live" href="https://shray77.github.io/vet-hub/" target="_blank" rel="noopener">Демо ↗</a>
-            <a class="cbtn code" href="https://github.com/shray77/vet-hub" target="_blank" rel="noopener">Код</a>
+          <div class="card__tags"><span class="card__tag">Vanilla JS</span><span class="card__tag">Агрегатор JSON</span><span class="card__tag">TimesFM</span><span class="card__tag">TSPulse</span></div>
+          <div class="card__links">
+            <a class="ds-btn ds-btn--primary" href="https://shray77.github.io/vet-hub/" target="_blank" rel="noopener">Демо ↗</a>
+            <a class="ds-btn" href="https://github.com/shray77/vet-hub" target="_blank" rel="noopener">Код</a>
           </div>
         </div>
       </article>
 
-      <article class="card" data-cat="mon" style="--c:#f97316">
-        <a class="shot" href="https://shray77.github.io/vetflu-site/" target="_blank" rel="noopener">
+      <article class="card cat-mon" data-cat="mon">
+        <a class="card__shot" href="https://shray77.github.io/vetflu-site/" target="_blank" rel="noopener">
           <img src="assets/shots/vetflu-site.jpg" alt="VetFlu — карта флайвеев и окон риска ВПГП" loading="lazy" decoding="async">
-          <span class="veil"></span><span class="open">открыть ↗</span>
+          <span class="card__open">открыть ↗</span>
         </a>
-        <div class="cbody">
-          <div class="chead">
-            <span class="cico" aria-hidden="true">🦆</span>
-            <div><h3>VetFlu</h3><span class="repo">vetflu-site</span></div>
-            <span class="live"><i></i>live</span>
+        <div class="card__body">
+          <div class="card__head">
+            <span class="card__ico" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+><path d="M16 7h.01" /><path d="M3.4 18H12a8 8 0 0 0 8-8V7a4 4 0 0 0-7.28-2.3L2 20" /><path d="m20 7 2 .5-2 .5" /><path d="M10 18v3" /><path d="M14 17.75V21" /><path d="M7 18a6 6 0 0 0 3.84-10.61" /></svg></span>
+            <div><h3 class="card__title">VetFlu</h3><span class="card__repo">vetflu-site</span></div>
+            <span class="ds-badge ds-badge--green card__live">live</span>
           </div>
-          <p class="cdesc">Окна риска заноса ВПГП: три канала риска — транзит, колонии, зимовки — × погодный форсаж × фон вспышек по 4 флайвеям России.</p>
-          <ul class="feat">
+          <p class="card__desc">Окна риска заноса ВПГП: транзит × колонии × зимовки — с погодным форсажем, фоном вспышек, давлением с границ и ветровым переносом по 4 флайвеям России.</p>
+          <ul class="card__feat">
             <li><b>R = max(M, C, Z) × MW × MB</b> — 8 групп резервуаров × 4 флайвея</li>
             <li>Карта коридоров, 16 узлов, скраббер 52 недель, история R</li>
             <li>Живые данные ежедневно: Open-Meteo + вспышки WOAH WAHIS, RSS-лента фаз</li>
           </ul>
-          <div class="tags"><span class="tag">Модель</span><span class="tag">Leaflet</span><span class="tag">Static JSON</span><span class="tag">RSS</span></div>
-          <div class="clinks">
-            <a class="cbtn live" href="https://shray77.github.io/vetflu-site/" target="_blank" rel="noopener">Демо ↗</a>
-            <a class="cbtn code" href="https://github.com/shray77/vetflu-site" target="_blank" rel="noopener">Код</a>
+          <div class="card__tags"><span class="card__tag">Модель</span><span class="card__tag">Leaflet</span><span class="card__tag">Static JSON</span><span class="card__tag">RSS</span></div>
+          <div class="card__links">
+            <a class="ds-btn ds-btn--primary" href="https://shray77.github.io/vetflu-site/" target="_blank" rel="noopener">Демо ↗</a>
+            <a class="ds-btn" href="https://github.com/shray77/vetflu-site" target="_blank" rel="noopener">Код</a>
           </div>
         </div>
       </article>
 
-      <article class="card" data-cat="mon" style="--c:#818cf8">
-        <a class="shot" href="https://shray77.github.io/vetflu-forecast/" target="_blank" rel="noopener">
+      <article class="card cat-mon" data-cat="mon">
+        <a class="card__shot" href="https://shray77.github.io/vetflu-forecast/" target="_blank" rel="noopener">
           <img src="assets/shots/vetflu-forecast.jpg" alt="VetFlu Forecast — прогноз TimesFM 2.5 и ретроспектива" loading="lazy" decoding="async">
-          <span class="veil"></span><span class="open">открыть ↗</span>
+          <span class="card__open">открыть ↗</span>
         </a>
-        <div class="cbody">
-          <div class="chead">
-            <span class="cico" aria-hidden="true">📈</span>
-            <div><h3>VetFlu Forecast</h3><span class="repo">vetflu-forecast</span></div>
-            <span class="live"><i></i>live</span>
+        <div class="card__body">
+          <div class="card__head">
+            <span class="card__ico" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+><path d="M16 7h6v6" /><path d="m22 7-8.5 8.5-5-5L2 17" /></svg></span>
+            <div><h3 class="card__title">VetFlu Forecast</h3><span class="card__repo">vetflu-forecast</span></div>
+            <span class="ds-badge ds-badge--green card__live">live</span>
           </div>
-          <p class="cdesc">Пилот foundation-модели TimesFM 2.5 (200M, Apache-2.0): недельный прогноз вспышек ВПГП на 4 недели вперёд — с честной ретроспективой против бейзлайнов.</p>
-          <ul class="feat">
+          <p class="card__desc">Пилот foundation-модели TimesFM 2.5 (200M, Apache-2.0): недельный прогноз вспышек ВПГП на 4 недели вперёд — с честной ретроспективой против бейзлайнов.</p>
+          <ul class="card__feat">
             <li><b>Прогноз +4 нед с квантилями q10–q90</b> по 4 флайвеям + мир + округа РФ</li>
             <li>Rolling-origin бэктест против naive/drift/сглаживания</li>
             <li>Понедельник 06:00 UTC на Actions, модель 925 МБ в кэше раннеров</li>
           </ul>
-          <div class="tags"><span class="tag">TimesFM 2.5</span><span class="tag">Foundation-модель</span><span class="tag">Actions</span><span class="tag">Бэктест</span></div>
-          <div class="clinks">
-            <a class="cbtn live" href="https://shray77.github.io/vetflu-forecast/" target="_blank" rel="noopener">Демо ↗</a>
-            <a class="cbtn code" href="https://github.com/shray77/vetflu-forecast" target="_blank" rel="noopener">Код</a>
+          <div class="card__tags"><span class="card__tag">TimesFM 2.5</span><span class="card__tag">Foundation-модель</span><span class="card__tag">Actions</span><span class="card__tag">Бэктест</span></div>
+          <div class="card__links">
+            <a class="ds-btn ds-btn--primary" href="https://shray77.github.io/vetflu-forecast/" target="_blank" rel="noopener">Демо ↗</a>
+            <a class="ds-btn" href="https://github.com/shray77/vetflu-forecast" target="_blank" rel="noopener">Код</a>
           </div>
         </div>
       </article>
 
-      <article class="card" data-cat="mon" style="--c:#fb7185">
-        <a class="shot" href="https://shray77.github.io/vetrecall-site/" target="_blank" rel="noopener">
+      <article class="card cat-mon" data-cat="mon">
+        <a class="card__shot" href="https://shray77.github.io/vetrecall-site/" target="_blank" rel="noopener">
           <img src="assets/shots/vetrecall-site.jpg" alt="VetRecall — радар отзывов и брака препаратов" loading="lazy" decoding="async">
-          <span class="veil"></span><span class="open">открыть ↗</span>
+          <span class="card__open">открыть ↗</span>
         </a>
-        <div class="cbody">
-          <div class="chead">
-            <span class="cico" aria-hidden="true">🚨</span>
-            <div><h3>VetRecall</h3><span class="repo">vetrecall-site</span></div>
-            <span class="live"><i></i>live</span>
+        <div class="card__body">
+          <div class="card__head">
+            <span class="card__ico" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+><path d="M10.268 21a2 2 0 0 0 3.464 0" /><path d="M22 8c0-2.3-.8-4.3-2-6" /><path d="M3.262 15.326A1 1 0 0 0 4 17h16a1 1 0 0 0 .74-1.673C19.41 13.956 18 12.499 18 8A6 6 0 0 0 6 8c0 4.499-1.411 5.956-2.738 7.326" /><path d="M4 2C2.8 3.7 2 5.7 2 8" /></svg></span>
+            <div><h3 class="card__title">VetRecall</h3><span class="card__repo">vetrecall-site</span></div>
+            <span class="ds-badge ds-badge--green card__live">live</span>
           </div>
-          <p class="cdesc">Радар отзывов и брака ветеринарных препаратов: сканы лент Россельхознадзора, keyword-классификация, проверка серии препарата за секунду.</p>
-          <ul class="feat">
+          <p class="card__desc">Радар отзывов и брака ветеринарных препаратов: сканы лент Россельхознадзора, keyword-классификация, проверка серии препарата за секунду.</p>
+          <ul class="card__feat">
             <li><b>Проверка серии</b> — вводишь номер, радар показывает совпадения</li>
             <li>Скан каждые 20 минут в чётные часы, сразу после инжеста ФСВПС</li>
             <li>Фильтры по типам: отзыв / брак / вспышка / карантин, поиск по препаратам</li>
           </ul>
-          <div class="tags"><span class="tag">Россельхознадзор</span><span class="tag">Keyword-классификатор</span><span class="tag">Cron 20 мин</span></div>
-          <div class="clinks">
-            <a class="cbtn live" href="https://shray77.github.io/vetrecall-site/" target="_blank" rel="noopener">Демо ↗</a>
-            <a class="cbtn code" href="https://github.com/shray77/vetrecall-site" target="_blank" rel="noopener">Код</a>
+          <div class="card__tags"><span class="card__tag">Россельхознадзор</span><span class="card__tag">Keyword-классификатор</span><span class="card__tag">Cron 20 мин</span></div>
+          <div class="card__links">
+            <a class="ds-btn ds-btn--primary" href="https://shray77.github.io/vetrecall-site/" target="_blank" rel="noopener">Демо ↗</a>
+            <a class="ds-btn" href="https://github.com/shray77/vetrecall-site" target="_blank" rel="noopener">Код</a>
           </div>
         </div>
       </article>
 
-      <article class="card" data-cat="mon" style="--c:#facc15">
-        <a class="shot" href="https://shray77.github.io/biothreat-site/" target="_blank" rel="noopener">
+      <article class="card cat-mon" data-cat="mon">
+        <a class="card__shot" href="https://shray77.github.io/biothreat-site/" target="_blank" rel="noopener">
           <img src="assets/shots/biothreat-site.jpg" alt="BioThreat Watch — мировой радар трансграничных болезней" loading="lazy" decoding="async">
-          <span class="veil"></span><span class="open">открыть ↗</span>
+          <span class="card__open">открыть ↗</span>
         </a>
-        <div class="cbody">
-          <div class="chead">
-            <span class="cico" aria-hidden="true">🌍</span>
-            <div><h3>BioThreat Watch</h3><span class="repo">biothreat-site</span></div>
-            <span class="live"><i></i>live</span>
+        <div class="card__body">
+          <div class="card__head">
+            <span class="card__ico" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+><circle cx="12" cy="12" r="10" /><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20" /><path d="M2 12h20" /></svg></span>
+            <div><h3 class="card__title">BioThreat Watch</h3><span class="card__repo">biothreat-site</span></div>
+            <span class="ds-badge ds-badge--green card__live">live</span>
           </div>
-          <p class="cdesc">Мировой радар трансграничных болезней (Ящур, АЧС, ВПГП, нодулярный дерматит): события из глобальных новостей с ИИ-разбором и расстоянием до границы РФ.</p>
-          <ul class="feat">
+          <p class="card__desc">Мировой радар трансграничных болезней (Ящур, АЧС, ВПГП, нодулярный дерматит): события из глобальных новостей с ИИ-разбором и расстоянием до границы РФ.</p>
+          <ul class="card__feat">
             <li><b>Уровни угрозы:</b> граница → высокая → повышенная → наблюдение → фон</li>
             <li>ИИ извлекает болезнь и страну, словарь расстояний даёт вердикт</li>
             <li>Скан каждые 40 минут, карта событий + фильтры + поиск</li>
           </ul>
-          <div class="tags"><span class="tag">Bing News</span><span class="tag">Workers AI</span><span class="tag">Leaflet</span><span class="tag">Cron 40 мин</span></div>
-          <div class="clinks">
-            <a class="cbtn live" href="https://shray77.github.io/biothreat-site/" target="_blank" rel="noopener">Демо ↗</a>
-            <a class="cbtn code" href="https://github.com/shray77/biothreat-site" target="_blank" rel="noopener">Код</a>
-          </div>
-        </div>
-      </article>
-      <article class="card" data-cat="data" style="--c:#22d3ee">
-        <a class="shot" href="https://shray77.github.io/vetdigest-site/" target="_blank" rel="noopener">
-          <img src="assets/shots/vetdigest-site.jpg" alt="VetDigest — ежедневный дайджест PubMed" loading="lazy" decoding="async">
-          <span class="veil"></span><span class="open">открыть ↗</span>
-        </a>
-        <div class="cbody">
-          <div class="chead">
-            <span class="cico" aria-hidden="true">📰</span>
-            <div><h3>VetDigest</h3><span class="repo">vetdigest-site</span></div>
-            <span class="live"><i></i>live</span>
-          </div>
-          <p class="cdesc">Ежедневный русский дайджест ветеринарных публикаций PubMed: Workers AI сжимает свежие статьи до трёх тезисов. Каждое утро в 10:00 МСК.</p>
-          <ul class="feat">
-            <li><b>PubMed → rss-core → 3 тезиса</b> на статью, без человека</li>
-            <li>Выпуски по датам, поиск, фильтры по источникам и специализациям</li>
-            <li>Без внешних CDN — открывается из РФ</li>
-          </ul>
-          <div class="tags"><span class="tag">Workers AI</span><span class="tag">PubMed</span><span class="tag">D1</span><span class="tag">Cron 07:00 UTC</span></div>
-          <div class="clinks">
-            <a class="cbtn live" href="https://shray77.github.io/vetdigest-site/" target="_blank" rel="noopener">Демо ↗</a>
-            <a class="cbtn code" href="https://github.com/shray77/vetdigest-site" target="_blank" rel="noopener">Код</a>
+          <div class="card__tags"><span class="card__tag">Bing News</span><span class="card__tag">Workers AI</span><span class="card__tag">Leaflet</span><span class="card__tag">Cron 40 мин</span></div>
+          <div class="card__links">
+            <a class="ds-btn ds-btn--primary" href="https://shray77.github.io/biothreat-site/" target="_blank" rel="noopener">Демо ↗</a>
+            <a class="ds-btn" href="https://github.com/shray77/biothreat-site" target="_blank" rel="noopener">Код</a>
           </div>
         </div>
       </article>
 
-      <article class="card" data-cat="data" style="--c:#a78bfa">
-        <a class="shot" href="https://shray77.github.io/vet-digest-llm/" target="_blank" rel="noopener">
-          <img src="assets/shots/vet-digest-llm.jpg" alt="VetDigest LLM — недельный дайджест экосистемы с аудио-версией" loading="lazy" decoding="async">
-          <span class="veil"></span><span class="open">открыть ↗</span>
+      <article class="card cat-data" data-cat="data">
+        <a class="card__shot" href="https://shray77.github.io/vetdigest-site/" target="_blank" rel="noopener">
+          <img src="assets/shots/vetdigest-site.jpg" alt="VetDigest — ежедневный дайджест ветеринарной науки" loading="lazy" decoding="async">
+          <span class="card__open">открыть ↗</span>
         </a>
-        <div class="cbody">
-          <div class="chead">
-            <span class="cico" aria-hidden="true">🤖</span>
-            <div><h3>VetDigest LLM</h3><span class="repo">vet-digest-llm</span></div>
-            <span class="live"><i></i>live</span>
+        <div class="card__body">
+          <div class="card__head">
+            <span class="card__ico" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+><path d="M15 18h-5" /><path d="M18 14h-8" /><path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-4 0v-9a2 2 0 0 1 2-2h2" /><rect x="10" y="6" rx="1" /></svg></span>
+            <div><h3 class="card__title">VetDigest</h3><span class="card__repo">vetdigest-site</span></div>
+            <span class="ds-badge ds-badge--green card__live">live</span>
           </div>
-          <p class="cdesc">Еженедельная сводка всей экосистемы: малая LLM читает живые JSON-каналы (окна риска ВПГП, вспышки, фармаконадзор, PubMed) и пишет текст недели — плюс аудио-версия голосом Piper.</p>
-          <ul class="feat">
+          <p class="card__desc">Ежедневный русский дайджест ветеринарной науки: PubMed + Europe PMC — статьи и препринты bioRxiv/medRxiv, агробаза AGRIS — Workers AI сжимает до трёх тезисов. Каждое утро в 10:00 МСК.</p>
+          <ul class="card__feat">
+            <li><b>PubMed + Europe PMC → 3 тезиса</b> на статью, без человека</li>
+            <li>Выпуски по датам, поиск, фильтры по источникам и специализациям</li>
+            <li>Без внешних CDN — открывается из РФ</li>
+          </ul>
+          <div class="card__tags"><span class="card__tag">Workers AI</span><span class="card__tag">PubMed + Europe PMC</span><span class="card__tag">D1</span><span class="card__tag">Cron 07:00 UTC</span></div>
+          <div class="card__links">
+            <a class="ds-btn ds-btn--primary" href="https://shray77.github.io/vetdigest-site/" target="_blank" rel="noopener">Демо ↗</a>
+            <a class="ds-btn" href="https://github.com/shray77/vetdigest-site" target="_blank" rel="noopener">Код</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="card cat-data" data-cat="data">
+        <a class="card__shot" href="https://shray77.github.io/vet-digest-llm/" target="_blank" rel="noopener">
+          <img src="assets/shots/vet-digest-llm.jpg" alt="VetDigest LLM — недельный дайджест экосистемы с аудио-версией" loading="lazy" decoding="async">
+          <span class="card__open">открыть ↗</span>
+        </a>
+        <div class="card__body">
+          <div class="card__head">
+            <span class="card__ico" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+><path d="M12 8V4H8" /><rect x="4" y="8" rx="2" /><path d="M2 14h2" /><path d="M20 14h2" /><path d="M15 13v2" /><path d="M9 13v2" /></svg></span>
+            <div><h3 class="card__title">VetDigest LLM</h3><span class="card__repo">vet-digest-llm</span></div>
+            <span class="ds-badge ds-badge--green card__live">live</span>
+          </div>
+          <p class="card__desc">Еженедельная сводка всей экосистемы: малая LLM читает живые JSON-каналы (окна риска ВПГП, вспышки, фармаконадзор, PubMed) и пишет текст недели — плюс аудио-версия голосом Piper.</p>
+          <ul class="card__feat">
             <li><b>Qwen3-1.7B + llama.cpp</b> на раннере Actions: без ключей и GPU</li>
             <li>Числа — из данных, текст — из модели; архив выпусков по неделям</li>
             <li>Кнопка «Слушать»: Piper TTS озвучивает выпуск в mp3</li>
           </ul>
-          <div class="tags"><span class="tag">Qwen3-1.7B</span><span class="tag">llama.cpp</span><span class="tag">Piper TTS</span><span class="tag">Actions</span></div>
-          <div class="clinks">
-            <a class="cbtn live" href="https://shray77.github.io/vet-digest-llm/" target="_blank" rel="noopener">Демо ↗</a>
-            <a class="cbtn code" href="https://github.com/shray77/vet-digest-llm" target="_blank" rel="noopener">Код</a>
+          <div class="card__tags"><span class="card__tag">Qwen3-1.7B</span><span class="card__tag">llama.cpp</span><span class="card__tag">Piper TTS</span><span class="card__tag">Actions</span></div>
+          <div class="card__links">
+            <a class="ds-btn ds-btn--primary" href="https://shray77.github.io/vet-digest-llm/" target="_blank" rel="noopener">Демо ↗</a>
+            <a class="ds-btn" href="https://github.com/shray77/vet-digest-llm" target="_blank" rel="noopener">Код</a>
           </div>
         </div>
       </article>
 
-      <article class="card" data-cat="data" style="--c:#f97316">
-        <a class="shot" href="https://shray77.github.io/rss-core-site/" target="_blank" rel="noopener">
+      <article class="card cat-data" data-cat="data">
+        <a class="card__shot" href="https://shray77.github.io/rss-core-site/" target="_blank" rel="noopener">
           <img src="assets/shots/rss-core-site.jpg" alt="rss-core — витрина конвейера приёма данных" loading="lazy" decoding="async">
-          <span class="veil"></span><span class="open">открыть ↗</span>
+          <span class="card__open">открыть ↗</span>
         </a>
-        <div class="cbody">
-          <div class="chead">
-            <span class="cico" aria-hidden="true">🛰</span>
-            <div><h3>RSS-конвейер</h3><span class="repo">rss-core-site · витрина</span></div>
-            <span class="live"><i></i>live</span>
+        <div class="card__body">
+          <div class="card__head">
+            <span class="card__ico" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+><path d="M4 11a9 9 0 0 1 9 9" /><path d="M4 4a16 16 0 0 1 16 16" /><circle cx="5" cy="19" r="1" /></svg></span>
+            <div><h3 class="card__title">RSS-конвейер</h3><span class="card__repo">rss-core-site · витрина</span></div>
+            <span class="ds-badge ds-badge--green card__live">live</span>
           </div>
-          <p class="cdesc">Общее ядро приёма данных экосистемы: RSS, PubMed и JSON-API → нормализация → дедупликация → база D1. Продуктовые воркеры только читают.</p>
-          <ul class="feat">
-            <li><b>19 источников</b> с интервалами, статусами и счётчиками неудач</li>
+          <p class="card__desc">Общее ядро приёма данных экосистемы: RSS, PubMed, Europe PMC и JSON-API → нормализация → дедупликация → база D1. Продуктовые воркеры только читают.</p>
+          <ul class="card__feat">
+            <li><b>24 источника</b> с интервалами, статусами и счётчиками неудач</li>
             <li>Под него собраны VetDigest, VetRecall и BioThreat Watch</li>
             <li>Витрина статуса обновляется воркером каждые 2 часа</li>
           </ul>
-          <div class="tags"><span class="tag">Cloudflare D1</span><span class="tag">Cron</span><span class="tag">TypeScript</span></div>
-          <div class="clinks">
-            <a class="cbtn live" href="https://shray77.github.io/rss-core-site/" target="_blank" rel="noopener">Статус ↗</a>
-            <a class="cbtn code" href="https://github.com/shray77/rss-core-site" target="_blank" rel="noopener">Код</a>
+          <div class="card__tags"><span class="card__tag">Cloudflare D1</span><span class="card__tag">Cron</span><span class="card__tag">TypeScript</span></div>
+          <div class="card__links">
+            <a class="ds-btn ds-btn--primary" href="https://shray77.github.io/rss-core-site/" target="_blank" rel="noopener">Статус ↗</a>
+            <a class="ds-btn" href="https://github.com/shray77/rss-core-site" target="_blank" rel="noopener">Код</a>
           </div>
         </div>
       </article>
 
-      <article class="card" data-cat="lab" style="--c:#4ade80">
-        <a class="shot" href="https://github.com/shray77/vet-pilots" target="_blank" rel="noopener">
-          <img src="assets/shots/vet-pilots.jpg" alt="vet-pilots — график аномалий TSPulse" loading="lazy" decoding="async">
-          <span class="veil"></span><span class="open">репозиторий ↗</span>
+      <article class="card cat-data" data-cat="data">
+        <a class="card__shot" href="https://shray77.github.io/vet-insilico/" target="_blank" rel="noopener">
+          <img src="assets/shots/vet-insilico.jpg" alt="VetInSilico Hub — браузерный in silico-инструментарий для вет-патогенов" loading="lazy" decoding="async">
+          <span class="card__open">открыть ↗</span>
         </a>
-        <div class="cbody">
-          <div class="chead">
-            <span class="cico" aria-hidden="true">🧪</span>
-            <div><h3>Вет-Пилоты</h3><span class="repo">vet-pilots</span></div>
-            <span class="live apk"><i></i>лаборатория</span>
+        <div class="card__body">
+          <div class="card__head">
+            <span class="card__ico" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+><path d="M6 18h8" /><path d="M3 22h18" /><path d="M14 22a7 7 0 1 0 0-14h-1" /><path d="M9 14h2" /><path d="M9 12a2 2 0 0 1-2-2V6h6v4a2 2 0 0 1-2 2Z" /><path d="M12 6V3a1 1 0 0 0-1-1H9a1 1 0 0 0-1 1v3" /></svg></span>
+            <div><h3 class="card__title">VetInSilico Hub</h3><span class="card__repo">vet-insilico</span></div>
+            <span class="ds-badge ds-badge--green card__live">live</span>
           </div>
-          <p class="cdesc">Полигон ML-экспериментов перед промоушеном в прод: реальная модель + реальные данные экосистемы + артефакты + честные оговорки. Всё CPU-only.</p>
-          <ul class="feat">
-            <li><b>TSPulse (IBM Granite, 1M)</b> — «аномалия недели» на суточном ряду вспышек, уже в ВетХабе и дайджесте</li>
-            <li><b>Piper TTS</b> — русский голос дайджеста, ASR-roundtrip верификация</li>
-            <li><b>GigaAM-v3-CTC (Сбер)</b> — офлайн-распознавание, переехал в VetVoice v1.20.0</li>
+          <p class="card__desc">In silico-инструментарий для ветеринарных патогенов: 23 браузерных инструмента — от репозиционирования лекарств до дизайна вакцин.</p>
+          <ul class="card__feat">
+            <li><b>Drug repurposing + Boltz-2:</b> ночные предсказания аффинности (IC50/ΔG) на Actions, сверка с экспериментом</li>
+            <li><b>ADMET/PK с проверкой по ChEMBL:</b> дескрипторы, фазы одобрения, механизмы действия</li>
+            <li>Эпитопы вакцин, PCR-праймеры, CRISPR gRNA, филогения; 183 теста</li>
           </ul>
-          <div class="tags"><span class="tag">TSPulse</span><span class="tag">Piper</span><span class="tag">GigaAM</span><span class="tag">CPU-only</span></div>
-          <div class="clinks">
-            <a class="cbtn live" href="https://github.com/shray77/vet-pilots" target="_blank" rel="noopener">Репозиторий ↗</a>
+          <div class="card__tags"><span class="card__tag">TypeScript</span><span class="card__tag">RDKit.js</span><span class="card__tag">Boltz-2</span><span class="card__tag">ChEMBL</span><span class="card__tag">Apache 2.0</span></div>
+          <div class="card__links">
+            <a class="ds-btn ds-btn--primary" href="https://shray77.github.io/vet-insilico/" target="_blank" rel="noopener">Демо ↗</a>
+            <a class="ds-btn" href="https://github.com/shray77/vet-insilico" target="_blank" rel="noopener">Код</a>
           </div>
         </div>
       </article>
 
-      <article class="card" data-cat="lab" style="--c:#a78bfa">
-        <a class="shot" href="https://shray77.github.io/vet-insilico/" target="_blank" rel="noopener">
-          <img src="assets/shots/vet-insilico.jpg" alt="VetInSilico Hub — 17 in silico инструментов" loading="lazy" decoding="async">
-          <span class="veil"></span><span class="open">открыть ↗</span>
-        </a>
-        <div class="cbody">
-          <div class="chead">
-            <span class="cico" aria-hidden="true">🔬</span>
-            <div><h3>VetInSilico Hub</h3><span class="repo">vet-insilico</span></div>
-            <span class="live"><i></i>live</span>
-          </div>
-          <p class="cdesc">In silico-инструментарий для ветеринарных патогенов: 17 браузерных инструментов — от репозиционирования лекарств до дизайна вакцин.</p>
-          <ul class="feat">
-            <li><b>Drug repurposing, ADMET, PK/PD</b>-симулятор, калькулятор доз</li>
-            <li>Эпитопы вакцин, PCR-праймеры, CRISPR gRNA, филогения</li>
-            <li>Гибрид: RDKit.js WASM + FOSS-ML (Qwen LLM, ESM-2) без токенов; 148 тестов</li>
-          </ul>
-          <div class="tags"><span class="tag">TypeScript</span><span class="tag">RDKit.js</span><span class="tag">Qwen LLM</span><span class="tag">ESM-2</span><span class="tag">Apache 2.0</span></div>
-          <div class="clinks">
-            <a class="cbtn live" href="https://shray77.github.io/vet-insilico/" target="_blank" rel="noopener">Демо ↗</a>
-            <a class="cbtn code" href="https://github.com/shray77/vet-insilico" target="_blank" rel="noopener">Код</a>
-          </div>
-        </div>
-      </article>
-      <article class="card" data-cat="doc" style="--c:#4ade80">
-        <a class="shot" href="https://shray77.github.io/vettools/" target="_blank" rel="noopener">
+      <article class="card cat-doc" data-cat="doc">
+        <a class="card__shot" href="https://shray77.github.io/vettools/" target="_blank" rel="noopener">
           <img src="assets/shots/vettools.jpg" alt="VetTools — офлайн-инструмент ветврача" loading="lazy" decoding="async">
-          <span class="veil"></span><span class="open">открыть ↗</span>
+          <span class="card__open">открыть ↗</span>
         </a>
-        <div class="cbody">
-          <div class="chead">
-            <span class="cico" aria-hidden="true">🧰</span>
-            <div><h3>VetTools</h3><span class="repo">vettools</span></div>
-            <span class="live"><i></i>live</span>
+        <div class="card__body">
+          <div class="card__head">
+            <span class="card__ico" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.106-3.105c.32-.322.863-.22.983.218a6 6 0 0 1-8.259 7.057l-7.91 7.91a1 1 0 0 1-2.999-3l7.91-7.91a6 6 0 0 1 7.057-8.259c.438.12.54.662.219.984z" /></svg></span>
+            <div><h3 class="card__title">VetTools</h3><span class="card__repo">vettools</span></div>
+            <span class="ds-badge ds-badge--green card__live">live</span>
           </div>
-          <p class="cdesc">Офлайн-инструмент ветврача «всё в одном»: один самодостаточный HTML-файл — работает с диска, без интернета, ИИ и сервера.</p>
-          <ul class="feat">
+          <p class="card__desc">Офлайн-инструмент ветврача «всё в одном»: один самодостаточный HTML-файл — работает с диска, без интернета, ИИ и сервера.</p>
+          <ul class="card__feat">
             <li><b>10 разделов:</b> SOAP-приём, выписка, согласие, стационар, анест-лист, некропсия</li>
             <li><b>6 калькуляторов:</b> дозы, инфузии, RER/MER, BSA, конвертер, BCS</li>
             <li>Данные не покидают браузер: localStorage + экспорт/импорт JSON</li>
           </ul>
-          <div class="tags"><span class="tag">HTML</span><span class="tag">Offline-first</span><span class="tag">file://</span></div>
-          <div class="clinks">
-            <a class="cbtn live" href="https://shray77.github.io/vettools/" target="_blank" rel="noopener">Демо ↗</a>
-            <a class="cbtn code" href="https://github.com/shray77/vettools" target="_blank" rel="noopener">Код</a>
+          <div class="card__tags"><span class="card__tag">HTML</span><span class="card__tag">Offline-first</span><span class="card__tag">file://</span></div>
+          <div class="card__links">
+            <a class="ds-btn ds-btn--primary" href="https://shray77.github.io/vettools/" target="_blank" rel="noopener">Демо ↗</a>
+            <a class="ds-btn" href="https://github.com/shray77/vettools" target="_blank" rel="noopener">Код</a>
           </div>
         </div>
       </article>
 
-      <article class="card" data-cat="doc" style="--c:#34d399">
-        <div class="shot"><img src="assets/shots/vetvoice.jpg" alt="VetVoice — выбор вида животного и расчёт дозы с каренцией" loading="lazy" decoding="async"></div>
-        <div class="cbody">
-          <div class="chead">
-            <span class="cico" aria-hidden="true">🗣</span>
-            <div><h3>VetVoice</h3><span class="repo">vetvoice</span></div>
-            <span class="live apk"><i></i>APK</span>
+      <article class="card cat-doc" data-cat="doc">
+        <div class="card__shot"><img src="assets/shots/vetvoice.jpg" alt="VetVoice — выбор вида животного и расчёт дозы с каренцией" loading="lazy" decoding="async"></div>
+        <div class="card__body">
+          <div class="card__head">
+            <span class="card__ico" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+><path d="M12 19v3" /><path d="M19 10v2a7 7 0 0 1-14 0v-2" /><rect x="9" y="2" rx="3" /></svg></span>
+            <div><h3 class="card__title">VetVoice</h3><span class="card__repo">vetvoice</span></div>
+            <span class="ds-badge ds-badge--amber card__live">APK</span>
           </div>
-          <p class="cdesc">Справочник и калькулятор дозировок с голосовым управлением — карманный помощник прямо на приёме. v1.20.1: release-подпись APK — обновления встают поверх.</p>
-          <ul class="feat">
+          <p class="card__desc">Справочник и калькулятор дозировок с голосовым управлением — карманный помощник прямо на приёме. v1.20.1: release-подпись APK — обновления встают поверх.</p>
+          <ul class="card__feat">
             <li><b>2 400+ препаратов:</b> доза по весу, виду и концентрации, каренция, взаимодействия</li>
             <li><b>Офлайн-движок GigaAM-v3-CTC (Сбер)</b> — ONNX int8, качается один раз; wake word на Vosk</li>
             <li>Экстренные протоколы, антидоты, жидкостная терапия; 10 видов — от КРС до пчёл</li>
-            <li>Release-подпись APK (CN=VetVoice) — обновляется как обычное приложение</li>
           </ul>
-          <div class="tags"><span class="tag">Flutter</span><span class="tag">GigaAM STT</span><span class="tag">Vosk</span><span class="tag">v1.20.1</span></div>
-          <div class="clinks">
-            <a class="cbtn live" href="https://github.com/shray77/vetvoice/releases/latest" target="_blank" rel="noopener">Скачать APK ↗</a>
-            <a class="cbtn code" href="https://github.com/shray77/vetvoice" target="_blank" rel="noopener">Код</a>
+          <div class="card__tags"><span class="card__tag">Flutter</span><span class="card__tag">GigaAM STT</span><span class="card__tag">Vosk</span><span class="card__tag">v1.20.1</span></div>
+          <div class="card__links">
+            <a class="ds-btn ds-btn--primary" href="https://github.com/shray77/vetvoice/releases/latest" target="_blank" rel="noopener">Скачать APK ↗</a>
+            <a class="ds-btn" href="https://github.com/shray77/vetvoice" target="_blank" rel="noopener">Код</a>
           </div>
         </div>
       </article>
 
-      <article class="card" data-cat="doc" style="--c:#fbbf24">
-        <div class="shot"><img src="assets/shots/veteco.jpg" alt="ВетЭко — калькулятор дозировок по базе 2 401 препарат" loading="lazy" decoding="async"></div>
-        <div class="cbody">
-          <div class="chead">
-            <span class="cico" aria-hidden="true">📸</span>
-            <div><h3>ВетЭко</h3><span class="repo">vetvoice-rag</span></div>
-            <span class="live apk"><i></i>APK</span>
+      <article class="card cat-doc" data-cat="doc">
+        <div class="card__shot"><img src="assets/shots/veteco.jpg" alt="ВетЭко — калькулятор дозировок по базе 2 401 препарат" loading="lazy" decoding="async"></div>
+        <div class="card__body">
+          <div class="card__head">
+            <span class="card__ico" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+><path d="M13.997 4a2 2 0 0 1 1.76 1.05l.486.9A2 2 0 0 0 18.003 7H20a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2h1.997a2 2 0 0 0 1.759-1.048l.489-.904A2 2 0 0 1 10.004 4z" /><circle cx="12" cy="13" r="3" /></svg></span>
+            <div><h3 class="card__title">ВетЭко</h3><span class="card__repo">vetvoice-rag</span></div>
+            <span class="ds-badge ds-badge--amber card__live">APK</span>
           </div>
-          <p class="cdesc">Android-ассистент ветврача: диктовка приёма в SOAP-медкарту, калькулятор доз, RAG-чат по базе знаний и диагностика кожных поражений по фото. v1.1.2: release-подпись APK — обновления встают поверх.</p>
-          <ul class="feat">
+          <p class="card__desc">Android-ассистент ветврача: диктовка приёма в SOAP-медкарту, калькулятор доз, RAG-чат по базе знаний и диагностика кожных поражений по фото. v1.1.2: release-подпись APK — обновления встают поверх.</p>
+          <ul class="card__feat">
             <li><b>Диктовка → SOAP-медкарта:</b> голосовые записи приёма, 3-уровневый fallback ИИ-шлюза</li>
             <li><b>RAG-чат (58 242 чанка: 15 709 данных + 42 533 научных)</b> + VLM-диагностика по фото кожи (GLM-4.6V)</li>
             <li>База: 2 401 препарат, 187 болезней, 154 протокола, 73 взаимодействия</li>
-            <li>Release-подпись APK (CN=VetEco) — апдейты встают поверх, версия из pubspec</li>
           </ul>
-          <div class="tags"><span class="tag">Flutter</span><span class="tag">RAG</span><span class="tag">v1.1.2</span></div>
-          <div class="clinks">
-            <a class="cbtn live" href="https://github.com/shray77/vetvoice-rag/releases/latest" target="_blank" rel="noopener">Скачать APK ↗</a>
-            <a class="cbtn code" href="https://github.com/shray77/vetvoice-rag" target="_blank" rel="noopener">Код</a>
+          <div class="card__tags"><span class="card__tag">Flutter</span><span class="card__tag">RAG</span><span class="card__tag">v1.1.2</span></div>
+          <div class="card__links">
+            <a class="ds-btn ds-btn--primary" href="https://github.com/shray77/vetvoice-rag/releases/latest" target="_blank" rel="noopener">Скачать APK ↗</a>
+            <a class="ds-btn" href="https://github.com/shray77/vetvoice-rag" target="_blank" rel="noopener">Код</a>
           </div>
         </div>
       </article>
 
-      <article class="card" data-cat="lab" style="--c:#f472b6">
-        <a class="shot" href="https://shray77.github.io/vetlearn-web/" target="_blank" rel="noopener">
+      <article class="card cat-doc" data-cat="doc">
+        <a class="card__shot" href="https://shray77.github.io/vetlearn-web/" target="_blank" rel="noopener">
           <img src="assets/shots/vetlearn-web.jpg" alt="VetLearn AI — платформа обучения ветеринарии" loading="lazy" decoding="async">
-          <span class="veil"></span><span class="open">открыть ↗</span>
+          <span class="card__open">открыть ↗</span>
         </a>
-        <div class="cbody">
-          <div class="chead">
-            <span class="cico" aria-hidden="true">📚</span>
-            <div><h3>VetLearn AI</h3><span class="repo">vetlearn-web · GitLab</span></div>
-            <span class="live"><i></i>бета</span>
+        <div class="card__body">
+          <div class="card__head">
+            <span class="card__ico" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+><path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z" /><path d="M22 10v6" /><path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5" /></svg></span>
+            <div><h3 class="card__title">VetLearn AI</h3><span class="card__repo">vetlearn-web</span></div>
+            <span class="ds-badge ds-badge--green card__live">бета</span>
           </div>
-          <p class="cdesc">AI-платформа персонализированного обучения ветеринарии: адаптивные квизы, клинические симуляторы, голосовой репетитор.</p>
-          <ul class="feat">
+          <p class="card__desc">AI-платформа персонализированного обучения ветеринарии: адаптивные квизы, клинические симуляторы, голосовой репетитор.</p>
+          <ul class="card__feat">
             <li><b>Адаптивное обучение:</b> placement-тест + квизы в реальном времени</li>
             <li>Симулятор приёма, OSCE-станции, атлас рентген/УЗИ/цитология</li>
             <li>AI-флешкарточки с интервальным повторением SM-2; 5 специализаций</li>
           </ul>
-          <div class="tags"><span class="tag">Next.js 16</span><span class="tag">React 19</span><span class="tag">Zustand</span><span class="tag">SM-2</span></div>
-          <div class="clinks">
-            <a class="cbtn live" href="https://shray77.github.io/vetlearn-web/" target="_blank" rel="noopener">Демо ↗</a>
-            <a class="cbtn code" href="https://gitlab.com/shray77/vetlearn-web" target="_blank" rel="noopener">Код ↗</a>
+          <div class="card__tags"><span class="card__tag">Next.js 16</span><span class="card__tag">React 19</span><span class="card__tag">Zustand</span><span class="card__tag">SM-2</span></div>
+          <div class="card__links">
+            <a class="ds-btn ds-btn--primary" href="https://shray77.github.io/vetlearn-web/" target="_blank" rel="noopener">Демо ↗</a>
+            <a class="ds-btn" href="https://github.com/shray77/vetlearn-web" target="_blank" rel="noopener">Код</a>
           </div>
         </div>
       </article>
 
-      <article class="card" data-cat="lab" style="--c:#22d3ee">
-        <a class="shot" href="https://shray77.github.io/vetpetri/" target="_blank" rel="noopener">
-          <img src="assets/shots/vetpetri.jpg" alt="ВетПетри — симулятор чашки Петри: тёмная тема, чаша с колониями, панель антибиотиков и мутаций" loading="lazy" decoding="async">
-          <span class="veil"></span><span class="open">открыть ↗</span>
+      <article class="card cat-lab" data-cat="lab">
+        <a class="card__shot" href="https://github.com/shray77/vet-pilots" target="_blank" rel="noopener">
+          <img src="assets/shots/vet-pilots.jpg" alt="vet-pilots — график аномалий TSPulse" loading="lazy" decoding="async">
+          <span class="card__open">репозиторий ↗</span>
         </a>
-        <div class="cbody">
-          <div class="chead">
-            <span class="cico" aria-hidden="true">🧫</span>
-            <div><h3>ВетПетри</h3><span class="repo">vetpetri</span></div>
-            <span class="live"><i></i>live</span>
+        <div class="card__body">
+          <div class="card__head">
+            <span class="card__ico" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+><path d="M14 2v6a2 2 0 0 0 .245.96l5.51 10.08A2 2 0 0 1 18 22H6a2 2 0 0 1-1.755-2.96l5.51-10.08A2 2 0 0 0 10 8V2" /><path d="M6.453 15h11.094" /><path d="M8.5 2h7" /></svg></span>
+            <div><h3 class="card__title">Вет-Пилоты</h3><span class="card__repo">vet-pilots</span></div>
+            <span class="ds-badge ds-badge--amber card__live">лаборатория</span>
           </div>
-          <p class="cdesc">Научная песочница чашки Петри для вет. микробиологии: рост колоний, антибиотикограммы и лекционные сценарии — в одном HTML-файле, без сервера.</p>
-          <ul class="feat">
+          <p class="card__desc">Полигон ML-экспериментов перед промоушеном в прод: реальная модель + реальные данные экосистемы + артефакты + честные оговорки. Всё CPU-only.</p>
+          <ul class="card__feat">
+            <li><b>TSPulse (IBM Granite, 1M)</b> — «аномалия недели» на суточном ряду вспышек, уже в ВетХабе и дайджесте</li>
+            <li><b>Piper TTS</b> — русский голос дайджеста, ASR-roundtrip верификация</li>
+            <li><b>GigaAM-v3-CTC (Сбер)</b> — офлайн-распознавание, переехал в VetVoice v1.20.0</li>
+          </ul>
+          <div class="card__tags"><span class="card__tag">TSPulse</span><span class="card__tag">Piper</span><span class="card__tag">GigaAM</span><span class="card__tag">CPU-only</span></div>
+          <div class="card__links">
+            <a class="ds-btn ds-btn--primary" href="https://github.com/shray77/vet-pilots" target="_blank" rel="noopener">Репозиторий ↗</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="card cat-lab" data-cat="lab">
+        <a class="card__shot" href="https://shray77.github.io/vetpetri/" target="_blank" rel="noopener">
+          <img src="assets/shots/vetpetri.jpg" alt="ВетПетри — симулятор чашки Петри: чаша с колониями, панель антибиотиков и мутаций" loading="lazy" decoding="async">
+          <span class="card__open">открыть ↗</span>
+        </a>
+        <div class="card__body">
+          <div class="card__head">
+            <span class="card__ico" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+><path d="M10 2v6.292a7 7 0 1 0 4 0V2" /><path d="M5 15h14" /><path d="M8.5 2h7" /></svg></span>
+            <div><h3 class="card__title">ВетПетри</h3><span class="card__repo">vetpetri</span></div>
+            <span class="ds-badge ds-badge--green card__live">live</span>
+          </div>
+          <p class="card__desc">Научная песочница чашки Петри для вет. микробиологии: рост колоний, антибиотикограммы и лекционные сценарии — в одном HTML-файле, без сервера.</p>
+          <ul class="card__feat">
             <li><b>Проектор лекций:</b> сценарии «задание → посев → чтение», протокол в CSV/PNG</li>
-            <li><b>Probe-чтение колоний</b>, мутации и персистеры, PK-панель %T>MIC по антибиотикам</li>
+            <li><b>Probe-чтение колоний</b>, мутации и персистеры, PK-панель %T&gt;MIC по антибиотикам</li>
             <li><b>Один файл ~139 КБ</b> — ноль зависимостей, seed-воспроизводимость через URL-hash</li>
           </ul>
-          <div class="tags"><span class="tag">симуляция</span><span class="tag">микробиология</span><span class="tag">%T&gt;MIC</span><span class="tag">single-file</span></div>
-          <div class="clinks">
-            <a class="cbtn live" href="https://shray77.github.io/vetpetri/" target="_blank" rel="noopener">Демо ↗</a>
-            <a class="cbtn code" href="https://github.com/shray77/vetpetri" target="_blank" rel="noopener">Код</a>
+          <div class="card__tags"><span class="card__tag">симуляция</span><span class="card__tag">микробиология</span><span class="card__tag">%T&gt;MIC</span><span class="card__tag">single-file</span></div>
+          <div class="card__links">
+            <a class="ds-btn ds-btn--primary" href="https://shray77.github.io/vetpetri/" target="_blank" rel="noopener">Демо ↗</a>
+            <a class="ds-btn" href="https://github.com/shray77/vetpetri" target="_blank" rel="noopener">Код</a>
           </div>
         </div>
       </article>
 
-      <article class="card" data-cat="plat" style="--c:#60a5fa">
-        <div class="shot"><img src="assets/shots/vetos.jpg" alt="VetOS — домашний экран лаунчера: часы, THI-метео, лента экосистемы, плитки проектов" loading="lazy" decoding="async"></div>
-        <div class="cbody">
-          <div class="chead">
-            <span class="cico" aria-hidden="true">📱</span>
-            <div><h3>VetOS</h3><span class="repo">vetos</span></div>
-            <span class="live apk"><i></i>APK</span>
+      <article class="card cat-plat" data-cat="plat">
+        <div class="card__shot"><img src="assets/shots/vetos.jpg" alt="VetOS — домашний экран лаунчера: часы, THI-метео, лента экосистемы, плитки проектов" loading="lazy" decoding="async"></div>
+        <div class="card__body">
+          <div class="card__head">
+            <span class="card__ico" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+><rect x="5" y="2" rx="2" ry="2" /><path d="M12 18h.01" /></svg></span>
+            <div><h3 class="card__title">VetOS</h3><span class="card__repo">vetos</span></div>
+            <span class="ds-badge ds-badge--amber card__live">APK</span>
           </div>
-          <p class="cdesc">Android-лаунчер-хаб вет-экосистемы: домашний экран с живым метео-тайлом THI/CCI, лентой данных проектов и плитками инструментов. Нажимаешь Home — попадаешь в свою экосистему.</p>
-          <ul class="feat">
+          <p class="card__desc">Android-лаунчер-хаб вет-экосистемы: домашний экран с живым метео-тайлом THI/CCI, лентой данных проектов и плитками инструментов. Нажимаешь Home — попадаешь в свою экосистему.</p>
+          <ul class="card__feat">
             <li><b>Живой метео-тайл:</b> THI станции по умолчанию + CCI, спарклайн 7 дней</li>
             <li><b>Каталог «Все проекты»:</b> 16 плиток с поиском и разделами; лента +2 фида (TSPulse, LLM-дайджест)</li>
-            <li>Дровер всех приложений, Chrome Custom Tabs, обновление APK из релизов; release-подпись — апдейты встают поверх</li>
+            <li>Дровер всех приложений, Chrome Custom Tabs, обновление APK из релизов</li>
           </ul>
-          <div class="tags"><span class="tag">Flutter</span><span class="tag">Dart</span><span class="tag">Launcher</span><span class="tag">v0.4.1</span></div>
-          <div class="clinks">
-            <a class="cbtn live" href="https://github.com/shray77/vetos/releases/latest" target="_blank" rel="noopener">Скачать APK ↗</a>
-            <a class="cbtn code" href="https://github.com/shray77/vetos" target="_blank" rel="noopener">Код</a>
+          <div class="card__tags"><span class="card__tag">Flutter</span><span class="card__tag">Dart</span><span class="card__tag">Launcher</span><span class="card__tag">v0.4.1</span></div>
+          <div class="card__links">
+            <a class="ds-btn ds-btn--primary" href="https://github.com/shray77/vetos/releases/latest" target="_blank" rel="noopener">Скачать APK ↗</a>
+            <a class="ds-btn" href="https://github.com/shray77/vetos" target="_blank" rel="noopener">Код</a>
           </div>
         </div>
       </article>
 
-      <article class="card" data-cat="plat" style="--c:#94a3b8">
-        <div class="shot ph">
-          <span class="emoji">⚙️</span>
+      <article class="card cat-plat" data-cat="plat">
+        <div class="card__shot ph">
+          <span class="ph-ico" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+><path d="M12 22v-5" /><path d="M9 8V2" /><path d="M15 8V2" /><path d="M18 8v5a4 4 0 0 1-4 4h-4a4 4 0 0 1-4-4V8Z" /></svg></span>
           <span class="ph-cap">Cloudflare Workers</span>
         </div>
-        <div class="cbody">
-          <div class="chead">
-            <span class="cico" aria-hidden="true">🔌</span>
-            <div><h3>VetAPI</h3><span class="repo">vet-api</span></div>
-            <span class="live lib"><i></i>compute-слой</span>
+        <div class="card__body">
+          <div class="card__head">
+            <span class="card__ico" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+><path d="M12 22v-5" /><path d="M9 8V2" /><path d="M15 8V2" /><path d="M18 8v5a4 4 0 0 1-4 4h-4a4 4 0 0 1-4-4V8Z" /></svg></span>
+            <div><h3 class="card__title">VetAPI</h3><span class="card__repo">vet-api</span></div>
+            <span class="ds-badge card__live">compute-слой</span>
           </div>
-          <p class="cdesc">Вычислительный API экосистемы на Cloudflare Workers: живые метео-срезы 49 станций, merge вспышек, KV-зеркала датасетов — ноль серверов.</p>
-          <ul class="feat">
+          <p class="card__desc">Вычислительный API экосистемы на Cloudflare Workers: живые метео-срезы 49 станций, merge вспышек, KV-зеркала датасетов — ноль серверов.</p>
+          <ul class="card__feat">
             <li><b>/v1/meteo/slice:</b> THI/THIadj/BRD + 48-часовой прогноз, кэш 60 с</li>
             <li>Вспышки: merge + dedupe + upsert, дельты, зеркала в KV</li>
             <li>workers.dev в РФ заблокирован — Actions мостят данные в Pages</li>
           </ul>
-          <div class="tags"><span class="tag">Cloudflare Workers</span><span class="tag">KV</span><span class="tag">TypeScript</span></div>
-          <div class="clinks">
-            <a class="cbtn code" href="https://github.com/shray77/vet-api" target="_blank" rel="noopener">Код</a>
+          <div class="card__tags"><span class="card__tag">Cloudflare Workers</span><span class="card__tag">KV</span><span class="card__tag">TypeScript</span></div>
+          <div class="card__links">
+            <a class="ds-btn" href="https://github.com/shray77/vet-api" target="_blank" rel="noopener">Код</a>
           </div>
         </div>
       </article>
@@ -800,105 +802,107 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:18px;align-items:center;justify-con
     </div>
   </div>
 </section>
+
 <section id="pipeline">
   <div class="wrap">
     <div class="sec-head">
-      <span class="kicker">02 · Архитектура</span>
-      <h2>Как всё соединено</h2>
-      <p>Экосистема — это конвейер: открытые источники текут в общую базу, продуктовые
-      воркеры делают из них витрины, а хабы собирают всё в одном окне. Без серверов,
-      в бесплатных лимитах.</p>
+      <p class="ds-overline ds-overline--rule">02 · <b>Архитектура</b></p>
+      <h2 class="ds-display">Как всё соединено</h2>
+      <p class="ds-lede">Экосистема — это конвейер: открытые источники текут в общую базу, продуктовые воркеры делают из них витрины, а хабы собирают всё в одном окне. Без серверов, в бесплатных лимитах.</p>
     </div>
     <div class="flow">
       <div class="node dim">
-        <span class="ni" aria-hidden="true">📡</span>
+        <span class="node__ico" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+><path d="M4.9 16.1C1 12.2 1 5.8 4.9 1.9" /><path d="M7.8 4.7a6.14 6.14 0 0 0-.8 7.5" /><circle cx="12" cy="9" r="2" /><path d="M16.2 4.8c2 2 2.26 5.11.8 7.47" /><path d="M19.1 1.9a9.96 9.96 0 0 1 0 14.1" /><path d="M9.5 18h5" /><path d="m8 22 4-11 4 11" /></svg></span>
         <h4>Открытые источники</h4>
-        <p>Open-Meteo / ECMWF, METAR NOAA, WOAH WAHIS, ФСВПС Россельхознадзора, PubMed, RSS-ленты новостей</p>
+        <p>Open-Meteo / ECMWF, METAR NOAA, WOAH WAHIS, ФСВПС Россельхознадзора, PubMed + Europe PMC, RSS-ленты новостей</p>
       </div>
       <div class="node">
-        <span class="ni" aria-hidden="true">🛰</span>
+        <span class="node__ico" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+><path d="M4 10a7.31 7.31 0 0 0 10 10Z" /><path d="m9 15 3-3" /><path d="M17 13a6 6 0 0 0-6-6" /><path d="M21 13A10 10 0 0 0 11 3" /></svg></span>
         <h4>rss-core</h4>
         <p>инжест → нормализация → дедупликация → Cloudflare D1; статус каждого источника</p>
       </div>
       <div class="node">
-        <span class="ni" aria-hidden="true">⚙️</span>
+        <span class="node__ico" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+><path d="M12 20v2" /><path d="M12 2v2" /><path d="M17 20v2" /><path d="M17 2v2" /><path d="M2 12h2" /><path d="M2 17h2" /><path d="M2 7h2" /><path d="M20 12h2" /><path d="M20 17h2" /><path d="M20 7h2" /><path d="M7 20v2" /><path d="M7 2v2" /><rect x="4" y="4" rx="2" /><rect x="8" y="8" rx="1" /></svg></span>
         <h4>Воркеры-продукты</h4>
         <p>VetDigest (Workers AI), VetRecall (keyword-радар), BioThreat Watch (ИИ + гео-словарь), VetAPI (метео-срезы)</p>
       </div>
       <div class="node">
-        <span class="ni" aria-hidden="true">🪞</span>
+        <span class="node__ico" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z" /><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z" /><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0" /><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5" /></svg></span>
         <h4>GitHub Actions → Pages</h4>
         <p>крон-мост: fetch → валидация → коммит JSON в публичные репы -site; работает из РФ без VPN</p>
       </div>
       <div class="node">
-        <span class="ni" aria-hidden="true">🖥</span>
+        <span class="node__ico" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+><path d="M2.97 12.92A2 2 0 0 0 2 14.63v3.24a2 2 0 0 0 .97 1.71l3 1.8a2 2 0 0 0 2.06 0L12 19v-5.5l-5-3-4.03 2.42Z" /><path d="m7 16.5-4.74-2.85" /><path d="m7 16.5 5-3" /><path d="M7 16.5v5.17" /><path d="M12 13.5V19l3.97 2.38a2 2 0 0 0 2.06 0l3-1.8a2 2 0 0 0 .97-1.71v-3.24a2 2 0 0 0-.97-1.71L17 10.5l-5 3Z" /><path d="m17 16.5-5-3" /><path d="m17 16.5 4.74-2.85" /><path d="M17 16.5v5.17" /><path d="M7.97 4.42A2 2 0 0 0 7 6.13v4.37l5 3 5-3V6.13a2 2 0 0 0-.97-1.71l-3-1.8a2 2 0 0 0-2.06 0l-3 1.8Z" /><path d="M12 8 7.26 5.15" /><path d="m12 8 4.74-2.85" /><path d="M12 13.5V8" /></svg></span>
         <h4>Хабы и модели</h4>
-        <p>ВетХаб собирает витрины вместе; TimesFM, TSPulse, Qwen3, Piper — CPU-модели на раннерах Actions</p>
+        <p>ВетХаб собирает витрины вместе; TimesFM, TSPulse, Qwen3, Boltz-2, Piper — CPU-модели на раннерах Actions</p>
       </div>
     </div>
-    <p class="flownote">Почему так: <b>workers.dev заблокирован в РФ</b> — поэтому вся пользовательская
-    поверхность живёт на GitHub Pages (статика + коммиты данных), а Cloudflare остаётся чистым
-    вычислителем за кулисами. Клиентский код всегда имеет фолбэк на закоммиченный JSON.</p>
+    <p class="flownote">Почему так: <b>workers.dev заблокирован в РФ</b> — поэтому вся пользовательская поверхность живёт на GitHub Pages (статика + коммиты данных), а Cloudflare остаётся чистым вычислителем за кулисами. Клиентский код всегда имеет фолбэк на закоммиченный JSON.</p>
   </div>
 </section>
 
 <section id="principles">
   <div class="wrap">
     <div class="sec-head">
-      <span class="kicker">03 · Подход</span>
-      <h2>Почему это работает</h2>
-      <p>Три принципа, которые держат все восемнадцать проектов бесплатными и живыми.</p>
+      <p class="ds-overline ds-overline--rule">03 · <b>Подход</b></p>
+      <h2 class="ds-display">Почему это работает</h2>
+      <p class="ds-lede">Три принципа, которые держат все девятнадцать проектов бесплатными и живыми.</p>
     </div>
     <div class="principles">
       <div class="pr">
-        <span class="ico" aria-hidden="true">📡</span>
+        <span class="pr-ico" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+><rect x="3" y="11" rx="2" ry="2" /><path d="M7 11V7a5 5 0 0 1 9.9-1" /></svg></span>
         <h4>Открытые данные и код</h4>
-        <p>Open-Meteo, METAR, открытые датасеты вспышек, FOSS-модели (Qwen, TimesFM, TSPulse, Piper, GigaAM).
-        Никаких закрытых API — инструменты работают у любого ветврача без ключей и подписок.
-        Каждый проект — публичный репозиторий с историей решений в ворклоге.</p>
+        <p>Open-Meteo, METAR, открытые датасеты вспышек, FOSS-модели (Qwen, TimesFM, TSPulse, Piper, GigaAM, Boltz-2). Никаких закрытых API — инструменты работают у любого ветврача без ключей и подписок. Каждый проект — публичный репозиторий с историей решений в ворклоге.</p>
       </div>
       <div class="pr">
-        <span class="ico" aria-hidden="true">🐄</span>
+        <span class="pr-ico" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+><path d="M11 2v2" /><path d="M5 2v2" /><path d="M5 3H4a2 2 0 0 0-2 2v4a6 6 0 0 0 12 0V5a2 2 0 0 0-2-2h-1" /><path d="M8 15a6 6 0 0 0 12 0v-3" /><circle cx="20" cy="10" r="2" /></svg></span>
         <h4>Практика важнее технологий</h4>
-        <p>Каждый модуль родился из задачи в клинике, на ферме или в лаборатории:
-        доза, каренция, зона риска, медкарта. Алгоритмы сверены с первоисточниками
-        и нормативами (WOAH, приказы МСХ РФ). Модели проходят честную ретроспективу —
-        и не выживают на витрине, если проигрывают простой статистике.</p>
+        <p>Каждый модуль родился из задачи в клинике, на ферме или в лаборатории: доза, каренция, зона риска, медкарта. Алгоритмы сверены с первоисточниками и нормативами (WOAH, приказы МСХ РФ). Модели проходят честную ретроспективу — и не выживают на витрине, если проигрывают простой статистике.</p>
       </div>
       <div class="pr">
-        <span class="ico" aria-hidden="true">🧩</span>
+        <span class="pr-ico" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+><path d="M15.39 4.39a1 1 0 0 0 1.68-.474 2.5 2.5 0 1 1 3.014 3.015 1 1 0 0 0-.474 1.68l1.683 1.682a2.414 2.414 0 0 1 0 3.414L19.61 15.39a1 1 0 0 1-1.68-.474 2.5 2.5 0 1 0-3.014 3.015 1 1 0 0 1 .474 1.68l-1.683 1.682a2.414 2.414 0 0 1-3.414 0L8.61 19.61a1 1 0 0 0-1.68.474 2.5 2.5 0 1 1-3.014-3.015 1 1 0 0 0 .474-1.68l-1.683-1.682a2.414 2.414 0 0 1 0-3.414L4.39 8.61a1 1 0 0 1 1.68.474 2.5 2.5 0 1 0 3.014-3.015 1 1 0 0 1-.474-1.68l1.683-1.682a2.414 2.414 0 0 1 3.414 0z" /></svg></span>
         <h4>Экосистема, а не монолит</h4>
-        <p>Каждый тул живёт своим репо, своим CI и своей частотой обновления. Git — это бекенд:
-        воркеры коммитят JSON, витрины и хабы читают. Новый проект не ломает старые —
-        он просто добавляет ещё один источник в конвейер и ещё одну плитку в хаб.</p>
+        <p>Каждый тул живёт своим репо, своим CI и своей частотой обновления. Git — это бекенд: воркеры коммитят JSON, витрины и хабы читают. Новый проект не ломает старые — он просто добавляет ещё один источник в конвейер и ещё одну плитку в хаб.</p>
       </div>
+    </div>
+    <div class="ds-fnotes fnotes">
+      <p class="ds-fn"><sup>1</sup> Свежесть данных на карточках каталога проверяется живью — по JSON-каналам экосистемы.</p>
+      <p class="ds-fn"><sup>2</sup> Общий язык интерфейса — дизайн-система vet-ds v2.2 «Научная периодика»: бумага, чернила и данные вместо декора.</p>
     </div>
   </div>
 </section>
+</main>
 
-<footer>
+<footer class="ds-footer ds-footer--meta">
   <div class="wrap">
-    <div class="cop">© <span id="yr">2026</span> shray77 · ветеринарная медицина × код</div>
-    <div class="flinks">
-      <a href="https://github.com/shray77" target="_blank" rel="noopener">
-        <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
-        github.com/shray77
-      </a>
-      <a href="./terms.html">условия использования</a>
-      <a href="https://gitlab.com/shray77" target="_blank" rel="noopener">
-        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m23.6004 9.5927-.0337-.0862L20.3.9814a.851.851 0 0 0-.3362-.405.8748.8748 0 0 0-.9997.0539-.8748.8748 0 0 0-.29.4399l-2.2055 6.748H7.5375l-2.2057-6.748a.8573.8573 0 0 0-.29-.4412.8748.8748 0 0 0-.9997-.0537.8585.8585 0 0 0-.3362.4049L.4332 9.5082a1.719 1.719 0 0 0 .064 1.4774l6.5242 12.0733c.2446.4527.7172.737 1.2326.7378h8.4904a1.4414 1.4414 0 0 0 1.2326-.7378l6.5242-12.0733a1.719 1.719 0 0 0 .064-1.4774z"/></svg>
-        gitlab.com/shray77
-      </a>
-    </div>
-    <div class="note">Одна HTML-страница без зависимостей и внешних CDN · хостится на GitHub Pages ·
-    проекты — как есть, без гарантий; решения в клинике всегда за врачом.</div>
+    <span class="ds-footer__legal">информационный каталог · не ветеринарный совет · решения в клинике всегда за врачом · <a href="./terms.html">условия использования</a></span>
+    <span>© <span id="yr">2026</span> shray77 · ветеринарная медицина × код · <a href="https://github.com/shray77" target="_blank" rel="noopener">github.com/shray77</a> · <a href="https://gitlab.com/shray77" target="_blank" rel="noopener">gitlab.com/shray77</a></span>
+    <span>вёрстка — <a href="https://github.com/shray77/vet-ds" target="_blank" rel="noopener">vet-ds</a> v2.2 «Научная периодика» · одна HTML-страница · шрифты Google Fonts (офлайн — системные) · хостинг GitHub Pages</span>
+    <span>скриншоты витрин — 26.10.2026 · свежесть данных на карточках — живые JSON экосистемы<sup>1</sup></span>
   </div>
 </footer>
 
+<script>(function(){var el=document.querySelector(".ds-masthead-meta .m-date");if(el)el.textContent=new Date().toLocaleDateString("ru-RU",{weekday:"long",day:"numeric",month:"long",year:"numeric"})})();</script>
+<script>document.getElementById("yr").textContent=new Date().getFullYear();</script>
 <script>
-document.getElementById('yr').textContent = new Date().getFullYear();
+(function(){
+  var root=document.documentElement,key="vetds-theme";
+  var btn=document.getElementById("themeToggle");
+  if(btn)btn.addEventListener("click",function(){
+    var cur=root.getAttribute("data-theme")==="dark"?"":"dark";
+    if(cur)root.setAttribute("data-theme",cur);else root.removeAttribute("data-theme");
+    try{localStorage.setItem(key,cur)}catch(e){}
+  });
+})();
 </script>
-
 <script>
 // фильтр проектов по разделам
 (function () {
@@ -920,20 +924,19 @@ document.getElementById('yr').textContent = new Date().getFullYear();
   apply(document.querySelector('.fbtn.on')?.dataset.f || 'all');
 })();
 </script>
-
 <script>
 // живые индикаторы свежести данных на карточках (fetch + CORS GitHub Pages)
 (function () {
   const MAP = [
-    ['vetflu-site',    'data/model.json', 30],
-    ['biothreat-site', 'events.json',      6],
-    ['vetrecall-site', 'signals.json',     6],
-    ['vetdigest-site', 'digest.json',     30],
+    ['vetflu-site',    'data/model.json',  30],
+    ['biothreat-site', 'events.json',       6],
+    ['vetrecall-site', 'signals.json',     72],
+    ['vetdigest-site', 'digest.json',      30],
     ['vet-digest-llm', 'data/llm_digest.json', 200],
-    ['rss-core-site',  'status.json',      6],
+    ['rss-core-site',  'status.json',       6],
   ];
   const sub = (repo) => {
-    const cards = document.querySelectorAll('.card .repo');
+    const cards = document.querySelectorAll('.card .card__repo');
     for (const c of cards) if (c.textContent.trim().startsWith(repo)) return c;
     return null;
   };
@@ -966,3 +969,4 @@ document.getElementById('yr').textContent = new Date().getFullYear();
 </script>
 </body>
 </html>
+

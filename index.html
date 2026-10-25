@@ -4,9 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>shray77 — ветеринар × разработчик</title>
-<meta name="description" content="Открытая экосистема для ветеринарии: метеорадар, эпизоотические карты, окна риска ВПГП, предиктивные модели, AI-дайджесты, офлайн-инструменты врача и голосовые ассистенты. 18 проектов, всё бесплатно и без API-ключей.">
+<meta name="description" content="Открытая экосистема для ветеринарии: метеорадар, эпизоотические карты, окна риска ВПГП, предиктивные модели, AI-дайджесты, офлайн-инструменты врача и голосовые ассистенты. 19 проектов, всё бесплатно и без API-ключей.">
 <meta property="og:title" content="shray77 — ветеринар × разработчик">
-<meta property="og:description" content="18 открытых проектов для ветеринарии: живые дашборды, предиктивные модели, офлайн-инструменты врача. Код, данные и формулы — открыты.">
+<meta property="og:description" content="19 открытых проектов для ветеринарии: живые дашборды, предиктивные модели, офлайн-инструменты врача. Код, данные и формулы — открыты.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://shray77.github.io/">
 <meta property="og:image" content="https://shray77.github.io/assets/og.jpg">
@@ -240,7 +240,7 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:18px;align-items:center;justify-con
     {
       "@type": "ItemList",
       "name": "Проекты экосистемы shray77",
-      "numberOfItems": 18,
+      "numberOfItems": 19,
       "itemListElement": [
         {"@type":"ListItem","position":1,"name":"ВЕТМЕТЕО · ВетРадар-61"},
         {"@type":"ListItem","position":2,"name":"ВетКарта"},
@@ -259,7 +259,8 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:18px;align-items:center;justify-con
         {"@type":"ListItem","position":15,"name":"ВетЭко"},
         {"@type":"ListItem","position":16,"name":"VetLearn AI"},
         {"@type":"ListItem","position":17,"name":"VetOS"},
-        {"@type":"ListItem","position":18,"name":"VetAPI"}
+        {"@type":"ListItem","position":18,"name":"VetAPI"},
+        {"@type":"ListItem","position":19,"name":"ВетПетри"}
       ]
     }
   ]
@@ -293,8 +294,8 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:18px;align-items:center;justify-con
       врача. <b>Код, данные и формулы открыты</b>, инфраструктура — в бесплатных лимитах,
       ни одного API-ключа.</p>
       <div class="stats">
-        <div class="stat"><b>18</b><span>открытых проектов</span></div>
-        <div class="stat"><b><em>12</em></b><span>живых демо на Pages</span></div>
+        <div class="stat"><b>19</b><span>открытых проектов</span></div>
+        <div class="stat"><b><em>13</em></b><span>живых демо на Pages</span></div>
         <div class="stat"><b>0 ₽</b><span>инфраструктура</span></div>
         <div class="stat"><b>0</b><span>API-ключей</span></div>
       </div>
@@ -329,7 +330,7 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:18px;align-items:center;justify-con
       <button class="fbtn" data-f="data" aria-pressed="false">Данные и ИИ <b>3</b></button>
       <button class="fbtn" data-f="doc" aria-pressed="false">Инструменты врача <b>3</b></button>
       <button class="fbtn" data-f="plat" aria-pressed="false">Платформа <b>2</b></button>
-      <button class="fbtn" data-f="lab" aria-pressed="false">Пилоты и пробы <b>3</b></button>
+      <button class="fbtn" data-f="lab" aria-pressed="false">Пилоты и пробы <b>4</b></button>
     </div>
     <div class="grid" id="grid">
       <article class="card" data-cat="mon" style="--c:#38bdf8">
@@ -721,6 +722,31 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:18px;align-items:center;justify-con
           <div class="clinks">
             <a class="cbtn live" href="https://shray77.github.io/vetlearn-web/" target="_blank" rel="noopener">Демо ↗</a>
             <a class="cbtn code" href="https://gitlab.com/shray77/vetlearn-web" target="_blank" rel="noopener">Код ↗</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="card" data-cat="lab" style="--c:#22d3ee">
+        <a class="shot" href="https://shray77.github.io/vetpetri/" target="_blank" rel="noopener">
+          <img src="assets/shots/vetpetri.jpg" alt="ВетПетри — симулятор чашки Петри: тёмная тема, чаша с колониями, панель антибиотиков и мутаций" loading="lazy" decoding="async">
+          <span class="veil"></span><span class="open">открыть ↗</span>
+        </a>
+        <div class="cbody">
+          <div class="chead">
+            <span class="cico" aria-hidden="true">🧫</span>
+            <div><h3>ВетПетри</h3><span class="repo">vetpetri</span></div>
+            <span class="live"><i></i>live</span>
+          </div>
+          <p class="cdesc">Научная песочница чашки Петри для вет. микробиологии: рост колоний, антибиотикограммы и лекционные сценарии — в одном HTML-файле, без сервера.</p>
+          <ul class="feat">
+            <li><b>Проектор лекций:</b> сценарии «задание → посев → чтение», протокол в CSV/PNG</li>
+            <li><b>Probe-чтение колоний</b>, мутации и персистеры, PK-панель %T>MIC по антибиотикам</li>
+            <li><b>Один файл ~139 КБ</b> — ноль зависимостей, seed-воспроизводимость через URL-hash</li>
+          </ul>
+          <div class="tags"><span class="tag">симуляция</span><span class="tag">микробиология</span><span class="tag">%T&gt;MIC</span><span class="tag">single-file</span></div>
+          <div class="clinks">
+            <a class="cbtn live" href="https://shray77.github.io/vetpetri/" target="_blank" rel="noopener">Демо ↗</a>
+            <a class="cbtn code" href="https://github.com/shray77/vetpetri" target="_blank" rel="noopener">Код</a>
           </div>
         </div>
       </article>

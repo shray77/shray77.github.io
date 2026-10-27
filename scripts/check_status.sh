@@ -27,6 +27,9 @@ vet-insilico|Витрины|https://shray77.github.io/vet-insilico/|200|
 vettools|Витрины|https://shray77.github.io/vettools/|200|
 biothreat-site|Витрины|https://shray77.github.io/biothreat-site/|200|
 vetrecall-site|Витрины|https://shray77.github.io/vetrecall-site/|200|
+vetfecrt-site|Витрины|https://shray77.github.io/vetfecrt-site/|200|ФЭКРТ
+vetpetri|Витрины|https://shray77.github.io/vetpetri/|200|ВетПетри
+vet-hub|Витрины|https://shray77.github.io/vet-hub/|200|
 vetflu-feed|Эндпоинты|https://shray77.github.io/vetflu-site/feed.xml|200|<rss version
 vetflu-model|Эндпоинты|https://shray77.github.io/vetflu-site/data/model.json|200|"nodes"
 vetflu-wind|Эндпоинты|https://shray77.github.io/vetflu-site/data/wind_live.json|200|sector_deg

@@ -1,12 +1,12 @@
 {
  "service": "vetinsilico-status",
  "note": "status.json обновляется ТОЛЬКО при изменении состояния; живость монитора — бейдж воркфлоу status-check",
- "generated_for_run": "2026-10-11T15:44:44Z",
- "checked_at": "2026-10-11T15:44:44Z",
- "last_change_at": "2026-10-11T14:19:12Z",
- "state_hash": "f59c1a76c556",
+ "generated_for_run": "2026-10-28T01:21:19Z",
+ "checked_at": "2026-10-28T01:21:19Z",
+ "last_change_at": "2026-10-11T15:44:44Z",
+ "state_hash": "5194030547f6",
  "overall": "ok",
- "checks_total": 28,
+ "checks_total": 31,
  "checks_failed": 0,
  "failed_ids": [],
  "checks": [
@@ -16,7 +16,7 @@
    "url": "https://shray77.github.io/",
    "code": 200,
    "ok": true,
-   "ms": 386,
+   "ms": 108,
    "expected": "200/200+фраза"
   },
   {
@@ -25,7 +25,7 @@
    "url": "https://shray77.github.io/vetflu-site/",
    "code": 200,
    "ok": true,
-   "ms": 451,
+   "ms": 135,
    "expected": "200/200+фраза"
   },
   {
@@ -34,7 +34,7 @@
    "url": "https://shray77.github.io/vet-heatmap/",
    "code": 200,
    "ok": true,
-   "ms": 374,
+   "ms": 113,
    "expected": "200/200"
   },
   {
@@ -43,7 +43,7 @@
    "url": "https://shray77.github.io/vet-meteo/",
    "code": 200,
    "ok": true,
-   "ms": 430,
+   "ms": 176,
    "expected": "200/200"
   },
   {
@@ -52,7 +52,7 @@
    "url": "https://shray77.github.io/rss-core-site/",
    "code": 200,
    "ok": true,
-   "ms": 386,
+   "ms": 144,
    "expected": "200/200"
   },
   {
@@ -61,7 +61,7 @@
    "url": "https://shray77.github.io/vetdigest-site/",
    "code": 200,
    "ok": true,
-   "ms": 417,
+   "ms": 144,
    "expected": "200/200"
   },
   {
@@ -70,7 +70,7 @@
    "url": "https://shray77.github.io/vet-insilico/",
    "code": 200,
    "ok": true,
-   "ms": 439,
+   "ms": 137,
    "expected": "200/200"
   },
   {
@@ -79,7 +79,7 @@
    "url": "https://shray77.github.io/vettools/",
    "code": 200,
    "ok": true,
-   "ms": 473,
+   "ms": 126,
    "expected": "200/200"
   },
   {
@@ -88,7 +88,7 @@
    "url": "https://shray77.github.io/biothreat-site/",
    "code": 200,
    "ok": true,
-   "ms": 377,
+   "ms": 156,
    "expected": "200/200"
   },
   {
@@ -97,7 +97,34 @@
    "url": "https://shray77.github.io/vetrecall-site/",
    "code": 200,
    "ok": true,
-   "ms": 389,
+   "ms": 126,
+   "expected": "200/200"
+  },
+  {
+   "id": "vetfecrt-site",
+   "group": "Витрины",
+   "url": "https://shray77.github.io/vetfecrt-site/",
+   "code": 200,
+   "ok": true,
+   "ms": 140,
+   "expected": "200/200+фраза"
+  },
+  {
+   "id": "vetpetri",
+   "group": "Витрины",
+   "url": "https://shray77.github.io/vetpetri/",
+   "code": 200,
+   "ok": true,
+   "ms": 129,
+   "expected": "200/200+фраза"
+  },
+  {
+   "id": "vet-hub",
+   "group": "Витрины",
+   "url": "https://shray77.github.io/vet-hub/",
+   "code": 200,
+   "ok": true,
+   "ms": 151,
    "expected": "200/200"
   },
   {
@@ -106,7 +133,7 @@
    "url": "https://shray77.github.io/vetflu-site/feed.xml",
    "code": 200,
    "ok": true,
-   "ms": 372,
+   "ms": 244,
    "expected": "200/200+фраза"
   },
   {
@@ -115,7 +142,7 @@
    "url": "https://shray77.github.io/vetflu-site/data/model.json",
    "code": 200,
    "ok": true,
-   "ms": 495,
+   "ms": 150,
    "expected": "200/200+фраза"
   },
   {
@@ -124,7 +151,7 @@
    "url": "https://shray77.github.io/vetflu-site/data/wind_live.json",
    "code": 200,
    "ok": true,
-   "ms": 347,
+   "ms": 93,
    "expected": "200/200+фраза"
   },
   {
@@ -133,7 +160,7 @@
    "url": "https://shray77.github.io/vetflu-site/og-image.png",
    "code": 200,
    "ok": true,
-   "ms": 425,
+   "ms": 106,
    "expected": "200/200"
   },
   {
@@ -142,7 +169,7 @@
    "url": "https://shray77.github.io/biothreat-site/terms.html",
    "code": 200,
    "ok": true,
-   "ms": 400,
+   "ms": 170,
    "expected": "200/200"
   },
   {
@@ -151,7 +178,7 @@
    "url": "https://shray77.github.io/rss-core-site/terms.html",
    "code": 200,
    "ok": true,
-   "ms": 381,
+   "ms": 126,
    "expected": "200/200"
   },
   {
@@ -160,7 +187,7 @@
    "url": "https://shray77.github.io/vet-heatmap/terms.html",
    "code": 200,
    "ok": true,
-   "ms": 400,
+   "ms": 125,
    "expected": "200/200"
   },
   {
@@ -169,7 +196,7 @@
    "url": "https://shray77.github.io/vet-insilico/terms/",
    "code": 200,
    "ok": true,
-   "ms": 374,
+   "ms": 162,
    "expected": "200/200"
   },
   {
@@ -178,7 +205,7 @@
    "url": "https://shray77.github.io/vet-meteo/terms.html",
    "code": 200,
    "ok": true,
-   "ms": 361,
+   "ms": 122,
    "expected": "200/200"
   },
   {
@@ -187,7 +214,7 @@
    "url": "https://shray77.github.io/vetdigest-site/terms.html",
    "code": 200,
    "ok": true,
-   "ms": 390,
+   "ms": 139,
    "expected": "200/200"
   },
   {
@@ -196,7 +223,7 @@
    "url": "https://shray77.github.io/vetrecall-site/terms.html",
    "code": 200,
    "ok": true,
-   "ms": 7509,
+   "ms": 124,
    "expected": "200/200"
   },
   {
@@ -205,7 +232,7 @@
    "url": "https://shray77.github.io/vetflu-site/terms.html",
    "code": 200,
    "ok": true,
-   "ms": 384,
+   "ms": 123,
    "expected": "200/200"
   },
   {
@@ -214,7 +241,7 @@
    "url": "https://rss-core.shray77.workers.dev/",
    "code": 200,
    "ok": true,
-   "ms": 135,
+   "ms": 80,
    "expected": "200/200"
   },
   {
@@ -223,7 +250,7 @@
    "url": "https://vetdigest.shray77.workers.dev/",
    "code": 200,
    "ok": true,
-   "ms": 73,
+   "ms": 87,
    "expected": "200/200"
   },
   {
@@ -241,7 +268,7 @@
    "url": "https://vetrecall.shray77.workers.dev/",
    "code": 200,
    "ok": true,
-   "ms": 83,
+   "ms": 120,
    "expected": "200/200"
   },
   {
@@ -250,7 +277,7 @@
    "url": "https://vet-api.shray77.workers.dev/",
    "code": 200,
    "ok": true,
-   "ms": 55,
+   "ms": 102,
    "expected": "200/200+фраза"
   },
   {
@@ -259,7 +286,7 @@
    "url": "https://vet-api.shray77.workers.dev/v1/vetflu/risk",
    "code": 200,
    "ok": true,
-   "ms": 123,
+   "ms": 205,
    "expected": "200/200+фраза"
   }
  ]

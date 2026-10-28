@@ -197,7 +197,7 @@ section:first-of-type{padding-top:0}
     {
       "@type": "ItemList",
       "name": "Проекты экосистемы shray77",
-      "numberOfItems": 19,
+      "numberOfItems": 20,
       "itemListElement": [
         {"@type":"ListItem","position":1,"name":"ВЕТМЕТЕО · ВетРадар-61"},
         {"@type":"ListItem","position":2,"name":"ВетКарта"},
@@ -212,12 +212,13 @@ section:first-of-type{padding-top:0}
         {"@type":"ListItem","position":11,"name":"Вет-Пилоты"},
         {"@type":"ListItem","position":12,"name":"VetInSilico Hub"},
         {"@type":"ListItem","position":13,"name":"VetTools"},
-        {"@type":"ListItem","position":14,"name":"VetVoice"},
-        {"@type":"ListItem","position":15,"name":"ВетЭко"},
-        {"@type":"ListItem","position":16,"name":"VetLearn AI"},
-        {"@type":"ListItem","position":17,"name":"VetOS"},
-        {"@type":"ListItem","position":18,"name":"VetAPI"},
-        {"@type":"ListItem","position":19,"name":"ВетПетри"}
+        {"@type":"ListItem","position":14,"name":"ФЭКРТ"},
+        {"@type":"ListItem","position":15,"name":"VetVoice"},
+        {"@type":"ListItem","position":16,"name":"ВетЭко"},
+        {"@type":"ListItem","position":17,"name":"VetLearn AI"},
+        {"@type":"ListItem","position":18,"name":"VetOS"},
+        {"@type":"ListItem","position":19,"name":"VetAPI"},
+        {"@type":"ListItem","position":20,"name":"ВетПетри"}
       ]
     }
   ]
@@ -290,8 +291,8 @@ section:first-of-type{padding-top:0}
       <div class="open__chips" aria-label="Живые показатели экосистемы">
         <span class="ds-chip">THI 66.5 · ВетРадар</span>
         <span class="ds-chip">R = 100 · окно ВПГП</span>
-        <span class="ds-chip">2 758 вспышек · ВетКарта</span>
-        <span class="ds-chip">24 источника · rss-core</span>
+        <span class="ds-chip">2&nbsp;758&nbsp;вспышек · ВетКарта</span>
+        <span class="ds-chip">24&nbsp;источника · rss-core</span>
       </div>
     </figure>
   </div>
@@ -352,7 +353,7 @@ section:first-of-type{padding-top:0}
             <div><h3 class="card__title">ВетКарта</h3><span class="card__repo">vet-heatmap</span></div>
             <span class="ds-badge ds-badge--green card__live">live</span>
           </div>
-          <p class="card__desc">Эпизоотическая обстановка России: 2 758 вспышек по 85 регионам, зоны риска по стандартам ВОЗЖ, эпидкривые и калькулятор карантина.</p>
+          <p class="card__desc">Эпизоотическая обстановка России: 2&nbsp;758&nbsp;вспышек по 85&nbsp;регионам, зоны риска по стандартам ВОЗЖ, эпидкривые и калькулятор карантина.</p>
           <ul class="card__feat">
             <li><b>Хороплет плотности</b> + маркеры вспышек, пульсация активных</li>
             <li>Зоны 3/10/30 км вокруг очагов (WOAH Terrestrial Code)</li>
@@ -406,8 +407,8 @@ section:first-of-type{padding-top:0}
           </div>
           <p class="card__desc">Окна риска заноса ВПГП: транзит × колонии × зимовки — с погодным форсажем, фоном вспышек, давлением с границ и ветровым переносом по 4 флайвеям России.</p>
           <ul class="card__feat">
-            <li><b>R = max(M, C, Z) × MW × MB</b> — 8 групп резервуаров × 4 флайвея</li>
-            <li>Карта коридоров, 16 узлов, скраббер 52 недель, история R</li>
+            <li><b>R = max(M, C, Z) × MW × MB</b> — 8&nbsp;групп резервуаров × 4&nbsp;флайвея</li>
+            <li>Карта коридоров, 16&nbsp;узлов, скраббер 52&nbsp;недель, история R</li>
             <li>Живые данные ежедневно: Open-Meteo + вспышки WOAH WAHIS, RSS-лента фаз</li>
           </ul>
           <div class="card__tags"><span class="card__tag">Модель</span><span class="card__tag">Leaflet</span><span class="card__tag">Static JSON</span><span class="card__tag">RSS</span></div>
@@ -434,7 +435,7 @@ section:first-of-type{padding-top:0}
           <ul class="card__feat">
             <li><b>Прогноз +4 нед с квантилями q10–q90</b> по 4 флайвеям + мир + округа РФ</li>
             <li>Rolling-origin бэктест против naive/drift/сглаживания</li>
-            <li>Понедельник 06:00 UTC на Actions, модель 925 МБ в кэше раннеров</li>
+            <li>Понедельник 06:00 UTC на Actions, модель 925&nbsp;МБ в кэше раннеров</li>
           </ul>
           <div class="card__tags"><span class="card__tag">TimesFM 2.5</span><span class="card__tag">Foundation-модель</span><span class="card__tag">Actions</span><span class="card__tag">Бэктест</span></div>
           <div class="card__links">
@@ -562,7 +563,7 @@ section:first-of-type{padding-top:0}
           </div>
           <p class="card__desc">Общее ядро приёма данных экосистемы: RSS, PubMed, Europe PMC и JSON-API → нормализация → дедупликация → база D1. Продуктовые воркеры только читают.</p>
           <ul class="card__feat">
-            <li><b>24 источника</b> с интервалами, статусами и счётчиками неудач</li>
+            <li><b>24&nbsp;источника</b> с интервалами, статусами и счётчиками неудач</li>
             <li>Под него собраны VetDigest, VetRecall и BioThreat Watch</li>
             <li>Витрина статуса обновляется воркером каждые 2 часа</li>
           </ul>
@@ -590,7 +591,7 @@ section:first-of-type{padding-top:0}
           <ul class="card__feat">
             <li><b>Drug repurposing + Boltz-2:</b> ночные предсказания аффинности (IC50/ΔG) на Actions, сверка с экспериментом</li>
             <li><b>ADMET/PK с проверкой по ChEMBL:</b> дескрипторы, фазы одобрения, механизмы действия</li>
-            <li>Эпитопы вакцин, PCR-праймеры, CRISPR gRNA, филогения; 183 теста</li>
+            <li>Эпитопы вакцин, PCR-праймеры, CRISPR gRNA, филогения; 183&nbsp;теста</li>
           </ul>
           <div class="card__tags"><span class="card__tag">TypeScript</span><span class="card__tag">RDKit.js</span><span class="card__tag">Boltz-2</span><span class="card__tag">ChEMBL</span><span class="card__tag">Apache 2.0</span></div>
           <div class="card__links">
@@ -641,7 +642,7 @@ section:first-of-type{padding-top:0}
           <p class="card__desc">Полевой калькулятор резистентности к антигельминтикам по гайдлайну WAAVP-2023: редукция счёта яиц гельминтов с 90% ДИ и вердиктом «восприимчив / серая зона / резистентность». Мелкие жвачные, КРС, лошади — офлайн, данные не покидают браузер.</p>
           <ul class="card__feat">
             <li><b>Парный дизайн и контроль:</b> формулы WAAVP-2023 и классики Coles, пороги вида × препарата</li>
-            <li><b>Детерминированный бутстрэп:</b> 10 000 реплик, фиксированный seed — один ввод = один 90% ДИ</li>
+            <li><b>Детерминированный бутстрэп:</b> 10&nbsp;000&nbsp;реплик, фиксированный seed — один ввод = один 90% ДИ</li>
             <li>Род-специфичный пересчёт по культуре L3; арифметика гейтится 40 известными ответами (node --test)</li>
           </ul>
           <div class="card__tags"><span class="card__tag">WAAVP-2023</span><span class="card__tag">Офлайн</span><span class="card__tag">node --test</span></div>
@@ -663,7 +664,7 @@ section:first-of-type{padding-top:0}
           </div>
           <p class="card__desc">Справочник и калькулятор дозировок с голосовым управлением — карманный помощник прямо на приёме. v1.20.1: release-подпись APK — обновления встают поверх.</p>
           <ul class="card__feat">
-            <li><b>2 400+ препаратов:</b> доза по весу, виду и концентрации, каренция, взаимодействия</li>
+            <li><b>2&nbsp;400+&nbsp;препаратов:</b> доза по весу, виду и концентрации, каренция, взаимодействия</li>
             <li><b>Офлайн-движок GigaAM-v3-CTC (Сбер)</b> — ONNX int8, качается один раз; wake word на Vosk</li>
             <li>Экстренные протоколы, антидоты, жидкостная терапия; 10 видов — от КРС до пчёл</li>
           </ul>
@@ -687,8 +688,8 @@ section:first-of-type{padding-top:0}
           <p class="card__desc">Android-ассистент ветврача: диктовка приёма в SOAP-медкарту, калькулятор доз, RAG-чат по базе знаний и диагностика кожных поражений по фото. v1.1.2: release-подпись APK — обновления встают поверх.</p>
           <ul class="card__feat">
             <li><b>Диктовка → SOAP-медкарта:</b> голосовые записи приёма, 3-уровневый fallback ИИ-шлюза</li>
-            <li><b>RAG-чат (58 242 чанка: 15 709 данных + 42 533 научных)</b> + VLM-диагностика по фото кожи (GLM-4.6V)</li>
-            <li>База: 2 401 препарат, 187 болезней, 154 протокола, 73 взаимодействия</li>
+            <li><b>RAG-чат (58&nbsp;242&nbsp;чанка: 15&nbsp;709&nbsp;данных + 42&nbsp;533&nbsp;научных)</b> + VLM-диагностика по фото кожи (GLM-4.6V)</li>
+            <li>База: 2&nbsp;401&nbsp;препарат, 187&nbsp;болезней, 154&nbsp;протокола, 73&nbsp;взаимодействия</li>
           </ul>
           <div class="card__tags"><span class="card__tag">Flutter</span><span class="card__tag">RAG</span><span class="card__tag">v1.1.2</span></div>
           <div class="card__links">
@@ -765,7 +766,7 @@ section:first-of-type{padding-top:0}
           <ul class="card__feat">
             <li><b>Проектор лекций:</b> сценарии «задание → посев → чтение», протокол в CSV/PNG</li>
             <li><b>Probe-чтение колоний</b>, мутации и персистеры, PK-панель %T&gt;MIC по антибиотикам</li>
-            <li><b>Один файл ~139 КБ</b> — ноль зависимостей, seed-воспроизводимость через URL-hash</li>
+            <li><b>Один файл ~139&nbsp;КБ</b> — ноль зависимостей, seed-воспроизводимость через URL-hash</li>
           </ul>
           <div class="card__tags"><span class="card__tag">симуляция</span><span class="card__tag">микробиология</span><span class="card__tag">%T&gt;MIC</span><span class="card__tag">single-file</span></div>
           <div class="card__links">
@@ -876,7 +877,7 @@ section:first-of-type{padding-top:0}
     <div class="sec-head">
       <p class="ds-overline ds-overline--rule">03 · <b>Подход</b></p>
       <h2 class="ds-display">Почему это работает</h2>
-      <p class="ds-lede">Три принципа, которые держат все девятнадцать проектов бесплатными и живыми.</p>
+      <p class="ds-lede">Три принципа, которые держат все двадцать проектов бесплатными и живыми.</p>
     </div>
     <div class="principles">
       <div class="pr">
@@ -909,7 +910,7 @@ section:first-of-type{padding-top:0}
 <footer class="ds-footer ds-footer--meta">
   <div class="wrap">
     <span class="ds-footer__legal">информационный каталог · не ветеринарный совет · решения в клинике всегда за врачом · <a href="./terms.html">условия использования</a></span>
-    <span>© <span id="yr">2026</span> shray77 · <a href="https://github.com/shray77" target="_blank" rel="noopener">github.com/shray77</a> · вёрстка — <a href="https://github.com/shray77/vet-ds" target="_blank" rel="noopener">vet-ds</a> v2.3</span>
+    <span>© <span id="yr">2026</span> shray77 · <a href="https://github.com/shray77" target="_blank" rel="noopener">github.com/shray77</a> · вёрстка — vet-ds v2.3</span>
   </div>
 </footer>
 
@@ -934,7 +935,7 @@ section:first-of-type{padding-top:0}
   const apply = (f) => {
     cards.forEach((c) => {
       const cat = c.dataset.cat;
-      const show = f === 'lab' ? cat === 'lab' : (f === 'all' ? cat !== 'lab' : cat === f);
+      const show = f === 'all' || cat === f;
       c.style.display = show ? '' : 'none';
     });
   };

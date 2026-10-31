@@ -82,9 +82,11 @@ section:first-of-type{padding-top:0}
   transition:color var(--ds-dur) var(--ds-ease),border-color var(--ds-dur) var(--ds-ease),background var(--ds-dur) var(--ds-ease)}
 .fbtn:hover{color:var(--text);border-color:var(--text)}
 .fbtn .fdot{width:7px;height:7px;border-radius:50%;background:var(--fc,var(--faint));flex:none}
-.fbtn b{font-weight:700;opacity:.6}
+.fbtn b{font-weight:700}
 .fbtn.on{color:var(--accent);border-color:color-mix(in srgb,var(--accent) 45%,transparent);
   background:color-mix(in srgb,var(--accent) 10%,transparent)}
+.fbtn.on b{color:#A93519;color:color-mix(in srgb,var(--accent) 85%,#000)}
+[data-theme="dark"] .fbtn.on b{color:#E37F5F;color:color-mix(in srgb,var(--accent) 85%,#fff)}
 
 /* ---------- карточки каталога ---------- */
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:20px}
@@ -99,7 +101,7 @@ section:first-of-type{padding-top:0}
 .card:hover .card__shot img{transform:scale(1.03)}
 .card__open{position:absolute;right:10px;bottom:10px;padding:4px 10px;border-radius:var(--ds-radius-s);
   background:color-mix(in srgb,var(--bg) 78%,transparent);border:1px solid var(--border-strong);
-  font-family:var(--mono);font-size:11px;font-weight:500;color:var(--text);
+  font-family:var(--mono);font-size:12px;font-weight:500;color:var(--text);
   opacity:0;transform:translateY(4px);transition:opacity var(--ds-dur) var(--ds-ease),transform var(--ds-dur) var(--ds-ease)}
 .card:hover .card__open{opacity:1;transform:translateY(0)}
 .card__shot.ph{display:grid;place-items:center;background-color:var(--surface2);
@@ -108,7 +110,7 @@ section:first-of-type{padding-top:0}
 .card__shot.ph .ph-ico{color:var(--c);opacity:.75}
 .card__shot.ph .ph-ico svg{width:44px;height:44px;stroke-width:1.4}
 .card__shot.ph .ph-cap{position:absolute;left:12px;bottom:10px;font-family:var(--mono);
-  font-size:10.5px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:var(--faint)}
+  font-size:11px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:var(--faint)}
 .card__body{padding:16px 18px 18px;display:flex;flex-direction:column;flex:1}
 .card__head{display:flex;align-items:center;gap:11px;margin-bottom:10px}
 .card__ico{width:36px;height:36px;flex:none;display:grid;place-items:center;color:var(--c);
@@ -124,12 +126,12 @@ section:first-of-type{padding-top:0}
 .card__feat li::before{content:"";position:absolute;left:0;top:8px;width:8px;height:2px;background:var(--c)}
 .card__feat li b{color:var(--text);font-weight:600}
 .card__tags{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:14px}
-.card__tag{font-family:var(--mono);font-size:10.5px;color:var(--muted);
+.card__tag{font-family:var(--mono);font-size:11px;color:var(--muted);
   border:1px solid var(--border);padding:2px 8px;border-radius:var(--ds-radius-s)}
 .card__links{display:flex;gap:8px}
 .card__links .ds-btn{flex:1;min-height:36px;font-size:13px}
 .fresh{display:inline-flex;align-items:center;gap:5px;margin-left:8px;font-family:var(--mono);
-  font-size:10px;font-weight:500;color:var(--faint);vertical-align:1px}
+  font-size:11px;font-weight:500;color:var(--faint);vertical-align:1px}
 .fresh i{width:6px;height:6px;border-radius:50%;background:var(--faint);flex:none}
 .fresh.ok{color:var(--green)} .fresh.ok i{background:var(--green)}
 .fresh.warn{color:var(--amber)} .fresh.warn i{background:var(--amber)}
@@ -138,6 +140,7 @@ section:first-of-type{padding-top:0}
 /* ---------- конвейер ---------- */
 #pipeline{background:var(--surface2);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
 .flow{display:flex;align-items:stretch;gap:0;overflow-x:auto;padding:6px 2px 18px}
+.node.dim{min-width:360px}
 .node{flex:1;min-width:192px;background:var(--surface);border:1px solid var(--border);
   border-radius:var(--ds-radius);padding:16px 16px 14px;position:relative}
 .node__ico{color:var(--accent);margin-bottom:8px}
@@ -177,7 +180,8 @@ section:first-of-type{padding-top:0}
   .open{padding-top:30px}
   .filters{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;-ms-overflow-style:none;padding-bottom:4px}
   .filters::-webkit-scrollbar{display:none}
-  .fbtn{flex:none}
+  .fbtn{flex:none;min-height:44px}
+  .card__links .ds-btn{min-height:44px}
   .grid{grid-template-columns:1fr}
   .node{min-width:210px}
   .node+.node{margin-left:30px}
@@ -291,7 +295,7 @@ section:first-of-type{padding-top:0}
       <div class="open__chips" aria-label="Показатели экосистемы">
         <span class="ds-chip">THI 66.5 · ВетРадар</span>
         <span class="ds-chip">R = 100 · окно ВПГП</span>
-        <span class="ds-chip">2&nbsp;758&nbsp;вспышек · ВетКарта</span>
+        <span class="ds-chip"><span data-outbreaks>2&nbsp;845</span>&nbsp;вспышек · ВетКарта</span>
         <span class="ds-chip">24&nbsp;источника · rss-core</span>
       </div>
     </figure>
@@ -336,7 +340,7 @@ section:first-of-type{padding-top:0}
           <div class="card__tags"><span class="card__tag">Next.js 16</span><span class="card__tag">TypeScript</span><span class="card__tag">Leaflet</span><span class="card__tag">Open-Meteo</span></div>
           <div class="card__links">
             <a class="ds-btn ds-btn--primary" href="https://shray77.github.io/vet-meteo/" target="_blank" rel="noopener">Демо ↗</a>
-            <a class="ds-btn" href="https://github.com/shray77/vet-meteo" target="_blank" rel="noopener">Код</a>
+            <a class="ds-btn" href="https://github.com/shray77/vet-meteo" target="_blank" rel="noopener">Код ↗</a>
           </div>
         </div>
       </article>
@@ -353,7 +357,7 @@ section:first-of-type{padding-top:0}
             <div><h3 class="card__title">ВетКарта</h3><span class="card__repo">vet-heatmap</span></div>
             <span class="ds-badge ds-badge--green card__live">live</span>
           </div>
-          <p class="card__desc">Эпизоотическая обстановка России: 2&nbsp;758&nbsp;вспышек по 85&nbsp;регионам, зоны риска по стандартам ВОЗЖ, эпидкривые и калькулятор карантина.</p>
+          <p class="card__desc">Эпизоотическая обстановка России: <span data-outbreaks>2&nbsp;845</span>&nbsp;вспышек по 85&nbsp;регионам, зоны риска по стандартам ВОЗЖ, эпидкривые и калькулятор карантина.</p>
           <ul class="card__feat">
             <li><b>Хороплет плотности</b> + маркеры вспышек, пульсация активных</li>
             <li>Зоны 3/10/30 км вокруг очагов (WOAH Terrestrial Code)</li>
@@ -362,7 +366,7 @@ section:first-of-type{padding-top:0}
           <div class="card__tags"><span class="card__tag">TypeScript</span><span class="card__tag">PWA</span><span class="card__tag">GIS</span><span class="card__tag">WAHIS+ФСВПС</span></div>
           <div class="card__links">
             <a class="ds-btn ds-btn--primary" href="https://shray77.github.io/vet-heatmap/" target="_blank" rel="noopener">Демо ↗</a>
-            <a class="ds-btn" href="https://github.com/shray77/vet-heatmap" target="_blank" rel="noopener">Код</a>
+            <a class="ds-btn" href="https://github.com/shray77/vet-heatmap" target="_blank" rel="noopener">Код ↗</a>
           </div>
         </div>
       </article>
@@ -388,7 +392,7 @@ section:first-of-type{padding-top:0}
           <div class="card__tags"><span class="card__tag">Vanilla JS</span><span class="card__tag">Агрегатор JSON</span><span class="card__tag">TimesFM</span><span class="card__tag">TSPulse</span></div>
           <div class="card__links">
             <a class="ds-btn ds-btn--primary" href="https://shray77.github.io/vet-hub/" target="_blank" rel="noopener">Демо ↗</a>
-            <a class="ds-btn" href="https://github.com/shray77/vet-hub" target="_blank" rel="noopener">Код</a>
+            <a class="ds-btn" href="https://github.com/shray77/vet-hub" target="_blank" rel="noopener">Код ↗</a>
           </div>
         </div>
       </article>
@@ -414,7 +418,7 @@ section:first-of-type{padding-top:0}
           <div class="card__tags"><span class="card__tag">Модель</span><span class="card__tag">Leaflet</span><span class="card__tag">Static JSON</span><span class="card__tag">RSS</span></div>
           <div class="card__links">
             <a class="ds-btn ds-btn--primary" href="https://shray77.github.io/vetflu-site/" target="_blank" rel="noopener">Демо ↗</a>
-            <a class="ds-btn" href="https://github.com/shray77/vetflu-site" target="_blank" rel="noopener">Код</a>
+            <a class="ds-btn" href="https://github.com/shray77/vetflu-site" target="_blank" rel="noopener">Код ↗</a>
           </div>
         </div>
       </article>
@@ -440,7 +444,7 @@ section:first-of-type{padding-top:0}
           <div class="card__tags"><span class="card__tag">TimesFM 2.5</span><span class="card__tag">Foundation-модель</span><span class="card__tag">Actions</span><span class="card__tag">Бэктест</span></div>
           <div class="card__links">
             <a class="ds-btn ds-btn--primary" href="https://shray77.github.io/vetflu-forecast/" target="_blank" rel="noopener">Демо ↗</a>
-            <a class="ds-btn" href="https://github.com/shray77/vetflu-forecast" target="_blank" rel="noopener">Код</a>
+            <a class="ds-btn" href="https://github.com/shray77/vetflu-forecast" target="_blank" rel="noopener">Код ↗</a>
           </div>
         </div>
       </article>
@@ -466,7 +470,7 @@ section:first-of-type{padding-top:0}
           <div class="card__tags"><span class="card__tag">Россельхознадзор</span><span class="card__tag">Keyword-классификатор</span><span class="card__tag">Cron 20 мин</span></div>
           <div class="card__links">
             <a class="ds-btn ds-btn--primary" href="https://shray77.github.io/vetrecall-site/" target="_blank" rel="noopener">Демо ↗</a>
-            <a class="ds-btn" href="https://github.com/shray77/vetrecall-site" target="_blank" rel="noopener">Код</a>
+            <a class="ds-btn" href="https://github.com/shray77/vetrecall-site" target="_blank" rel="noopener">Код ↗</a>
           </div>
         </div>
       </article>
@@ -492,7 +496,7 @@ section:first-of-type{padding-top:0}
           <div class="card__tags"><span class="card__tag">Bing News</span><span class="card__tag">Workers AI</span><span class="card__tag">Leaflet</span><span class="card__tag">Cron 40 мин</span></div>
           <div class="card__links">
             <a class="ds-btn ds-btn--primary" href="https://shray77.github.io/biothreat-site/" target="_blank" rel="noopener">Демо ↗</a>
-            <a class="ds-btn" href="https://github.com/shray77/biothreat-site" target="_blank" rel="noopener">Код</a>
+            <a class="ds-btn" href="https://github.com/shray77/biothreat-site" target="_blank" rel="noopener">Код ↗</a>
           </div>
         </div>
       </article>
@@ -518,7 +522,7 @@ section:first-of-type{padding-top:0}
           <div class="card__tags"><span class="card__tag">Workers AI</span><span class="card__tag">PubMed + Europe PMC</span><span class="card__tag">D1</span><span class="card__tag">Cron 07:00 UTC</span></div>
           <div class="card__links">
             <a class="ds-btn ds-btn--primary" href="https://shray77.github.io/vetdigest-site/" target="_blank" rel="noopener">Демо ↗</a>
-            <a class="ds-btn" href="https://github.com/shray77/vetdigest-site" target="_blank" rel="noopener">Код</a>
+            <a class="ds-btn" href="https://github.com/shray77/vetdigest-site" target="_blank" rel="noopener">Код ↗</a>
           </div>
         </div>
       </article>
@@ -544,7 +548,7 @@ section:first-of-type{padding-top:0}
           <div class="card__tags"><span class="card__tag">Qwen3-1.7B</span><span class="card__tag">llama.cpp</span><span class="card__tag">Piper TTS</span><span class="card__tag">Actions</span></div>
           <div class="card__links">
             <a class="ds-btn ds-btn--primary" href="https://shray77.github.io/vet-digest-llm/" target="_blank" rel="noopener">Демо ↗</a>
-            <a class="ds-btn" href="https://github.com/shray77/vet-digest-llm" target="_blank" rel="noopener">Код</a>
+            <a class="ds-btn" href="https://github.com/shray77/vet-digest-llm" target="_blank" rel="noopener">Код ↗</a>
           </div>
         </div>
       </article>
@@ -570,7 +574,7 @@ section:first-of-type{padding-top:0}
           <div class="card__tags"><span class="card__tag">Cloudflare D1</span><span class="card__tag">Cron</span><span class="card__tag">TypeScript</span></div>
           <div class="card__links">
             <a class="ds-btn ds-btn--primary" href="https://shray77.github.io/rss-core-site/" target="_blank" rel="noopener">Статус ↗</a>
-            <a class="ds-btn" href="https://github.com/shray77/rss-core-site" target="_blank" rel="noopener">Код</a>
+            <a class="ds-btn" href="https://github.com/shray77/rss-core-site" target="_blank" rel="noopener">Код ↗</a>
           </div>
         </div>
       </article>
@@ -596,7 +600,7 @@ section:first-of-type{padding-top:0}
           <div class="card__tags"><span class="card__tag">TypeScript</span><span class="card__tag">RDKit.js</span><span class="card__tag">Boltz-2</span><span class="card__tag">ChEMBL</span><span class="card__tag">Apache 2.0</span></div>
           <div class="card__links">
             <a class="ds-btn ds-btn--primary" href="https://shray77.github.io/vet-insilico/" target="_blank" rel="noopener">Демо ↗</a>
-            <a class="ds-btn" href="https://github.com/shray77/vet-insilico" target="_blank" rel="noopener">Код</a>
+            <a class="ds-btn" href="https://github.com/shray77/vet-insilico" target="_blank" rel="noopener">Код ↗</a>
           </div>
         </div>
       </article>
@@ -622,7 +626,7 @@ section:first-of-type{padding-top:0}
           <div class="card__tags"><span class="card__tag">HTML</span><span class="card__tag">Offline-first</span><span class="card__tag">file://</span></div>
           <div class="card__links">
             <a class="ds-btn ds-btn--primary" href="https://shray77.github.io/vettools/" target="_blank" rel="noopener">Демо ↗</a>
-            <a class="ds-btn" href="https://github.com/shray77/vettools" target="_blank" rel="noopener">Код</a>
+            <a class="ds-btn" href="https://github.com/shray77/vettools" target="_blank" rel="noopener">Код ↗</a>
           </div>
         </div>
       </article>
@@ -648,7 +652,7 @@ section:first-of-type{padding-top:0}
           <div class="card__tags"><span class="card__tag">WAAVP-2023</span><span class="card__tag">Офлайн</span><span class="card__tag">node --test</span></div>
           <div class="card__links">
             <a class="ds-btn ds-btn--primary" href="https://shray77.github.io/vetfecrt-site/" target="_blank" rel="noopener">Демо ↗</a>
-            <a class="ds-btn" href="https://github.com/shray77/vetfecrt-site" target="_blank" rel="noopener">Код</a>
+            <a class="ds-btn" href="https://github.com/shray77/vetfecrt-site" target="_blank" rel="noopener">Код ↗</a>
           </div>
         </div>
       </article>
@@ -671,7 +675,7 @@ section:first-of-type{padding-top:0}
           <div class="card__tags"><span class="card__tag">Flutter</span><span class="card__tag">GigaAM STT</span><span class="card__tag">Vosk</span><span class="card__tag">v1.20.1</span></div>
           <div class="card__links">
             <a class="ds-btn ds-btn--primary" href="https://github.com/shray77/vetvoice/releases/latest" target="_blank" rel="noopener">Скачать APK ↗</a>
-            <a class="ds-btn" href="https://github.com/shray77/vetvoice" target="_blank" rel="noopener">Код</a>
+            <a class="ds-btn" href="https://github.com/shray77/vetvoice" target="_blank" rel="noopener">Код ↗</a>
           </div>
         </div>
       </article>
@@ -694,7 +698,7 @@ section:first-of-type{padding-top:0}
           <div class="card__tags"><span class="card__tag">Flutter</span><span class="card__tag">RAG</span><span class="card__tag">v1.1.2</span></div>
           <div class="card__links">
             <a class="ds-btn ds-btn--primary" href="https://github.com/shray77/vetvoice-rag/releases/latest" target="_blank" rel="noopener">Скачать APK ↗</a>
-            <a class="ds-btn" href="https://github.com/shray77/vetvoice-rag" target="_blank" rel="noopener">Код</a>
+            <a class="ds-btn" href="https://github.com/shray77/vetvoice-rag" target="_blank" rel="noopener">Код ↗</a>
           </div>
         </div>
       </article>
@@ -720,7 +724,7 @@ section:first-of-type{padding-top:0}
           <div class="card__tags"><span class="card__tag">Next.js 16</span><span class="card__tag">React 19</span><span class="card__tag">Zustand</span><span class="card__tag">SM-2</span><span class="card__tag">vet-ds v2.2</span></div>
           <div class="card__links">
             <a class="ds-btn ds-btn--primary" href="https://shray77.github.io/vetlearn-web/" target="_blank" rel="noopener">Демо ↗</a>
-            <a class="ds-btn" href="https://github.com/shray77/vetlearn-web" target="_blank" rel="noopener">Код</a>
+            <a class="ds-btn" href="https://github.com/shray77/vetlearn-web" target="_blank" rel="noopener">Код ↗</a>
           </div>
         </div>
       </article>
@@ -728,7 +732,7 @@ section:first-of-type{padding-top:0}
       <article class="card cat-lab" data-cat="lab">
         <a class="card__shot" href="https://github.com/shray77/vet-pilots" target="_blank" rel="noopener">
           <img src="assets/shots/vet-pilots.jpg" alt="vet-pilots — график аномалий TSPulse" loading="lazy" decoding="async">
-          <span class="card__open">репозиторий ↗</span>
+          <span class="card__open">Репозиторий ↗</span>
         </a>
         <div class="card__body">
           <div class="card__head">
@@ -771,7 +775,7 @@ section:first-of-type{padding-top:0}
           <div class="card__tags"><span class="card__tag">симуляция</span><span class="card__tag">микробиология</span><span class="card__tag">%T&gt;MIC</span><span class="card__tag">single-file</span></div>
           <div class="card__links">
             <a class="ds-btn ds-btn--primary" href="https://shray77.github.io/vetpetri/" target="_blank" rel="noopener">Демо ↗</a>
-            <a class="ds-btn" href="https://github.com/shray77/vetpetri" target="_blank" rel="noopener">Код</a>
+            <a class="ds-btn" href="https://github.com/shray77/vetpetri" target="_blank" rel="noopener">Код ↗</a>
           </div>
         </div>
       </article>
@@ -794,7 +798,7 @@ section:first-of-type{padding-top:0}
           <div class="card__tags"><span class="card__tag">Flutter</span><span class="card__tag">Dart</span><span class="card__tag">Launcher</span><span class="card__tag">v0.4.1</span></div>
           <div class="card__links">
             <a class="ds-btn ds-btn--primary" href="https://github.com/shray77/vetos/releases/latest" target="_blank" rel="noopener">Скачать APK ↗</a>
-            <a class="ds-btn" href="https://github.com/shray77/vetos" target="_blank" rel="noopener">Код</a>
+            <a class="ds-btn" href="https://github.com/shray77/vetos" target="_blank" rel="noopener">Код ↗</a>
           </div>
         </div>
       </article>
@@ -820,7 +824,7 @@ section:first-of-type{padding-top:0}
           </ul>
           <div class="card__tags"><span class="card__tag">Cloudflare Workers</span><span class="card__tag">KV</span><span class="card__tag">TypeScript</span></div>
           <div class="card__links">
-            <a class="ds-btn" href="https://github.com/shray77/vet-api" target="_blank" rel="noopener">Код</a>
+            <a class="ds-btn" href="https://github.com/shray77/vet-api" target="_blank" rel="noopener">Код ↗</a>
           </div>
         </div>
       </article>
@@ -928,10 +932,11 @@ section:first-of-type{padding-top:0}
 })();
 </script>
 <script>
-// фильтр проектов по разделам
+// фильтр проектов по разделам: выбор переживает F5 (localStorage) и кодируется в URL (#cat=…)
 (function () {
   const btns = document.querySelectorAll('.fbtn');
   const cards = document.querySelectorAll('#grid .card');
+  const KEY = 'vetds-filter';
   const apply = (f) => {
     cards.forEach((c) => {
       const cat = c.dataset.cat;
@@ -939,13 +944,29 @@ section:first-of-type{padding-top:0}
       c.style.display = show ? '' : 'none';
     });
   };
-  btns.forEach((b) => b.addEventListener('click', () => {
+  const activate = (b, push) => {
     btns.forEach((x) => { x.classList.remove('on'); x.setAttribute('aria-pressed', 'false'); });
     b.classList.add('on');
     b.setAttribute('aria-pressed', 'true');
     apply(b.dataset.f);
-  }));
-  apply(document.querySelector('.fbtn.on')?.dataset.f || 'all');
+    try { localStorage.setItem(KEY, b.dataset.f); } catch (e) {}
+    if (push) {
+      const f = b.dataset.f;
+      if (f && f !== 'all') history.replaceState(null, '', '#cat=' + f);
+      else if (location.hash) history.replaceState(null, '', location.pathname);
+    }
+  };
+  btns.forEach((b) => b.addEventListener('click', () => activate(b, true)));
+  let first = null;
+  const m = location.hash.match(/^#cat=([\w-]+)/);
+  if (m) first = Array.from(btns).find((x) => x.dataset.f === m[1]);
+  if (!first) {
+    let saved = null;
+    try { saved = localStorage.getItem(KEY); } catch (e) {}
+    if (saved) first = Array.from(btns).find((x) => x.dataset.f === saved);
+  }
+  if (!first) first = document.querySelector('.fbtn.on');
+  if (first) activate(first, false);
 })();
 </script>
 <script>
@@ -989,6 +1010,20 @@ section:first-of-type{padding-top:0}
         chip.querySelector('span').textContent = 'данные недоступны';
       });
   }
+})();
+</script>
+<script>
+// живое число вспышек ВетКарты: герой-чип + карточка (статичное 2 845 — фолбэк до загрузки)
+(function () {
+  fetch('https://shray77.github.io/vet-heatmap/data/outbreaks.json', { cache: 'no-store' })
+    .then((r) => (r.ok ? r.json() : Promise.reject(r.status)))
+    .then((j) => {
+      const n = j && j.total_outbreaks;
+      if (!n) return;
+      const t = String(n).replace(/\B(?=(\d{3})+(?!\d))/g, '\u00A0');
+      document.querySelectorAll('[data-outbreaks]').forEach((el) => { el.textContent = t; });
+    })
+    .catch(() => {});
 })();
 </script>
 </body>

@@ -30,6 +30,8 @@ vetrecall-site|Витрины|https://shray77.github.io/vetrecall-site/|200|
 vetfecrt-site|Витрины|https://shray77.github.io/vetfecrt-site/|200|ФЭКРТ
 vetpetri|Витрины|https://shray77.github.io/vetpetri/|200|ВетПетри
 vet-hub|Витрины|https://shray77.github.io/vet-hub/|200|
+biobarrier-site|Витрины|https://shray77.github.io/biobarrier-site/|200|БиоБарьер
+vetpredis-site|Витрины|https://shray77.github.io/vetpredis-site/|200|Атлас
 vetflu-feed|Эндпоинты|https://shray77.github.io/vetflu-site/feed.xml|200|<rss version
 vetflu-model|Эндпоинты|https://shray77.github.io/vetflu-site/data/model.json|200|"nodes"
 vetflu-wind|Эндпоинты|https://shray77.github.io/vetflu-site/data/wind_live.json|200|sector_deg

@@ -2,14 +2,14 @@
 
 Личный сайт-визитка: **[shray77.github.io](https://shray77.github.io/)**
 
-Ветеринарная медицина × код. Витрина всей открытой экосистемы — **22 проекта**,
-из них 17 живых демо на GitHub Pages:
+Ветеринарная медицина × код. Витрина всей открытой экосистемы — **23 проекта**,
+из них 18 живых демо на GitHub Pages:
 
 | Раздел | Проекты |
 |---|---|
 | Мониторинг и прогнозы | [ВЕТМЕТЕО](https://github.com/shray77/vet-meteo) · [ВетКарта](https://github.com/shray77/vet-heatmap) · [ВетХаб](https://github.com/shray77/vet-hub) · [VetFlu](https://github.com/shray77/vetflu-site) · [VetFlu Forecast](https://github.com/shray77/vetflu-forecast) · [VetRecall](https://github.com/shray77/vetrecall-site) · [BioThreat Watch](https://github.com/shray77/biothreat-site) |
 | Данные и ИИ | [VetDigest](https://github.com/shray77/vetdigest-site) · [VetDigest LLM](https://github.com/shray77/vet-digest-llm) · [RSS-конвейер](https://github.com/shray77/rss-core-site) · [VetInSilico Hub](https://github.com/shray77/vet-insilico) · [Атлас предрасположенностей](https://github.com/shray77/vetpredis-site) ([демо](https://shray77.github.io/vetpredis-site/)) |
-| Инструменты врача | [VetTools](https://github.com/shray77/vettools) · [ФЭКРТ](https://github.com/shray77/vetfecrt-site) ([демо](https://shray77.github.io/vetfecrt-site/)) · [БиоБарьер](https://github.com/shray77/biobarrier-site) ([демо](https://shray77.github.io/biobarrier-site/)) · [VetVoice](https://github.com/shray77/vetvoice) · [ВетЭко](https://github.com/shray77/vetvoice-rag) · [VetLearn AI](https://github.com/shray77/vetlearn-web) ([демо](https://shray77.github.io/vetlearn-web/)) |
+| Инструменты врача | [VetTools](https://github.com/shray77/vettools) · [ФЭКРТ](https://github.com/shray77/vetfecrt-site) ([демо](https://shray77.github.io/vetfecrt-site/)) · [БиоБарьер](https://github.com/shray77/biobarrier-site) ([демо](https://shray77.github.io/biobarrier-site/)) · [Шкалы боли](https://github.com/shray77/vetpain-site) ([демо](https://shray77.github.io/vetpain-site/)) · [VetVoice](https://github.com/shray77/vetvoice) · [ВетЭко](https://github.com/shray77/vetvoice-rag) · [VetLearn AI](https://github.com/shray77/vetlearn-web) ([демо](https://shray77.github.io/vetlearn-web/)) |
 | Платформа | [VetOS](https://github.com/shray77/vetos) · [VetAPI](https://github.com/shray77/vet-api) |
 | Пилоты и пробы (отдельная вкладка) | [Вет-Пилоты](https://github.com/shray77/vet-pilots) · [ВетПетри](https://github.com/shray77/vetpetri) |
 
@@ -28,7 +28,7 @@
   `assets/shots/`; og-карточка `assets/og.jpg` 1200×630 — HTML-рендер того же
   конвейера. Перегенерация — после крупных редизайнов витрин.
 - Хостинг: GitHub Pages, ветка `main`, корень репозитория (`.nojekyll`).
-- SEO: sitemap.xml, robots.txt, JSON-LD (Person + ItemList из 22 позиций).
+- SEO: sitemap.xml, robots.txt, JSON-LD (Person + ItemList из 23 позиций).
 
 ## Правки
 

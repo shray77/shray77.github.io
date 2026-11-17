@@ -33,11 +33,13 @@ vet-hub|Витрины|https://shray77.github.io/vet-hub/|200|
 biobarrier-site|Витрины|https://shray77.github.io/biobarrier-site/|200|БиоБарьер
 vetpredis-site|Витрины|https://shray77.github.io/vetpredis-site/|200|Атлас
 vetpain-site|Витрины|https://shray77.github.io/vetpain-site/|200|Шкалы боли
+capripox-site|Витрины|https://shray77.github.io/capripox-site/|200|оспа овец
 vetflu-feed|Эндпоинты|https://shray77.github.io/vetflu-site/feed.xml|200|<rss version
 vetflu-model|Эндпоинты|https://shray77.github.io/vetflu-site/data/model.json|200|"nodes"
 vetflu-wind|Эндпоинты|https://shray77.github.io/vetflu-site/data/wind_live.json|200|sector_deg
 vetflu-og|Эндпоинты|https://shray77.github.io/vetflu-site/og-image.png|200|
 terms-biothreat|Terms|https://shray77.github.io/biothreat-site/terms.html|200|
+terms-capripox|Terms|https://shray77.github.io/capripox-site/terms.html|200|
 terms-rss-core|Terms|https://shray77.github.io/rss-core-site/terms.html|200|
 terms-heatmap|Terms|https://shray77.github.io/vet-heatmap/terms.html|200|
 terms-insilico|Terms|https://shray77.github.io/vet-insilico/terms/|200|

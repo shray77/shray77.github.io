@@ -226,7 +226,8 @@ section:first-of-type{padding-top:0}
         {"@type":"ListItem","position":21,"name":"БиоБарьер"},
         {"@type":"ListItem","position":22,"name":"Атлас предрасположенностей"},
         {"@type":"ListItem","position":23,"name":"Шкалы боли"},
-        {"@type":"ListItem","position":24,"name":"КаприПокс"}
+        {"@type":"ListItem","position":24,"name":"КаприПокс"},
+        {"@type":"ListItem","position":25,"name":"VetMCP"}
       ]
     }
   ]
@@ -314,11 +315,11 @@ section:first-of-type{padding-top:0}
       <p class="ds-lede">Каждое средство решает конкретную задачу практики: приём животного, надзор, исследование, обучение. Карточки можно отбирать по разделам; снимок экрана ведёт на работающий сайт проекта.</p>
     </div>
     <div class="filters" id="filters" role="group" aria-label="Фильтр проектов">
-      <button class="fbtn on" data-f="all" aria-pressed="true" style="--fc:var(--ds-accent)">Все проекты <b>24</b></button>
+      <button class="fbtn on" data-f="all" aria-pressed="true" style="--fc:var(--ds-accent)">Все проекты <b>25</b></button>
       <button class="fbtn" data-f="mon" aria-pressed="false" style="--fc:var(--ds-blue)">Мониторинг и прогнозы <b>7</b></button>
       <button class="fbtn" data-f="data" aria-pressed="false" style="--fc:var(--ds-violet)">Данные и справочники <b>5</b></button>
       <button class="fbtn" data-f="doc" aria-pressed="false" style="--fc:var(--ds-green)">Инструменты врача <b>8</b></button>
-      <button class="fbtn" data-f="plat" aria-pressed="false" style="--fc:var(--ds-accent)">Платформа <b>2</b></button>
+      <button class="fbtn" data-f="plat" aria-pressed="false" style="--fc:var(--ds-accent)">Платформа <b>3</b></button>
       <button class="fbtn" data-f="lab" aria-pressed="false" style="--fc:var(--ds-amber)">Пилоты и пробы <b>2</b></button>
     </div>
     <div class="grid" id="grid">
@@ -762,6 +763,26 @@ section:first-of-type{padding-top:0}
           <div class="card__links">
             <a class="ds-btn ds-btn--primary" href="https://shray77.github.io/capripox-site/" target="_blank" rel="noopener">Открыть сайт ↗</a>
             <a class="ds-btn" href="https://github.com/shray77/capripox-site" target="_blank" rel="noopener">Исходный код ↗</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="card cat-plat" data-cat="plat">
+        <div class="card__body">
+          <div class="card__head">
+            <span class="card__ico" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m4 17 6-6-6-6"/><path d="M12 19h8"/><rect x="1" y="2" width="14" height="10" rx="1"/></svg></span>
+            <div><h3 class="card__title">VetMCP</h3><span class="card__repo">vetmcp</span></div>
+            <span class="ds-badge ds-badge--green card__live">работает</span>
+          </div>
+          <p class="card__desc">Ветеринарная экосистема как MCP-сервер: живые данные витрин — для ИИ-агентов (Claude Desktop, Cursor, Cline). Ноль зависимостей, Node ≥ 20, один файл.</p>
+          <ul class="card__feat">
+            <li><b>8 инструментов:</b> погода и тепловая нагрузка (THI/THIadj/BRD), прогноз 48 ч, вероятностный веер двух ансамблей ECMWF (IFS + ИИ-модель AIFS), ретро-проверка прогнозов, окна риска ВПГП, отзывы и вспышки РФ, мировые биоугрозы, дайджест науки</li>
+            <li>Протокол MCP: stdio, newline-delimited JSON-RPC 2.0, версии 2024-11-05/2025-03-26/2025-06-18; кэш TTL 5 мин, честные isError-ошибки</li>
+            <li>Гейт: 16 known-answer (протокол + все инструменты на фикстурах) + CI-смоук initialize/tools/list; DOI 10.5281/zenodo.24319402</li>
+          </ul>
+          <div class="card__tags"><span class="card__tag">MCP</span><span class="card__tag">ИИ-агенты</span><span class="card__tag">Zero-dep</span><span class="card__tag">node --test</span></div>
+          <div class="card__links">
+            <a class="ds-btn ds-btn--primary" href="https://github.com/shray77/vetmcp" target="_blank" rel="noopener">Исходный код ↗</a>
           </div>
         </div>
       </article>

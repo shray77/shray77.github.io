@@ -201,7 +201,7 @@ section:first-of-type{padding-top:0}
     {
       "@type": "ItemList",
       "name": "Проекты экосистемы shray77",
-      "numberOfItems": 20,
+      "numberOfItems": 24,
       "itemListElement": [
         {"@type":"ListItem","position":1,"name":"ВЕТМЕТЕО · ВетРадар-61"},
         {"@type":"ListItem","position":2,"name":"ВетКарта"},
@@ -225,7 +225,8 @@ section:first-of-type{padding-top:0}
         {"@type":"ListItem","position":20,"name":"ВетПетри"},
         {"@type":"ListItem","position":21,"name":"БиоБарьер"},
         {"@type":"ListItem","position":22,"name":"Атлас предрасположенностей"},
-        {"@type":"ListItem","position":23,"name":"Шкалы боли"}
+        {"@type":"ListItem","position":23,"name":"Шкалы боли"},
+        {"@type":"ListItem","position":24,"name":"КаприПокс"}
       ]
     }
   ]
@@ -313,10 +314,10 @@ section:first-of-type{padding-top:0}
       <p class="ds-lede">Каждое средство решает конкретную задачу практики: приём животного, надзор, исследование, обучение. Карточки можно отбирать по разделам; снимок экрана ведёт на работающий сайт проекта.</p>
     </div>
     <div class="filters" id="filters" role="group" aria-label="Фильтр проектов">
-      <button class="fbtn on" data-f="all" aria-pressed="true" style="--fc:var(--ds-accent)">Все проекты <b>23</b></button>
+      <button class="fbtn on" data-f="all" aria-pressed="true" style="--fc:var(--ds-accent)">Все проекты <b>24</b></button>
       <button class="fbtn" data-f="mon" aria-pressed="false" style="--fc:var(--ds-blue)">Мониторинг и прогнозы <b>7</b></button>
       <button class="fbtn" data-f="data" aria-pressed="false" style="--fc:var(--ds-violet)">Данные и справочники <b>5</b></button>
-      <button class="fbtn" data-f="doc" aria-pressed="false" style="--fc:var(--ds-green)">Инструменты врача <b>7</b></button>
+      <button class="fbtn" data-f="doc" aria-pressed="false" style="--fc:var(--ds-green)">Инструменты врача <b>8</b></button>
       <button class="fbtn" data-f="plat" aria-pressed="false" style="--fc:var(--ds-accent)">Платформа <b>2</b></button>
       <button class="fbtn" data-f="lab" aria-pressed="false" style="--fc:var(--ds-amber)">Пилоты и пробы <b>2</b></button>
     </div>
@@ -338,6 +339,7 @@ section:first-of-type{padding-top:0}
           <ul class="card__feat">
             <li><b>Показатели теплового и холодового стресса скота</b> (THI, THIadj, CCI) и риск респираторных болезней телят</li>
             <li>Карта области и прокрутка прогноза по часам на неделю вперёд</li>
+            <li>Вероятностный слой: два ансамбля ECMWF — физический IFS и ИИ-модель AIFS, веер p10–p90 и вероятности порогов</li>
             <li>Архив погоды, сводки и автоматические оповещения в Telegram</li>
           </ul>
           <div class="card__tags"><span class="card__tag">Веб-сайт</span><span class="card__tag">Карта области</span><span class="card__tag">Прогноз на 7 дней</span><span class="card__tag">Автообновление</span></div>
@@ -735,6 +737,31 @@ section:first-of-type{padding-top:0}
           <div class="card__links">
             <a class="ds-btn ds-btn--primary" href="https://shray77.github.io/vetpain-site/" target="_blank" rel="noopener">Открыть сайт ↗</a>
             <a class="ds-btn" href="https://github.com/shray77/vetpain-site" target="_blank" rel="noopener">Исходный код ↗</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="card cat-doc" data-cat="doc">
+        <a class="card__shot" href="https://shray77.github.io/capripox-site/" target="_blank" rel="noopener">
+          <img src="assets/shots/capripox.jpg" alt="КаприПокс — оспа овец и коз: сценарии вакцинации по оценке EFSA-2026" loading="lazy" decoding="async">
+          <span class="card__open">открыть ↗</span>
+        </a>
+        <div class="card__body">
+          <div class="card__head">
+            <span class="card__ico" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4c2.5-2 6.5-2 8 .5 2-.5 3.5 1 3 3-1 3-3 5-6.5 5H10C7 12.5 5 10 5 7.5 5 5.5 7 4.5 9 5c.6-.4 1.3-.7 2-1Z"/><path d="M10 12.5V21"/><path d="M15 12.5V21"/><path d="M8.5 12.2 6 19"/></svg></span>
+            <div><h3 class="card__title">КаприПокс</h3><span class="card__repo">capripox-site · витрина</span></div>
+            <span class="ds-badge ds-badge--green card__live">работает</span>
+          </div>
+          <p class="card__desc">Оспа овец и коз: разбор оценки EFSA-2026 по балканской эпидемии 2024–2026 — 2315 вспышек, вакцины (RM-65, Romania, Bakirköy), ядерная модель распространения и калькуляторы кампании. Каждый номер — из первоисточника.</p>
+          <ul class="card__feat">
+            <li><b>Ядро передачи</b> K(x)=(1+x/d₀)⁻ᵅ с MLE-параметрами Болгарии — видно, откуда зоны наблюдения 10 и 20 км</li>
+            <li><b>Матрица стратегий</b> «детекция × вакцинация × контроль перемещений»: только выводы статьи, немоделированные сочетания помечены честно</li>
+            <li>Логистика кампании с порогом 75% (EFSA-2014); арифметика гейтится 22 известными ответами (node --test, CI)</li>
+          </ul>
+          <div class="card__tags"><span class="card__tag">EFSA 2026</span><span class="card__tag">SIRV-модель</span><span class="card__tag">Офлайн</span><span class="card__tag">node --test</span></div>
+          <div class="card__links">
+            <a class="ds-btn ds-btn--primary" href="https://shray77.github.io/capripox-site/" target="_blank" rel="noopener">Открыть сайт ↗</a>
+            <a class="ds-btn" href="https://github.com/shray77/capripox-site" target="_blank" rel="noopener">Исходный код ↗</a>
           </div>
         </div>
       </article>

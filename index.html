@@ -774,15 +774,17 @@ section:first-of-type{padding-top:0}
             <div><h3 class="card__title">VetMCP</h3><span class="card__repo">vetmcp</span></div>
             <span class="ds-badge ds-badge--green card__live">работает</span>
           </div>
-          <p class="card__desc">Ветеринарная экосистема как MCP-сервер: живые данные витрин — для ИИ-агентов (Claude Desktop, Cursor, Cline). Ноль зависимостей, Node ≥ 20, один файл.</p>
+          <p class="card__desc">Первый ветеринарный MCP-сервер в РФ (проверено 20.11.2026). Живые данные витрин — для ИИ-агентов (Claude Desktop, Cursor, Cline). Ноль зависимостей, Node ≥ 20, один файл.</p>
           <ul class="card__feat">
             <li><b>10 инструментов:</b> погода и тепловая нагрузка (THI/THIadj/BRD), прогноз 48 ч, вероятностный веер двух ансамблей ECMWF (IFS + ИИ-модель AIFS), ретро-проверка прогнозов, окна риска ВПГП, отзывы и вспышки РФ, мировые биоугрозы, дайджест науки, эпидкарта вспышек РФ 2005→сегодня (ВетКарта), справочник ветпрепаратов ChEMBL + аффинности Boltz-2</li>
             <li>Протокол MCP: stdio, newline-delimited JSON-RPC 2.0, версии 2024-11-05/2025-03-26/2025-06-18; кэш TTL 5 мин, честные isError-ошибки</li>
             <li>Гейт: 20 known-answer (протокол + все инструменты на фикстурах) + CI-смоук initialize/tools/list; DOI 10.5281/zenodo.24319402</li>
+            <li>Листинги: официальный реестр MCP (io.github.shray77/vetmcp, публикация из CI по OIDC) + awesome-mcp-servers (PR №20138); установка одним кликом из бандла .mcpb</li>
           </ul>
-          <div class="card__tags"><span class="card__tag">MCP</span><span class="card__tag">ИИ-агенты</span><span class="card__tag">Zero-dep</span><span class="card__tag">node --test</span></div>
+          <div class="card__tags"><span class="card__tag">MCP</span><span class="card__tag">первый в РФ</span><span class="card__tag">ИИ-агенты</span><span class="card__tag">Zero-dep</span><span class="card__tag">node --test</span></div>
           <div class="card__links">
             <a class="ds-btn ds-btn--primary" href="https://github.com/shray77/vetmcp" target="_blank" rel="noopener">Исходный код ↗</a>
+            <a class="ds-btn" href="https://github.com/shray77/vetmcp/releases/tag/v1.1.0" target="_blank" rel="noopener">Установка .mcpb ↗</a>
           </div>
         </div>
       </article>
